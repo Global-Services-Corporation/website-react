@@ -1,0 +1,23 @@
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border: 4px solid #00a7e1;
+  border-radius: 50%;
+  max-width: 200px;
+  margin: 0 auto;
+  transition: opacity 0.5s ease;
+}
+
+.slider-item.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slider-item.show {
+  opacity: 1;
+  pointer-events: auto;
+}
