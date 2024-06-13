@@ -1,18 +1,19 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { bgConfirmAdesion, logoLyrics } from "../../assets"
-
+import { logoLyrics } from "../../assets"
 import { User } from "../../services/utils/types"
+import Loading from "./Loading"
 
 const FinalizatedAdesion: React.FC = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
 	const [user, setUser] = useState<User | null>(null)
-	const [file, setFile] = useState<File | null>(null) // Adicione o estado para o arquivo
-
+	const [file, setFile] = useState<File | null>(null)
+	const [isLoading, setIsLoading] = useState(false) // Estado para controlar o loading
 	const [personalData, setPersonalData] = useState<any>(null)
-	// Remova os estados de personalData e enterpriseData se não forem usados
+	const [pedidoEnviado, setPedidoEnviado] = useState(false) // Estado para controlar se o pedido foi enviado com sucesso
+	const [okClicked, setOkClicked] = useState(false) // Estado para controlar se o botão OK foi clicado
 
 	useEffect(() => {
 		fetchUserData(id)
@@ -24,17 +25,17 @@ const FinalizatedAdesion: React.FC = () => {
 			setPersonalData(JSON.parse(personalFormData))
 		}
 	}, [id])
-	useEffect(() => {
-		fetchUserData(id)
-	}, [id])
 
 	const fetchUserData = async (userId: string | undefined) => {
 		try {
-			const response = await axios.get(`http://gsc.api.unocura.ao/user/${userId}`, {
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem("token")}`,
-				},
-			})
+			const response = await axios.get(
+				`http://gsc.api.unocura.ao/user/${userId}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
+				}
+			)
 			setUser(response.data)
 		} catch (error) {
 			console.error("Erro ao carregar dados do usuário:", error)
@@ -54,10 +55,12 @@ const FinalizatedAdesion: React.FC = () => {
 			return
 		}
 
+		setIsLoading(true) // Ativar o estado de loading antes da requisição
+
 		const formData = new FormData()
 		formData.append("doc", file)
 
-		// Verifique se os dados pessoais estão disponíveis e, em seguida, adicione-os ao FormData
+		// Adicionar dados pessoais ao FormData
 		formData.append("name", personalData.nome)
 		formData.append("email", personalData.email)
 		formData.append("price", personalData.price) // Verifique se o campo correto é 'price'
@@ -65,21 +68,31 @@ const FinalizatedAdesion: React.FC = () => {
 
 		try {
 			const response = await axios.post(
-				`https://gsc.api.unocura.ao/send-email`,
+				`http://gsc.api.unocura.ao/send-email`,
 				formData,
 				{
 					headers: {
 						Authorization: `Bearer ${localStorage.getItem("token")}`,
-						"Content-Type": "multipart/form-data", // Indicando que a requisição é multipart/form-data
+						"Content-Type": "multipart/form-data",
 					},
 				}
 			)
 			console.log("Resposta do servidor:", response.data)
-			alert("Reserva enviada, responderemos o mais breve possível!")
-			navigate(`/personal/${user?.uuid}`)
+			setPedidoEnviado(true) // Marcar o pedido como enviado com sucesso
 		} catch (error) {
 			console.error("Erro ao enviar formulário:", error)
+		} finally {
+			setIsLoading(false) // Desativar o estado de loading após a requisição
 		}
+	}
+
+	const handleOkClick = () => {
+		setOkClicked(true) // Marcar o botão OK como clicado
+		navigate(`/personal/${user?.uuid}`) // Navegar para a página pessoal
+	}
+
+	if (isLoading) {
+		return <Loading />
 	}
 
 	return (
@@ -89,12 +102,6 @@ const FinalizatedAdesion: React.FC = () => {
 					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
 				</a>
 			</header>
-
-			<img
-				src={bgConfirmAdesion}
-				alt=""
-				className="absolute w-full h-full object-cover top-0"
-			/>
 
 			<section className="flex flex-col text-white z-50 items-center gap-6 w-[85%] max-h-[800px] h-[450px] my-auto justify-around">
 				<h1 className="text-[35px] font-semibold text-center max-sm:text-[25px]">
@@ -115,6 +122,20 @@ const FinalizatedAdesion: React.FC = () => {
 						className={`w-[400px] h-[50px] max-lg:w-auto max-sm:w-auto flex p-4 bg-[#1F2126] rounded-[4px] text-[#9E9E9E]`}
 					/>
 				</form>
+
+				{pedidoEnviado && !okClicked && (
+					<div className="fixed top-0 left-0 w-screen h-screen flex flex-col gap-5 items-center justify-center bg-black bg-opacity-75 z-50">
+						<div className="bg-green-500 text-white p-4 rounded-lg">
+							Pedido enviado com sucesso!
+						</div>
+						<button
+							className="max-sm:mb-[100px] font-bold w-1/2 h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+							onClick={handleOkClick}
+						>
+							OK
+						</button>
+					</div>
+				)}
 
 				<div className="w-[60%] flex flex-col items-center gap-8">
 					<button
