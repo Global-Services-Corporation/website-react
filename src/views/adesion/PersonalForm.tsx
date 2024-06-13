@@ -67,7 +67,7 @@ const PersonalForm: React.FC = () => {
 						<input
 							{...field}
 							type="text"
-							className={`w-[400px] h-[50px] max-lg:w-auto max-sm:w-auto flex p-4 bg-[#1F2126] rounded-[4px] text-[#9E9E9E] ${
+							className={`w-[400px] h-[50px] max-lg:w-auto max-sm:w-auto flex p-4 bg-[#1B223C] rounded-[4px] text-[#9E9E9E] ${
 								errors.nome ? "border-red-500" : ""
 							}`}
 							placeholder="Insira o seu nome"
@@ -100,7 +100,7 @@ const PersonalForm: React.FC = () => {
 						<input
 							{...field}
 							type="email"
-							className={`w-[400px] max-sm:w-auto max-lg:w-auto h-[50px] flex p-4 bg-[#1F2126] rounded-[4px] text-[#9E9E9E] ${
+							className={`w-[400px] max-sm:w-auto max-lg:w-auto h-[50px] flex p-4 bg-[#1B223C] rounded-[4px] text-[#9E9E9E] ${
 								errors.email ? "border-red-500" : ""
 							}`}
 							placeholder="Insira o seu email"
@@ -135,7 +135,7 @@ const PersonalForm: React.FC = () => {
 						<input
 							{...field}
 							type="number"
-							className={`w-[400px] h-[50px] max-sm:w-auto max-lg:w-auto flex p-4 bg-[#1F2126] rounded-[4px] text-[#9E9E9E] ${
+							className={`w-[400px] h-[50px] max-sm:w-auto max-lg:w-auto flex p-4 bg-[#1B223C] rounded-[4px] text-[#9E9E9E] ${
 								errors.contacto ? "border-red-500" : ""
 							}`}
 							placeholder="Insira o seu contacto telefónico"
@@ -159,7 +159,7 @@ const PersonalForm: React.FC = () => {
 			<div className="flex justify-center items-center w-full">
 				<button
 					type="submit"
-					className="text-[#1c1c1c] text-[14px] font-bold w-[200px] h-[50px] bg-[#30CBE8] rounded-[5px]"
+					className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
 				>
 					Enviar formulário
 				</button>

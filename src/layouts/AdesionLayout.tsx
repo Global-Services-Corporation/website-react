@@ -49,7 +49,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 
 	return (
 		<>
-			<section className="h-screen flex bg-[#141416]">
+			<section className="h-screen flex bg-[#001032]">
 				<main
 					className="w-1/2 max-sm:w-screen overflow-y-auto max-sm:overflow-x-hidden box-border flex flex-col"
 					style={{

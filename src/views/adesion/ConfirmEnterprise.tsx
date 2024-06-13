@@ -68,7 +68,7 @@ const ConfirmAdesionEnterprise: React.FC = () => {
 
       <section className="flex flex-col text-white z-50 items-center gap-6 w-[85%] max-h-[800px] h-[500px] my-auto justify-between py-8">
         <h1 className="text-[35px] font-semibold text-center max-sm:text-[25px]">
-          Confirma os dados de adesão
+          Confirmar os dados
         </h1>
 
         <form className="w-[60%] max-sm:w-[80%] grid grid-cols-2 grid-rows-2 max-sm:flex max-sm:flex-col gap-4">

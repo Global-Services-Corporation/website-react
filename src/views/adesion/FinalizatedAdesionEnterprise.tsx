@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { bgConfirmAdesion, logoLyrics } from "../../assets";
 
 import { User } from "../../services/utils/types";
@@ -11,16 +11,23 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [file, setFile] = useState<File | null>(null); // Adicione o estado para o arquivo
   const [enterpriseData, setEnterpriseData] = useState<any>(null);
+  const [ticketData, setTicketData] = useState<any>(null);
   // Remova os estados de enterPriseData e enterpriseData se não forem usados
 
   useEffect(() => {
     fetchUserData(id);
     const enterpriseFormData = localStorage.getItem("enterpriseFormData");
+    const ticketFormData = localStorage.getItem("accumulatedTicketData");
 
     console.log("Dados Pessoais:", enterpriseFormData);
+    console.log("Dados Pessoais:", ticketFormData);
 
     if (enterpriseFormData) {
       setEnterpriseData(JSON.parse(enterpriseFormData));
+    }
+
+    if (ticketFormData) {
+      setTicketData(JSON.parse(ticketFormData));
     }
   }, [id]);
   useEffect(() => {
@@ -29,11 +36,14 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 
   const fetchUserData = async (userId: string | undefined) => {
     try {
-      const response = await axios.get(`https://gsc.api.unocura.ao/user/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(
+        `https://gsc.api.unocura.ao/user/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setUser(response.data);
     } catch (error) {
       console.error("Erro ao carregar dados do usuário:", error);
@@ -59,7 +69,13 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
     // Verifique se os dados pessoais estão disponíveis e, em seguida, adicione-os ao FormData
     formData.append("name", enterpriseData.nome);
     formData.append("email", enterpriseData.email);
-    formData.append("price", enterpriseData.price);
+    formData.append(
+      "price",
+      ticketData.total.toLocaleString("pt-PT", {
+        style: "currency",
+        currency: "AOA",
+      })
+    );
     formData.append("contact", enterpriseData.contacto);
 
     try {
@@ -83,10 +99,21 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 
   return (
     <main className="w-screen h-screen relative bg-[#141416] flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
-      <header className="w-full py-4 px-6 z-10">
+      <header className="w-full py-4 px-6 z-10 flex items-center justify-between">
         <a href={user ? `/${user?.uuid}` : "/"}>
           <img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
         </a>
+
+        <Link
+          to={
+            user
+              ? `/tickets-datas/${user?.uuid}`
+              : `/tickets-datas/${user?.uuid}`
+          }
+          className="text-white font-bold"
+        >
+          Cancelar
+        </Link>
       </header>
 
       <img
@@ -105,7 +132,7 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
         </p>
 
         <form className="w-[60%] max-sm:w-[80%] flex flex-col items-center h-40 justify-around max-sm:flex max-sm:flex-col gap-4">
-          <p>Descarregar Comprovativo</p>
+          <p>Enviar Comprovativo</p>
 
           <input
             type="file"
