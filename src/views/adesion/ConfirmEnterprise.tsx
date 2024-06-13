@@ -66,7 +66,7 @@ const ConfirmAdesionEnterprise: React.FC = () => {
         className="absolute w-full h-full object-cover top-0"
       />
 
-      <section className="flex flex-col text-white z-50 items-center gap-6 w-[85%] max-h-[800px] h-[500px] my-auto justify-between py-8">
+      <section className="flex flex-col text-white z-50 items-center gap-6 w-[85%] max-h-[800px] h-[500px] my-auto  justify-between py-8">
         <h1 className="text-[35px] font-semibold text-center max-sm:text-[25px]">
           Confirmar os dados
         </h1>
@@ -111,7 +111,7 @@ const ConfirmAdesionEnterprise: React.FC = () => {
 
         <div className="w-[60%] flex flex-col items-center gap-8">
           <button
-            className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+            className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] max-sm:w-[220px] max-sm:h-[50px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
             onClick={handleAvancar}
           >
             Avançar

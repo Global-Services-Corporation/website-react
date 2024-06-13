@@ -69,7 +69,7 @@ const ConfirmAdesionPersonal: React.FC = () => {
         </Link>
       </header>
 
-      <section className="text-white flex flex-col z-50 h-2/3 w-1/2 rounded-md justify-between p-14 bg-[#1B223C] my-auto items-center">
+      <section className="text-white flex flex-col max-sm:w-full max-sm:h-auto z-50 h-2/3 w-1/2 rounded-md justify-between p-14 bg-[#1B223C] my-auto items-center">
         <h1 className="text-[35px] font-semibold text-center max-sm:text-[25px] text-[#30CBE8]">
           Confirmar dados
         </h1>
@@ -117,9 +117,9 @@ const ConfirmAdesionPersonal: React.FC = () => {
           </div>
         </form>
 
-        <div className="w-[60%] flex flex-col items-center gap-8">
+        <div className="w-[60%] flex flex-col items-center gap-8 max-sm:p-4">
           <button
-            className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+            className="max-sm:mb-[100px] font-bold w-[300px] max-sm:w-[220px] max-sm:h-[50px] h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
             onClick={handleAvancar}
           >
             Avançar

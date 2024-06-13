@@ -113,7 +113,7 @@ const TicketsPrices: React.FC = () => {
 
   return (
     <main className="w-screen h-screen relative bg-[#001032] flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
-      <header className="w-full py-4 px-6 z-10 flex justify-between items-center">
+      <header className="w-full py-4 px-6 z-10 flex justify-between items-center ">
         <a href={user ? `/${user?.uuid}` : "/"}>
           <img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
         </a>
@@ -126,14 +126,14 @@ const TicketsPrices: React.FC = () => {
         </Link>
       </header>
 
-      <div className="text-white flex flex-col z-50 h-2/3 w-1/2 rounded-md justify-between p-14 bg-[#1B223C] my-auto max-sm:m-0">
+      <div className="text-white max-sm:text-[15px]  flex flex-col z-50 h-2/3 w-1/2 rounded-md justify-between p-14 bg-[#1B223C] max-sm:gap-2 max-sm:w-full max-sm:h-auto my-auto max-sm:m-0">
         <h1 className="font-bold text-center text-3xl text-[#30CBE8]">
           Tickets
         </h1>
         {ticketTypes.map((ticket) => (
           <div
             key={ticket.id}
-            className="flex w-full justify-between items-center shadow-inner shadow-black rounded-md p-4"
+            className="flex w-full max-sm:flex-col justify-between items-center shadow-inner shadow-black rounded-md p-4"
           >
             <p className="font-bold text-[#30CBE8] text-lg">{ticket.label}</p>
 
@@ -196,7 +196,7 @@ const TicketsPrices: React.FC = () => {
               saveToLocalStorage("accumulatedTicketData", quantities, total);
               console.log(localStorage.getItem("accumulatedTicketData"));
             }}
-            className=" font-bold w-[300px] h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+            className=" font-bold w-[300px] h-[56px] max-sm:w-[220px] max-sm:h-[50px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
           >
             Avançar
           </button>
