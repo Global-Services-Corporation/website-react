@@ -49,7 +49,7 @@ const EnterpriseForm: React.FC = () => {
     const formData = { ...data };
     console.log("Dados enviados com sucesso", formData);
     localStorage.setItem("enterpriseFormData", JSON.stringify(formData));
-    navigate(`/tickets-datas/${user?.uuid}`);
+    navigate(`/tickets-datas-enterprise/${user?.uuid}`);
   };
 
   return (
