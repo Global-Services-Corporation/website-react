@@ -2,7 +2,6 @@
 
 import EnterpriseForm from "../../views/adesion/EnterpriseForm";
 import PersonalForm from "../../views/adesion/PersonalForm";
-import Home from "../../views/landing/Home";
 import { RouteType } from "../../services/config/types";
 import InfoPage from "../../views/landing/Events";
 

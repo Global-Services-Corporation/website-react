@@ -12,6 +12,7 @@ import { User } from "./services/utils/types"
 import ConfirmAdesionPersonal from "./views/adesion/ConfirmPersonal"
 import FinalizatedAdesion from "./views/adesion/FinalizatedAdesion"
 import FinalizatedAdesionEnterprise from "./views/adesion/FinalizatedAdesionEnterprise"
+import TicketsPrices from "./views/adesion/TicketsPrices"
 
 const isAuthenticated = () => {
 	return !!localStorage.getItem("token")
@@ -78,6 +79,8 @@ function App() {
 					path="/finalizado-enterprise/:id"
 					element={<FinalizatedAdesionEnterprise />}
 				/>
+
+				<Route path="/tickets-datas/:id" element={<TicketsPrices />} />
 
 				{AllRoutes.map((route) => (
 					<Route
