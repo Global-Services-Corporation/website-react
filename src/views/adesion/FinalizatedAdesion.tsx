@@ -79,7 +79,7 @@ const FinalizatedAdesion: React.FC = () => {
 
 		try {
 			const response = await axios.post(
-				`http://gsc.api.unocura.ao/send-email`,
+				`https://gsc.api.unocura.ao/send-email`,
 				formData,
 				{
 					headers: {
