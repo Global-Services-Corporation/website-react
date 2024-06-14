@@ -151,7 +151,7 @@ const FinalizatedAdesion: React.FC = () => {
 						className="cursor-pointer  text-white  max-lg:w-auto max-sm:w-auto flex items-center justify-center rounded-lg text-center p-2"
 					>
 						{file ? (
-							<p className="bg-[#00A7E1] p-4 rounded-lg">{file.name}</p>
+							<p className="bg-[#00A7E1] p-4 rounded-lg w-5/6">{file.name}</p>
 						) : (
 							<img src={downloadPay} />
 						)}
