@@ -2,7 +2,6 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { downloadPay, logoLyrics } from "../../assets"
-
 import { User } from "../../services/utils/types"
 import Loading from "./Loading"
 
@@ -76,6 +75,7 @@ const FinalizatedAdesion: React.FC = () => {
 			})
 		)
 		formData.append("contact", personalData.contacto)
+		formData.append("ticketsData", JSON.stringify(ticketData))
 
 		try {
 			const response = await axios.post(

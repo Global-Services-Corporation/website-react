@@ -75,6 +75,7 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 			})
 		)
 		formData.append("contact", enterpriseData.contacto)
+		formData.append("ticketsData", JSON.stringify(ticketData))
 
 		try {
 			const response = await axios.post(
