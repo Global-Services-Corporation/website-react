@@ -52,9 +52,19 @@ import Edsondossantos from "./events/Oradores-e-Moderadores/Edsondossantos.jpg"
 import Pauloportas from "./events/Oradores-e-Moderadores/Pauloportas.jpg"
 import Pedroramos from "./events/Oradores-e-Moderadores/Pedroramos.jpg"
 import Anabela from "./events/Oradores-e-Moderadores/anabela.jpg"
+import Banner1 from "./events/Banner/Banner1.png";
+import Banner2 from "./events/Banner/Banner2.png";
+import Banner3 from "./events/Banner/Banner3.png";
+import Banner4 from "./events/Banner/Banner4.png";
+import Banner5 from "./events/Banner/Banner5.png";
 
 
 export {
+  Banner1,
+  Banner2,
+  Banner3,
+  Banner4,
+  Banner5,
   Anabela,
   Pedroramos,
   Pauloportas,
