@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    autoplaySpeed: 3000, // Tempo em milissegundos entre as mudanças de slide
+    autoplaySpeed: 4000, // Tempo em milissegundos entre as mudanças de slide
     slidesToShow: 1,
     slidesToScroll: 1,
   };

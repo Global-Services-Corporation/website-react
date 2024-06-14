@@ -58,9 +58,10 @@ import Banner2 from "./events/Banner/Banner2.png";
 import Banner3 from "./events/Banner/Banner3.png";
 import Banner4 from "./events/Banner/Banner4.png";
 import Banner5 from "./events/Banner/Banner5.png";
-
+import FIB from "./events/Atividades-Recentes/FIB.jpg"
 
 export {
+  FIB,
   Banner1,
   Banner2,
   Banner3,

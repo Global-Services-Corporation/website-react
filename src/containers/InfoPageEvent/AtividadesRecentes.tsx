@@ -6,7 +6,7 @@ import "../../index.css";
 import { Pagination } from "swiper/modules";
 
 import ProgramCard from "../../components/program-card";
-import { post1, post2, post3, post4 } from "../../assets";
+import { FIB, post2, post3, post4 } from "../../assets";
 
 const AtividadesRecentes = () => {
   const [slidesPerView, setSlidePerView] = useState(3);
@@ -30,7 +30,7 @@ const AtividadesRecentes = () => {
   const dataCard = [
     {
       id: 1,
-      image: post1,
+      image: FIB,
       description:
         "Fazer parte da FIB 2024, não é participar de um simples evento, é estar ao lado daqueles que constroem soluções e influenciam as decisões da segunda maior região de Angola e da Ecónomia no Geral.",
       title: "13ª Edição - FIB 2024",
