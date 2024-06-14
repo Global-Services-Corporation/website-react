@@ -22,6 +22,7 @@ import instagramIcon from "./social-medias-icons/Instagram.svg";
 import bgOqueEsperar from "./events/O-Que-Esperar/Frame 427318921.png";
 import listIcon from "./events/Pricings/listicon.png";
 import icon from "./events/Pricings/icon.png";
+import downloadPay from "./events/AdesionForm/downloadPay.svg";
 import backgroundCard from "./events/Pricings/background.png";
 import listras from "./login/listras.svg";
 import escudo from "./login/escudo.svg";
@@ -70,6 +71,7 @@ export {
   Pauloportas,
   Edsondossantos,
   HugoTeles,
+  downloadPay,
   superbock,
   tanqueray,
   espacos,

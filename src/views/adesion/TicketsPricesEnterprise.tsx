@@ -38,7 +38,7 @@ const ticketTypes: TicketType[] = [
 	},
 ]
 
-const TicketsPrices: React.FC = () => {
+const TicketsPricesEnterprise: React.FC = () => {
 	const [quantities, setQuantities] = useState<{ [key: string]: number }>(
 		ticketTypes.reduce((acc, ticket) => {
 			acc[ticket.id] = 0
@@ -135,7 +135,7 @@ const TicketsPrices: React.FC = () => {
 				total,
 				totalQuantity
 			)
-			navigate(`/confirm-adesion-personal/${user?.uuid}`)
+			navigate(`/confirm-adesion-enterprise/${user?.uuid}`)
 		} else {
 			alert("Selecione algum ticket!")
 		}
@@ -149,7 +149,7 @@ const TicketsPrices: React.FC = () => {
 				</a>
 
 				<Link
-					to={user ? `/personal/${user?.uuid}` : "/personal"}
+					to={user ? `/enterprise/${user?.uuid}` : "/enterprise"}
 					className="text-white font-bold"
 					onClick={() => {
 						localStorage.removeItem("accumulatedTicketData")
@@ -199,7 +199,7 @@ const TicketsPrices: React.FC = () => {
 					</div>
 				))}
 
-				<div className="flex flex-col w-full justify-between items-center h-1/4 gap-2">
+				<div className="flex flex-col w-full justify-between items-center h-1/4 max-sm:gap-7 max-sm:mt-5 gap-2">
 					<div className="flex gap-2 flex-col">
 						<p className="flex font-bold gap-1">
 							Quantidade de Tickets:
@@ -231,4 +231,4 @@ const TicketsPrices: React.FC = () => {
 	)
 }
 
-export default TicketsPrices
+export default TicketsPricesEnterprise

@@ -13,6 +13,10 @@ const PersonalForm: React.FC = () => {
 		control,
 		formState: { errors },
 	} = useForm()
+	
+	useEffect(() => {
+		localStorage.clear()
+	}, [])
 
 	useEffect(() => {
 		fetchUserData(id)
