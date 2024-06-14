@@ -151,6 +151,9 @@ const TicketsPrices: React.FC = () => {
 				<Link
 					to={user ? `/personal/${user?.uuid}` : "/personal"}
 					className="text-white font-bold"
+					onClick={() => {
+						localStorage.removeItem("accumulatedTicketData")
+					}}
 				>
 					Cancelar
 				</Link>

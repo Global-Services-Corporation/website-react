@@ -118,6 +118,9 @@ const FinalizatedAdesion: React.FC = () => {
 				<Link
 					to={`/tickets-datas/${user?.uuid}`}
 					className="text-white font-bold"
+					onClick={() => {
+						localStorage.removeItem("accumulatedTicketData")
+					}}
 				>
 					Cancelar
 				</Link>
