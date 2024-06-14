@@ -123,14 +123,25 @@ const FinalizatedAdesion: React.FC = () => {
 				</Link>
 			</header>
 
-			<section className="text-white flex flex-col z-50 h-2/3 w-2/3 max-sm:w-[90%] rounded-md justify-between p-10 bg-[#1B223C] my-auto items-center">
+			<section className="text-white flex flex-col z-50 h-3/4 w-2/3 max-sm:w-[90%] rounded-md justify-between p-10 bg-[#1B223C] my-auto items-center">
 				<h1 className="text-[35px] text-white font-semibold text-center max-sm:text-[25px]">
 					FINALIZAR RESERVA
 				</h1>
 
-				<p className="text-lg font-semibold text-center max-sm:text-sm">
+				<p className="text-lg font-bold text-center max-sm:text-sm">
 					IBAN: 0000 0454 9943 1664 3
 				</p>
+
+				<div className="text-center">
+					<p className="font-bold text-[#00A7E1]">Valor total a enviar:</p>
+
+					<p>
+						{`${ticketData?.total.toLocaleString("pt-PT", {
+							style: "currency",
+							currency: "AOA",
+						})}` || "Nenhum"}
+					</p>
+				</div>
 
 				<form className="w-[90%] max-sm:w-full flex flex-col items-center h-30 justify-around max-sm:flex max-sm:flex-col gap-4">
 					<p className="font-semibold">Enviar Comprovativo</p>
@@ -168,12 +179,14 @@ const FinalizatedAdesion: React.FC = () => {
 					</div>
 				)}
 
-				<button
-					className="max-sm:w-full font-bold w-[300px] h-14 rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
-					onClick={handleFinalizar}
-				>
-					Finalizar
-				</button>
+				<div className="w-[60%] flex flex-col items-center gap-8">
+					<button
+						className="max-sm:w-full font-bold w-[300px] h-14 rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+						onClick={handleFinalizar}
+					>
+						Finalizar
+					</button>
+				</div>
 			</section>
 		</main>
 	)

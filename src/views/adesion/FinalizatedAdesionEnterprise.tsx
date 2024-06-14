@@ -10,12 +10,12 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
 	const [user, setUser] = useState<User | null>(null)
-	const [isLoading, setIsLoading] = useState(false) // Estado para controlar o loading
+	const [isLoading, setIsLoading] = useState(false)
 	const [file, setFile] = useState<File | null>(null)
 	const [enterpriseData, setEnterpriseData] = useState<any>(null)
 	const [ticketData, setTicketData] = useState<any>(null)
-	const [pedidoEnviado, setPedidoEnviado] = useState(false) // Estado para controlar se o pedido foi enviado com sucesso
-	const [okClicked, setOkClicked] = useState(false) // Estado para controlar se o botão OK foi clicado
+	const [pedidoEnviado, setPedidoEnviado] = useState(false)
+	const [okClicked, setOkClicked] = useState(false)
 
 	useEffect(() => {
 		fetchUserData(id)
@@ -65,7 +65,6 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 		const formData = new FormData()
 		formData.append("doc", file)
 
-		// Adicionar dados pessoais ao FormData
 		formData.append("name", enterpriseData.nome)
 		formData.append("email", enterpriseData.email)
 		formData.append(
@@ -122,14 +121,25 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 				</Link>
 			</header>
 
-			<section className="text-white flex flex-col z-50 h-2/3 w-2/3 max-sm:w-[90%] rounded-md justify-between p-10 bg-[#1B223C] my-auto items-center">
+			<section className="text-white flex flex-col z-50 h-3/4 w-2/3 max-sm:w-[90%] rounded-md justify-between p-10 bg-[#1B223C] my-auto items-center">
 				<h1 className="text-[35px] text-white font-semibold text-center max-sm:text-[25px]">
 					FINALIZAR RESERVA
 				</h1>
 
-				<p className="text-lg font-semibold text-center max-sm:text-sm">
+				<p className="text-lg font-bold text-center max-sm:text-sm">
 					IBAN: 0000 0454 9943 1664 3
 				</p>
+
+				<div className="text-center">
+					<p className="font-bold text-[#00A7E1]">Valor total a enviar:</p>
+
+					<p>
+						{`${ticketData?.total.toLocaleString("pt-PT", {
+							style: "currency",
+							currency: "AOA",
+						})}` || "Nenhum"}
+					</p>
+				</div>
 
 				<form className="w-[90%] max-sm:w-full flex flex-col items-center h-30 justify-around max-sm:flex max-sm:flex-col gap-4">
 					<p className="font-semibold">Enviar Comprovativo</p>
