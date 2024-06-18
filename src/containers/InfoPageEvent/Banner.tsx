@@ -38,6 +38,7 @@ const Banner: React.FC = () => {
     autoplaySpeed: 4000, // Tempo em milissegundos entre as mudanças de slide
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false
   };
 
   return (
