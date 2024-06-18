@@ -42,13 +42,13 @@ const Banner: React.FC = () => {
 
   return (
     <div className="min-h-[1075px] max-sm:min-h-[0] relative max-sm:h-[600px] w-full">
-      {/* Mantendo o background principal */}
+      
       <img
         src={bannerImage}
         alt="Banner Background"
         className="w-full h-[864px] max-sm:h-[600px] z-0"
       />
-      <div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-40 gap-[50px] ">
+      <div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-40 max-sm:top-0 gap-[50px] ">
         <div className="flex flex-col max-sm:absolute max-sm:bottom-[200px] max-sm:items-center max-sm:flex justify-center items-center text-[#fff] w-[1075px] max-lg:w-full max-lg:px-8 gap-6">
           <h1 className="text-[60px] max-md:text-5xl font-bold max-sm:text-[24px] text-center">
             BUSINESS AFTER WORK 2024 <br />
@@ -70,8 +70,8 @@ const Banner: React.FC = () => {
         </div>
         </div>
 
-      {/* Slider abaixo do conteúdo existente */}
-      <div className=" flex flex-col  absolute justify-center bottom-0 inset-x-0">
+
+      <div className=" flex flex-col  absolute justify-center bottom-0 inset-x-0 max-sm:hidden">
         <Slider {...settings}>
           <div className="w-full flex justify-center items-center">
             <img
