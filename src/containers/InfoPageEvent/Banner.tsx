@@ -77,7 +77,7 @@ const Banner: React.FC = () => {
             <img
               src={bannerIllustration}
               alt="Banner Background 1"
-              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
+              className="w-full opacity-60 object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] h-full"
             />
           </div>
 
@@ -85,7 +85,7 @@ const Banner: React.FC = () => {
             <img
               src={Banner3}
               alt="Banner Background 2"
-              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
+              className="w-full object-cover opacity-60 object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
 
@@ -93,7 +93,7 @@ const Banner: React.FC = () => {
             <img
               src={Banner4}
               alt="Banner Background 3"
-              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
+              className="w-full opacity-60 object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
 
@@ -101,7 +101,7 @@ const Banner: React.FC = () => {
             <img
               src={Banner5}
               alt="Banner Background 3"
-              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
+              className="w-full opacity-60 object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
         </Slider>
