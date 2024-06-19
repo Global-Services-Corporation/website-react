@@ -5,7 +5,13 @@ import { User } from "../../services/utils/types";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { bannerImage, bannerIllustration, Banner3, Banner4, Banner5 } from "../../assets";
+import {
+  bannerImage,
+  bannerIllustration,
+  Banner3,
+  Banner4,
+  Banner5,
+} from "../../assets";
 
 const Banner: React.FC = () => {
   const { id } = useParams();
@@ -38,27 +44,21 @@ const Banner: React.FC = () => {
     autoplaySpeed: 4000, // Tempo em milissegundos entre as mudanças de slide
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
   };
 
   return (
-    <div className="min-h-[1075px] max-sm:min-h-[0] relative max-sm:h-[600px] w-full">
-      
-      <img
-        src={bannerImage}
-        alt="Banner Background"
-        className="w-full h-[864px] max-sm:h-[600px] z-0"
-      />
-      <div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-40 max-sm:top-0 gap-[50px] ">
-        <div className="flex flex-col max-sm:absolute max-sm:bottom-[200px] max-sm:items-center max-sm:flex justify-center items-center text-[#fff] w-[1075px] max-lg:w-full max-lg:px-8 gap-6">
-          <h1 className="text-[60px] max-md:text-5xl font-bold max-sm:text-[24px] text-center">
+    <div className="h-[700px] max-sm:min-h-[0] relative max-sm:h-[600px] w-full">
+      <div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-40 gap-[50px] z-50">
+        <div className="flex flex-col max-sm:absolute max-sm:top-10 max-sm:items-center max-sm:flex justify-center items-center text-[#fff] w-[1075px] max-lg:w-full max-lg:px-8 gap-6">
+          <h1 className="text-[60px] max-md:text-5xl font-bold max-sm:text-[24px] text-center shadow-md">
             BUSINESS AFTER WORK 2024 <br />
             <span className="font-extrabold max-md:text-5xl max-sm:text-[24px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
               LÍDER TECH
             </span>
           </h1>
 
-          <p className="text-[18px] max-sm:text-[14px]">
+          <p className="text-[18px] max-sm:text-[14px] shadow-md">
             Participe do maior evento corporativo.
           </p>
 
@@ -69,44 +69,43 @@ const Banner: React.FC = () => {
             Fazer Inscrição
           </a>
         </div>
-        </div>
+      </div>
 
-
-      <div className=" flex flex-col  absolute justify-center bottom-0 inset-x-0 max-sm:hidden">
-        <Slider {...settings}>
-          <div className="w-full flex justify-center items-center">
+      <div className=" flex flex-col max-h-[600px] absolute top-0 inset-x-0 max-sm:z-0">
+        <Slider {...settings} className="">
+          <div className="w-full flex items-center  h-[700px] max-sm:h-[600px]">
             <img
               src={bannerIllustration}
               alt="Banner Background 1"
-              className="w-full object-cover object-top h-[551px] rounded-[50px] max-sm:hidden max-3xl:w-[1250px] z-0"
+              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
-          <div>
+
+          <div className="w-full flex items-center h-[700px] max-sm:h-[600px]">
             <img
               src={Banner3}
               alt="Banner Background 2"
-              className="w-full object-cover object-center h-[551px] rounded-[50px] max-sm:hidden max-3xl:w-[1250px] z-0"
+              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
-          <div>
+
+          <div className="w-full flex items-center h-[700px] max-sm:h-[600px]">
             <img
               src={Banner4}
               alt="Banner Background 3"
-              className="w-full object-cover object-center h-[551px] rounded-[50px] max-sm:hidden max-3xl:w-[1250px] z-0"
+              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
-          <div>
+
+          <div className="w-full flex items-center h-[700px] max-sm:h-[600px]">
             <img
               src={Banner5}
               alt="Banner Background 3"
-              className="w-full object-cover object-top h-[551px] rounded-[50px] max-sm:hidden max-3xl:w-[1250px] z-0"
+              className="w-full object-cover object-top rounded-[50px] max-sm:rounded-none max-sm:hidden max-3xl:w-[1250px] z-0 h-full"
             />
           </div>
-          {/* Adicione outras imagens do slider aqui */}
         </Slider>
       </div>
-
-      {/* Conteúdo restante do banner */}
     </div>
   );
 };
