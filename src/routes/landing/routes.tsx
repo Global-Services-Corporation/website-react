@@ -4,12 +4,13 @@ import EnterpriseForm from "../../views/adesion/EnterpriseForm";
 import PersonalForm from "../../views/adesion/PersonalForm";
 import { RouteType } from "../../services/config/types";
 import InfoPage from "../../views/landing/Events";
+import HomePage from "../../views/landing/Home";
 
 const Routes: RouteType[] = [
   {
     label: "",
     path: "/",
-    element: <InfoPage />,
+    element: <HomePage />,
     type: "public",
   },
   {

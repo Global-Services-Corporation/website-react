@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../services/utils/types";
+import Banner from "../../containers/LandingPage/Banner";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -35,11 +36,11 @@ const HomePage: React.FC = () => {
   }, [user, navigate]);
 
   return (
-    <div className="bg-[#1C1C1C] w-full h-screen flex justify-center items-center">
-      <h1 className="text-white font-bold text-[60px] max-sm:text-[40px] text-center">
-        Global Services Corporation
-      </h1>
+    <div className="bg-[#001032] h-screen text-white gap-[64px] flex flex-col justify-center items-center">
+        <Banner/>
     </div>
+    
+  
   );
 };
 

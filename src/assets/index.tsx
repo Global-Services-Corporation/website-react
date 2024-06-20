@@ -59,8 +59,16 @@ import Banner3 from "./events/Banner/Banner3.png";
 import Banner4 from "./events/Banner/Banner4.png";
 import Banner5 from "./events/Banner/Banner5.png";
 import FIB from "./events/Atividades-Recentes/FIB.jpg"
+import seguro from "./landing/Banner/seguro.png"
+import academia from "./landing/Banner/academia.png"
+import saude from "./landing/Banner/saude.png"
+import mundo from "./landing/Banner/mundo.svg"
 
 export {
+  academia,
+  mundo,
+  saude,
+  seguro,
   FIB,
   Banner1,
   Banner2,
