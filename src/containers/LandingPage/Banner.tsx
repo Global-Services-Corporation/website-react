@@ -1,7 +1,7 @@
 import { seguro, academia, saude, mundo } from "../../assets";
 
 const Banner: React.FC = () => {
-  return <section className="w-[1199px] h-[554px] flex gap-32">
+  return <section className="w-[1199px] mt-52 h-[554px] flex gap-32">
     <div className="w-[427px] h-[395] flex flex-col gap-8">
       <h1 className="w-full h-[249] leading-none text-[69px] font-bold">Dar poder às <span className="text-[#30CBE8]">suas escolhas</span> de <span className="text-[#30CBE8]">seguros</span></h1>
       <p className="text-[#C5C5C5] text-[20px] font-bold">Explore o poder de proteger o seu futuro com escolhas inteligentes em seguros.</p>

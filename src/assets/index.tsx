@@ -63,8 +63,20 @@ import seguro from "./landing/Banner/seguro.png"
 import academia from "./landing/Banner/academia.png"
 import saude from "./landing/Banner/saude.png"
 import mundo from "./landing/Banner/mundo.svg"
+import elipse2 from "./landing/Services/elipse2.svg"
+import elipse1 from "./landing/Banner/elipse1.svg"
+import seguros from "./landing/Services/Seguros.png"
+import academiaicon from "./landing/Services/AcademiaIcon.png"
+import eventosicon from "./landing/Services/EventosIcon.png"
+import sobrenos from "./landing/AboutUs/AboutUs.png"
 
 export {
+  sobrenos,
+  elipse1,
+  elipse2,
+  academiaicon,
+  seguros,
+  eventosicon,
   academia,
   mundo,
   saude,

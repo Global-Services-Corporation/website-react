@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../services/utils/types";
 import Banner from "../../containers/LandingPage/Banner";
+import AboutUs from "../../containers/LandingPage/AboutUs";
+import Services from "../../containers/LandingPage/Services";
+import { Header } from "../../components/header";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -36,8 +39,11 @@ const HomePage: React.FC = () => {
   }, [user, navigate]);
 
   return (
-    <div className="bg-[#001032] h-screen text-white gap-[64px] flex flex-col justify-center items-center">
+    <div className="bg-[#001032] h-full text-white gap-[64px] flex flex-col justify-center items-center">
+        <Header/>
         <Banner/>
+        <Services/>
+        <AboutUs/>
     </div>
     
   
