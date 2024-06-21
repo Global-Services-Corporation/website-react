@@ -69,8 +69,10 @@ import seguros from "./landing/Services/Seguros.png"
 import academiaicon from "./landing/Services/AcademiaIcon.png"
 import eventosicon from "./landing/Services/EventosIcon.png"
 import sobrenos from "./landing/AboutUs/AboutUs.png"
+import linkIcon from "./landing/FormativeAction/linkIcon.svg"
 
 export {
+  linkIcon,
   sobrenos,
   elipse1,
   elipse2,

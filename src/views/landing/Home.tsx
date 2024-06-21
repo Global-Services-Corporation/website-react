@@ -5,7 +5,10 @@ import { User } from "../../services/utils/types";
 import Banner from "../../containers/LandingPage/Banner";
 import AboutUs from "../../containers/LandingPage/AboutUs";
 import Services from "../../containers/LandingPage/Services";
-import { Header } from "../../components/header";
+import EnterpriseSolution from "../../containers/LandingPage/EnterpriseSolution";
+
+import { elipse2 } from "../../assets";
+import FormativeAction from "../../containers/LandingPage/FormativeAction";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -39,14 +42,14 @@ const HomePage: React.FC = () => {
   }, [user, navigate]);
 
   return (
-    <div className="bg-[#001032] h-full text-white gap-[64px] flex flex-col justify-center items-center">
-        <Header/>
-        <Banner/>
-        <Services/>
-        <AboutUs/>
+    <div className="bg-[#001032] h-full text-white gap-16 flex flex-col justify-center items-center py-48">
+      <Banner />
+      <Services />
+      <img src={elipse2} className="absolute end-0 object-cover z-0" alt="" />
+      <AboutUs />
+      <EnterpriseSolution />
+      <FormativeAction />
     </div>
-    
-  
   );
 };
 
