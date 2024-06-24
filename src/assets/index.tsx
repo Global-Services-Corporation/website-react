@@ -1,6 +1,6 @@
 import bannerImage from "./events/Banner/Background-Image.png";
 import logoLyrics from "./logo-lyrics.svg";
-import bannerIllustration from "./events/Banner/Event-Banner.png";
+import bannerIllustration from "./events/Banner/Event-Banner.jpg";
 import parceiro1 from "./events/Parceiros/HCTA.png";
 import parceiro2 from "./events/Parceiros/deloite.png";
 import parceiro3 from "./events/Parceiros/Logo-2.png";
@@ -53,11 +53,11 @@ import Edsondossantos from "./events/Oradores-e-Moderadores/Edsondossantos.jpg"
 import Pauloportas from "./events/Oradores-e-Moderadores/Pauloportas.jpg"
 import Pedroramos from "./events/Oradores-e-Moderadores/Pedroramos.jpg"
 import Anabela from "./events/Oradores-e-Moderadores/anabela.jpg"
-import Banner1 from "./events/Banner/Banner1.png";
-import Banner2 from "./events/Banner/Banner2.png";
-import Banner3 from "./events/Banner/Banner3.png";
-import Banner4 from "./events/Banner/Banner4.png";
-import Banner5 from "./events/Banner/Banner5.png";
+import Banner1 from "./events/Banner/Banner1.jpg";
+import Banner2 from "./events/Banner/Banner2.jpg";
+import Banner3 from "./events/Banner/Banner3.jpg";
+import Banner4 from "./events/Banner/Banner4.jpg";
+import Banner5 from "./events/Banner/Banner5.jpg";
 import FIB from "./events/Atividades-Recentes/FIB.jpg"
 import seguro from "./landing/Banner/seguro.png"
 import academia from "./landing/Banner/academia.png"
@@ -70,8 +70,10 @@ import academiaicon from "./landing/Services/AcademiaIcon.png"
 import eventosicon from "./landing/Services/EventosIcon.png"
 import sobrenos from "./landing/AboutUs/AboutUs.png"
 import linkIcon from "./landing/FormativeAction/linkIcon.svg"
+import newsletterIcon from "./landing/Newsletter/newsletter2.png"
 
 export {
+  newsletterIcon,
   linkIcon,
   sobrenos,
   elipse1,

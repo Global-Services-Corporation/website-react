@@ -2,10 +2,10 @@ import { sobrenos } from "../../assets";
 
 const AboutUs: React.FC = () => {
   return (
-    <section className="w-full items-center justify-center bg-[#0E1937] h-[593px] flex relative gap-12">
-      <div className="w-4/5 flex gap-16 items-center justify-center">
-        <div className="w-2/5 flex flex-col gap-8">
-          <p className="font-semibold text-4xl">Sobre Nós</p>
+    <section className="w-full items-center justify-center bg-[#0E1937] h-[593px] flex relative gap-12 z-50">
+      <div className="w-4/5 flex items-center justify-between gap-5">
+        <div className="w-2/4 flex justify-between flex-col gap-4">
+          <p className="font-semibold text-4xl">Sobre nós</p>
           <p className="text-[20px] text-[#C5C5C5]">
             We currently support Facebook, Instagram, LinkedIn and Twitter. More
             to come. Felix is purpose built for ease of use and complete

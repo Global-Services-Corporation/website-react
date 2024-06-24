@@ -9,6 +9,8 @@ import EnterpriseSolution from "../../containers/LandingPage/EnterpriseSolution"
 
 import { elipse2 } from "../../assets";
 import FormativeAction from "../../containers/LandingPage/FormativeAction";
+import Blog from "../../containers/LandingPage/Blog";
+import Newsletter from "../../containers/LandingPage/Newsletter";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -43,12 +45,28 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="bg-[#001032] h-full text-white gap-16 flex flex-col justify-center items-center py-48">
+      <img
+        src={elipse2}
+        className="absolute start-0 -top-[750px] object-cover z-0 rotate-180"
+        alt=""
+      />
       <Banner />
+      <img
+        src={elipse2}
+        className="absolute end-0 object-cover z-0 top-[200px]"
+        alt=""
+      />
       <Services />
-      <img src={elipse2} className="absolute end-0 object-cover z-0" alt="" />
       <AboutUs />
+      <img
+        src={elipse2}
+        className="absolute start-0 object-cover z-0 top-[1470px] rotate-180"
+        alt=""
+      />
       <EnterpriseSolution />
       <FormativeAction />
+      <Blog/>
+      <Newsletter/>
     </div>
   );
 };

@@ -40,10 +40,10 @@ const EnterpriseSolution: React.FC = () => {
     },
   ];
   return (
-    <section className="w-4/5 flex flex-col justify-center gap-12 py-24 px-12  items-center">
+    <section className="w-full flex flex-col justify-center gap-12 py-24  items-center">
       <div className="w-full flex flex-col items-center gap-5 justify-center">
-        <p className="font-semibold text-4xl"> Soluções Empresariais</p>
-        <p>
+        <p className="font-bold text-4xl"> Soluções Empresariais</p>
+        <p className="text-[#c5c5c5]">
           Veja as soluções que a{" "}
           <span className="text-[#30CBE8]">Global Services Corporation</span>{" "}
           tem para a sua empresa.

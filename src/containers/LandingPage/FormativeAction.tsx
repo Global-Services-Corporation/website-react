@@ -9,8 +9,8 @@ const FormativeAction: React.FC = () => {
     speed: 500,
     autoplay: true,
     autoplaySpeed: 4000, // Tempo em milissegundos entre as mudanças de slide
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 4,
+    slidesToScroll: 2,
     arrows: false,
   };
 
@@ -34,17 +34,17 @@ const FormativeAction: React.FC = () => {
   ];
 
   return (
-    <section className="w-4/5 flex flex-col justify-center gap-12 py-24 px-12  items-center">
+    <section className="w-full flex flex-col justify-center gap-12 py-24 items-center z-40">
       <div className="w-full flex flex-col items-center gap-5 justify-center">
-        <p className="font-semibold text-4xl"> Ação Formativa</p>
-        <p>
+        <p className="font-bold text-4xl"> Ação Formativa</p>
+        <p className="text-[#c5c5c5]"> {" "}
           Veja as soluções que a
-          <span className="text-[#30CBE8]">Global Services Corporation</span>{" "}
+          <span className="text-[#30CBE8]">Global Services Corporation</span> {" "}
           tem para a sua empresa.
         </p>
       </div>
 
-      <div className="w-full flex justify-center gap-3 h-fit">
+      <div className="w-4/5 flex justify-center items-center gap-2 h-fit">
         {" "}
         <Slider {...settings} className="w-full flex">
           {cardInfo.map((info, index) => (
