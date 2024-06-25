@@ -65,8 +65,19 @@ const HomePage: React.FC = () => {
       />
       <EnterpriseSolution />
       <FormativeAction />
-      <Blog/>
-      <Newsletter/>
+      <img
+        src={elipse2}
+        alt=""
+        className="absolute end-0 top-[2470px] object-cover "
+      />
+      <Blog />
+      <img
+        src={elipse2}
+        className="absolute start-0 object-cover z-0 top-[3470px] rotate-180"
+        alt=""
+      />
+      <Newsletter />
+     
     </div>
   );
 };

@@ -10,7 +10,7 @@ const Routes: RouteType[] = [
   {
     label: "",
     path: "/",
-    element: <InfoPage />,
+    element: <HomePage />,
     type: "public",
   },
   {

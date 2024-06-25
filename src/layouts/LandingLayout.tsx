@@ -1,5 +1,6 @@
 import React from "react";
 import { Header } from "../components/header";
+import Footer from "../components/footer";
 
 const LandingLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -8,6 +9,7 @@ const LandingLayout: React.FC<{ children: React.ReactNode }> = ({
     <>
       <Header />
       <main>{children}</main>
+      <Footer/>
     </>
   );
 };

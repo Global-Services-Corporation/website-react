@@ -5,38 +5,32 @@ const EnterpriseSolution: React.FC = () => {
     {
       cardIcon: eventosicon,
       title: "Consultoria de Seguros",
-      description: `Avaliação detalhada das necessidades de seguro do cliente com base
-            em sua situação financeira, pessoal ou empresarial.`,
+      description: `Oferecemos serviços especializados para ajudar indivíduos e empresas a escolherem e gerenciarem planos de seguro adequados às suas necessidades..`,
     },
     {
       cardIcon: eventosicon,
-      title: "Consultoria de Seguros",
-      description: `Avaliação detalhada das necessidades de seguro do cliente com base
-              em sua situação financeira, pessoal ou empresarial.`,
+      title: "Consultoria Empresarial",
+      description: `Oferecemos serviços especializados para melhorar o desempenho organizacional através de estratégias personalizadas em áreas como operações, finanças, recursos humanos e tecnologia, visando a otimização, crescimento e competitividade no mercado.`,
     },
     {
       cardIcon: eventosicon,
-      title: "Consultoria de Seguros",
-      description: `Avaliação detalhada das necessidades de seguro do cliente com base
-              em sua situação financeira, pessoal ou empresarial.`,
+      title: "Consultoria Jurídica",
+      description: `Oferecemos uma orientação especializada em questões legais para indivíduos e empresas, abrangendo áreas como direito civil, comercial, trabalhista e regulatório, com o objetivo de assegurar conformidade legal, minimizar riscos e resolver conflitos de maneira eficaz e estratégica.`,
     },
     {
       cardIcon: eventosicon,
-      title: "Consultoria de Seguros",
-      description: `Avaliação detalhada das necessidades de seguro do cliente com base
-              em sua situação financeira, pessoal ou empresarial.`,
+      title: "Consultoria em Marketing",
+      description: `Oferecemos serviços especializados para empresas melhorarem sua presença e desempenho no mercado.`,
     },
     {
       cardIcon: eventosicon,
-      title: "Consultoria de Seguros",
-      description: `Avaliação detalhada das necessidades de seguro do cliente com base
-              em sua situação financeira, pessoal ou empresarial.`,
+      title: "Consultoria em RH",
+      description: `Oferecemos soluções especializadas para empresas gerenciarem eficientemente seus recursos humanos.`,
     },
     {
       cardIcon: eventosicon,
-      title: "Consultoria de Seguros",
-      description: `Avaliação detalhada das necessidades de seguro do cliente com base
-              em sua situação financeira, pessoal ou empresarial.`,
+      title: "Consultoria Financeira",
+      description: `Oferecemos serviços especializados para ajudar indivíduos e empresas a gerenciar seus recursos financeiros de forma eficiente.`,
     },
   ];
   return (
@@ -53,7 +47,7 @@ const EnterpriseSolution: React.FC = () => {
         {CardInfo.map((info, index) => (
           <div
             key={index}
-            className=" w-full h-56 justify-center flex flex-col p-6 gap-2.5  rounded-lg bg-[#0E1937]"
+            className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg bg-[#0E1937]"
           >
             <img src={info.cardIcon} alt="" className="h-16 w-16" />
             <p className="text-[#30CBE8]">{info.title}</p>

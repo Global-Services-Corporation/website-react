@@ -1,4 +1,4 @@
-import bannerImage from "./events/Banner/Background-Image.png";
+
 import logoLyrics from "./logo-lyrics.svg";
 import bannerIllustration from "./events/Banner/Event-Banner.jpg";
 import parceiro1 from "./events/Parceiros/HCTA.png";
@@ -42,7 +42,7 @@ import orador1 from "./events/Oradores-e-Moderadores/orador1.png";
 import bg from "./events/Oradores-e-Moderadores/bg1.png";
 import imageCard from "./events/Program/card-image.png";
 import post4 from "./events/Atividades-Recentes/image.png";
-import post1 from "./events/Atividades-Recentes/post1.png";
+
 import post2 from "./events/Atividades-Recentes/post2.jfif";
 import post3 from "./events/Atividades-Recentes/post3.jfif";
 import tanqueray from "./events/Parceiros/tanqueray.jpeg"
@@ -71,8 +71,22 @@ import eventosicon from "./landing/Services/EventosIcon.png"
 import sobrenos from "./landing/AboutUs/AboutUs.png"
 import linkIcon from "./landing/FormativeAction/linkIcon.svg"
 import newsletterIcon from "./landing/Newsletter/newsletter2.png"
+import acadBai from "./events/Sponsors/acadBai.png"
+import englishPlus from "./events/Sponsors/englishPlus.png"
+import gdaLogo from "./events/Sponsors/gdaLogo.png"
+import sistecLogo from "./events/Sponsors/sistecLogo.png"
+import tisWhiteLogo from "./events/Sponsors/tisWhiteLogo.svg"
+import ManuelHomem from "./events/Oradores-e-Moderadores/ManuelHomempng.png"
+import Edivania from "./events/Oradores-e-Moderadores/Edivania.png"
 
 export {
+  Edivania,
+  ManuelHomem,
+  tisWhiteLogo,
+  sistecLogo,
+  gdaLogo,
+  englishPlus,
+  acadBai,
   newsletterIcon,
   linkIcon,
   sobrenos,
@@ -100,7 +114,7 @@ export {
   superbock,
   tanqueray,
   espacos,
-  post1,
+ 
   post2,
   post3,
   post4,
@@ -113,7 +127,7 @@ export {
   oradores,
   empresas,
   bgConfirmAdesion,
-  bannerImage,
+ 
   logoLyrics,
   bannerIllustration,
   parceiro1,

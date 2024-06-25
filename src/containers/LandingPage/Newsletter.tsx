@@ -2,7 +2,7 @@ import { newsletterIcon } from "../../assets";
 
 const Newsletter: React.FC = () => {
   return (
-    <section className="w-3/5 h-80 flex bg-[#0E1937] rounded-2xl items-center justify-between px-16 relative">
+    <section className="w-3/5 h-80 flex bg-[#0E1937] rounded-2xl items-center justify-between px-16 mt-32 relative">
       <div className="w-3/5 h-4/5 flex flex-col justify-center gap-4">
         
         <p className="font-bold text-4xl">Subscreva à nossa newsletter</p>

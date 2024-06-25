@@ -4,7 +4,7 @@ import ProgramCard from "../../components/program-card";
 
 const ProgramEvent: React.FC = () => {
   return (
-    <section className="flex w-full justify-center">
+    <section className="flex w-full bg-[#1B223C] justify-center">
       <div
         className="flex w-full max-w-[1500px] items-center relative max-sm:min-h-[500px] h-[750px] max-sm:h-[500px] gap-20 max-2xl:px-[80px] 
        max-sm:px-10"

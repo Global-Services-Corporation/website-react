@@ -8,7 +8,7 @@ const EventInfo: React.FC = () => {
       </h1>
       <div className="max-sm:flex-col max-sm:gap-8 flex w-full justify-between items-center px-6 h-[462px] max-sm:h-full max-w-[1500px]">
         <CardInfo type="local" local="HCTA" />
-        <CardInfo type="date" date="Julho de 2024" />
+        <CardInfo type="date" date="18 de Julho de 2024" />
         <CardInfo type="time" time="16h30" />
       </div>
     </section>

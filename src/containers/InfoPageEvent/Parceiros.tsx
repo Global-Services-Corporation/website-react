@@ -8,7 +8,7 @@ import {
 
 const Parceiros: React.FC = () => {
   return (
-    <section className="w-full flex flex-col justify-center items-center py-[80px] max-sm:py-0 gap-12   max-sm:m-0 max-sm:h-[950px] bg-[#1B223C]">
+    <section className="w-full  flex flex-col justify-center items-center py-[80px] max-sm:py-0 gap-12   max-sm:m-0 max-sm:h-[950px] z-40">
       <h1 className="font-bold text-[45px] max-sm:text-[25px]   max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
         Parceiros
       </h1>

@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import FormativeActionCard from "../../components/formative-action-card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { elipse2 } from "../../assets";
 
 const FormativeAction: React.FC = () => {
   const settings = {
