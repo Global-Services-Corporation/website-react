@@ -1,63 +1,18 @@
-import React from "react";
-import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {
-  bg,
   Pauloportas,
   Anabela,
   Pedroramos,
   Edsondossantos,
-  ManuelHomem,
-  Edivania
 } from "../../assets";
+import KeynoteSpeaker from "./KeynoteSpeaker";
 
-// Definindo o componente Slider
-const SimpleSlider = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    className: "flex gap-5 flex-col",
-  };
 
-  return <Slider {...settings}></Slider>;
-};
 
 const Oradores = () => {
-  const apresentadora = [
-    {
-      foto: Edivania,
-      nome: "Edivania do Carmo",
-      cargo: `Apresentadora de TV`,
-      sobre: `CEO da KEEPTALENT Portugal | Vice-Presidente da Lusofonia Digital É
-    PhD em Economia de Empresa, Mestre em Sociologia do Emprego e
-    Licenciado na área das Ciências da Educação. É atualmente um dos
-    consultores de maior referência em Portugal e nos países de Língua
-    Portuguesa nas temáticas de Gestão de Pessoas e Organizações, tendo
-    anteriormente desempenhado o cargo de Administrador Executivo e de
-    Diretor de Recursos Humanos em grandes empresas nos últimos 30 anos.`,
-    },
-  ];
-
-  const keynote = [
-    {
-      foto: ManuelHomem,
-      nome: "Manuel Homem",
-      cargo: `Governador da Província de Luanda`,
-      sobre: `CEO da KEEPTALENT Portugal | Vice-Presidente da Lusofonia Digital É
-    PhD em Economia de Empresa, Mestre em Sociologia do Emprego e
-    Licenciado na área das Ciências da Educação. É atualmente um dos
-    consultores de maior referência em Portugal e nos países de Língua
-    Portuguesa nas temáticas de Gestão de Pessoas e Organizações, tendo
-    anteriormente desempenhado o cargo de Administrador Executivo e de
-    Diretor de Recursos Humanos em grandes empresas nos últimos 30 anos.`,
-    },
-  ];
-
   const orador = [
     {
       foto: Pedroramos,
@@ -104,74 +59,14 @@ const Oradores = () => {
   ];
 
   return (
-    <section className="flex justify-center w-4/5  max-sm:h max-sm:my-0 max-2xl:px-[100px] max-sm:px-4 text-white flex-col py-16 gap-8">
-  <div>
-        <h1 className="text-[45px] max-sm:text-[25px]  font-bold max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text text-center">
-          Apresentadora
-        </h1>
-
-        <div className="grid grid-cols-1 p-4 max-sm:grid-cols-1 gap-8">
-          {apresentadora.map((dados, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center text-center"
-            >
-              <img
-                className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-                src={dados.foto}
-                alt=""
-              />
-
-              <div className="w-[80%] mx-auto">
-                <h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-                  {dados.nome}
-                </h2>
-
-                <h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-                  {dados.cargo}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>   
-
-      <div>
-        <h1 className="text-[45px] max-sm:text-[25px]  font-bold max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text text-center">
-          Keynote Speakers
-        </h1>
-
-        <div className="grid grid-cols-1 p-4 max-sm:grid-cols-1 gap-8">
-          {keynote.map((dados, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center text-center"
-            >
-              <img
-                className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-                src={dados.foto}
-                alt=""
-              />
-
-              <div className="w-[80%] mx-auto">
-                <h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-                  {dados.nome}
-                </h2>
-
-                <h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-                  {dados.cargo}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div>
-        <h1 className="text-[45px] max-sm:text-[25px]  font-bold max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text text-center">
+    <section className="flex justify-center  w-full  max-sm:h max-sm:my-0 max-2xl:px-[100px] max-sm:px-0 text-white flex-col py-16 ">
+    <KeynoteSpeaker/>
+      <div className="bg-[#1B223C] py-12 flex flex-col items-center">
+        <h1 className="text-[45px] max-sm:text-[25px] font-bold max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text text-center">
           Oradores
         </h1>
 
-        <div className="grid grid-cols-4 p-4 max-sm:grid-cols-1 gap-8">
+        <div className="flex w-3/5 p-4 max-sm:flex-col gap-8">
           {orador.map((dados, index) => (
             <div
               key={index}

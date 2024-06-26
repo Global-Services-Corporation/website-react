@@ -7,8 +7,8 @@ import EventInfo from "../../containers/InfoPageEvent/InfoEvent";
 import OQueEsperar from "../../containers/InfoPageEvent/OQueEsperar";
 import Oradores from "../../containers/InfoPageEvent/Oradores";
 import Parceiros from "../../containers/InfoPageEvent/Parceiros";
-import ProgramEvent from "../../containers/InfoPageEvent/ProgramEvent";
-import Footer from "../../components/footer";
+import KeynoteSpeaker from "../../containers/InfoPageEvent/KeynoteSpeaker";
+
 import { Video } from "../../containers/InfoPageEvent/Feed";
 import CallToAction from "../../containers/InfoPageEvent/CallToAction";
 import { bgPricing } from "../../assets";
@@ -23,14 +23,14 @@ const InfoPage: React.FC = () => {
     <div className="bg-[#001032] gap-[64px] flex flex-col justify-center items-center relative">
       <Banner />
       <Parceiros />
-	  <img
+      <img
         src={bgPricing}
         alt=""
         className="object-cover max-sm:hidden absolute top-[5%] animate-pulse"
       />
       <AboutEvent />
       <EventInfo />
-      <ProgramEvent />
+
       <Oradores />
       <Estatisticas />
       <img
@@ -43,7 +43,7 @@ const InfoPage: React.FC = () => {
       <AtividadesRecentes />
       <Video />
       <Sponsors />
-      <Footer />
+
     </div>
   );
 };
