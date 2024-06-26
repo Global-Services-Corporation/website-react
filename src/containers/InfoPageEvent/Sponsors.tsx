@@ -7,18 +7,17 @@ const Sponsors: React.FC = () => {
         Patrocinadores
       </h1>
 
-      <div className="flex gap-[64px] w-full max-sm:flex justify-center items-center">
+      <div className="flex max-sm:flex-col gap-20 max-sm:gap-2 w-full max-sm:flex justify-center items-center">
         <img
           src={tisWhiteLogo}
           alt=""
-          className="object-contain max-2xl:h-[100px] max-2xl:w-[100px] max-sm:w-[200px]"
+          className="object-contain h-[150px] w-[150px] max-sm:w-28"
         />
         <img
           src={sistecLogo}
           alt=""
-          className="object-contain h-[150px] w-[150px] max-2xl:h-[100px]  max-2xl:w-[100px]"
+          className="object-contain h-[200px] w-[200px] max-sm:w-32"
         />
-       
       </div>
     </section>
   );
