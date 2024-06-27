@@ -59,14 +59,14 @@ const Oradores = () => {
   ];
 
   return (
-    <section className="flex justify-center  w-full  max-sm:h max-sm:my-0 max-2xl:px-[100px] max-sm:px-0 text-white flex-col py-16 ">
+    <section className="flex justify-center  w-full  max-sm:h max-sm:my-0 max-2xl:px-0 max-sm:px-0 text-white flex-col py-16 ">
     <KeynoteSpeaker/>
       <div className="bg-[#1B223C] py-12 flex flex-col items-center">
         <h1 className="text-[45px] max-sm:text-[25px] font-bold max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text text-center">
           Oradores
         </h1>
 
-        <div className="flex w-3/5 p-4 max-sm:flex-col gap-8">
+        <div className="flex max-2xl:w-4/5 w-3/5 p-4 max-sm:flex-col gap-8">
           {orador.map((dados, index) => (
             <div
               key={index}

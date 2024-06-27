@@ -3,7 +3,7 @@ import { Edivania, manuelHomem, ruiMiguens } from "../../assets";
 const KeynoteSpeaker: React.FC = () => {
   return (
     <section className="flex flex-col w-full items-center justify-center">
-      <div className="w-full gap-8 max-sm:gap-0 flex max-sm:flex-col-reverse bg-[#1B223C] justify-center hidden">
+      <div className="w-full gap-8 max-sm:gap-0 max-sm:flex-col-reverse bg-[#1B223C] justify-center hidden">
         <img src={manuelHomem} alt="" className="w-96 max-sm:w-80" />
 
         <div className="flex flex-col w-1/3 max-sm:w-full max-sm:items-center gap-2 h-96 max-sm:h-80 justify-center">
@@ -22,11 +22,11 @@ const KeynoteSpeaker: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="w-full gap-8 max-sm:gap-0 flex max-sm:flex-col-reverse bg-[#1B223C] justify-center max-sm:items-center">
+      <div className="w-full gap-8 max-sm:gap-0 flex max-sm:flex-col-reverse items-end bg-[#1B223C] justify-center max-sm:items-center">
         <img
           src={ruiMiguens}
           alt=""
-          className="w-96 object-cover max-sm:w-80"
+          className="w-80 h-80 object-cover object-bottom max-sm:w-80"
         />
 
         <div className="flex flex-col w-1/3 max-sm:w-full max-sm:items-center gap-2 h-96 max-sm:h-80 justify-center">
@@ -63,7 +63,7 @@ const KeynoteSpeaker: React.FC = () => {
             anos de televisão e acredita que a resiliência é a chave do sucesso.
           </p>
         </div>
-        <img src={Edivania} alt="" className=" w-96 max-sm:w-80" />
+        <img src={Edivania} alt="" className=" h-96 max-sm:w-80 object-contain" />
       </div>
     </section>
   );

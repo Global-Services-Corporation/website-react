@@ -69,7 +69,7 @@ const AtividadesRecentes = () => {
       </h1>
 
       <div
-        className={`max-2xl:min-w-[1250px] max-sm:min-w-[380px] min-w-[1500px] max-sm:w-[380px] w-[1000px] max-2xl:max-w-[1250px]`}
+        className={`max-2xl:min-w-[1024px] max-sm:min-w-[380px] min-w-[1350px] max-sm:w-[380px] w-[990px] max-2xl:max-w-[1024px]`}
       >
         <Swiper slidesPerView={slidesPerView} modules={[Pagination]}>
           {dataCard.map((card, index) => (

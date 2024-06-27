@@ -7,8 +7,6 @@ import EventInfo from "../../containers/InfoPageEvent/InfoEvent";
 import OQueEsperar from "../../containers/InfoPageEvent/OQueEsperar";
 import Oradores from "../../containers/InfoPageEvent/Oradores";
 import Parceiros from "../../containers/InfoPageEvent/Parceiros";
-import KeynoteSpeaker from "../../containers/InfoPageEvent/KeynoteSpeaker";
-
 import { Video } from "../../containers/InfoPageEvent/Feed";
 import CallToAction from "../../containers/InfoPageEvent/CallToAction";
 import { bgPricing } from "../../assets";
@@ -20,7 +18,7 @@ const InfoPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#001032] gap-[64px] flex flex-col justify-center items-center relative">
+    <div className="bg-[#001032] gap-[64px] flex flex-col justify-center items-center relative font-interTight">
       <Banner />
       <Parceiros />
       <img

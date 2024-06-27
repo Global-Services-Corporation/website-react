@@ -56,7 +56,7 @@ import Banner1 from "./events/Banner/Banner1.jpg";
 import Banner2 from "./events/Banner/Banner2.jpg";
 import Banner3 from "./events/Banner/Banner3.jpg";
 import Banner4 from "./events/Banner/Banner4.jpg";
-import Banner5 from "./events/Banner/Banner5.jpg";
+import Banner5 from "./events/Banner/Event-Banner.jpg"
 import FIB from "./events/Atividades-Recentes/FIB.jpg";
 import seguro from "./landing/Banner/seguro.png";
 import academia from "./landing/Banner/academia.png";
