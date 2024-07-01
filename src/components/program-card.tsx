@@ -14,7 +14,7 @@ const ProgramCard: React.FC<Props> = ({ image, description, title, link }) => {
     <div
       className={`flex flex-col ${
         !title && "max-sm:hidden"
-      } items-center max-sm:w-[370px] w-[400px] h-[600px]  rounded-[16px] bg-[#1B223C] gap-[28px] `}
+      } items-center max-sm:w-[370px] max-2xl:w-[300px] w-[350px] max-2xl:h-[450px] h-[500px]  rounded-[16px] bg-[#1B223C] max-2xl:gap-0`}
     >
       <div className={`w-full ${title ? "h-1/2" : "h-full"} `}>
         <img
@@ -32,7 +32,7 @@ const ProgramCard: React.FC<Props> = ({ image, description, title, link }) => {
         ) : (
           <></>
         )}
-        <p className="text-[#ffff] text-[18px] max-2xl:text-[14px]">
+        <p className="text-[#ffff] max-2xl:text-[14px]">
           {limitText(description, 150)}
         </p>
         {link ? (

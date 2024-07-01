@@ -8,7 +8,7 @@ const Routes: RouteType[] = [
   {
     label: "",
     path: "/:id",
-    element: <HomePage />,
+    element: <InfoPage />,
     type: "private",
   },
   {

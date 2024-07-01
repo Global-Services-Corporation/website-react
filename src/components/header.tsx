@@ -46,17 +46,10 @@ export const Header = () => {
     };
   }, []);
 
-  const navbar = [{}];
-
-  const handleLogout = () => {
+  const handleInscription = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    navigate("/personal");
     window.location.reload();
-  };
-
-  const getInitials = (name: string) => {
-    const [firstName, lastName] = name.split(" ");
-    return `${firstName.charAt(0)}${lastName ? lastName.charAt(0) : ""}`;
   };
 
   const toggleMenu = () => {
@@ -86,93 +79,8 @@ export const Header = () => {
         />
       </a>
 
-      {isMaxSm && (
-        <img
-          src={menu}
-          alt="Ícone do Menu"
-          className="cursor-pointer w-12"
-          onClick={toggleMenu}
-        />
-      )}
 
-      <div
-        className={`flex w-[70%] max-sm:w-screen max-sm:py-5 justify-between gap-8 max-sm:flex-col max-sm:px-8 ${
-          isMaxSm
-            ? isMenuOpen
-              ? "absolute h-screen z-50 gap-4 bottom-0 left-0 bg-black"
-              : "hidden"
-            : ""
-        }`}
-      >
-        {isMenuOpen && (
-          <img
-            src={menu}
-            alt="Ícone do Menu"
-            className="cursor-pointer w-12"
-            onClick={toggleMenu}
-          />
-        )}
-
-        <nav
-          className={`w-[590px] flex max-sm:flex-col max-sm:justify-center justify-center gap-10 text-[#fff] box-border h-[50px] max-sm:w-full max-sm:h-[70%] items-center`}
-        >
-          {navbar.map((navItem) => (
-            <ul key={navItem.id}>
-              <li className="hover:text-[#00A7E1] font-medium hover:border-b-[5px] hover:border-b-[#00A7E1] max-sm:border-none">
-                <a href={user ? `${navItem.page}${user.uuid}` : navItem.page}>
-                  {navItem.label}
-                </a>
-              </li>
-            </ul>
-          ))}
-        </nav>
-
-        <div className="flex items-center justify-center gap-3">
-          {user ? (
-            <div className="flex h-full justify-center items-center gap-5">
-              {user.photo ? (
-                <img
-                  src={user.photo}
-                  alt="User Picture"
-                  className="w-[40px] h-[40px] flex justify-center items-center box-border rounded-full"
-                />
-              ) : (
-                <span className="bg-white p-[10px] w-[40px] h-[40px] flex justify-center items-center box-border rounded-full font-bold text-xl">
-                  {getInitials(`${user.name} ${user.surname}`)}
-                </span>
-              )}
-
-              <div className="flex flex-col text-white">
-                <p className="font-bold text-[15px]">
-                  {user.name} {user.surname}
-                </p>
-
-                <p className="text-[13px] text-[#fdfdfdb9]">{user.email}</p>
-              </div>
-
-              <button onClick={handleLogout}>
-                <img src={logout} alt="Logout Icon" className="w-[20px]" />
-              </button>
-            </div>
-          ) : (
-            <div className="max-sm:flex max-sm:flex-col max-sm:w-full gap-4 flex">
-              <a
-                href="/create-account"
-                className="flex justify-center items-center w-[103px] max-sm:w-full h-[38px] rounded-md bg-[#ffffff65] text-[#fff]"
-              >
-                Criar Conta
-              </a>
-
-              <a
-                href="/login"
-                className="bg-[#0239FE] w-[74px] h-[38px] max-sm:w-full rounded-md text-[#fff] flex justify-center items-center"
-              >
-                Entrar
-              </a>
-            </div>
-          )}
-        </div>
-      </div>
+      
     </header>
   );
 };
