@@ -23,14 +23,14 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="w-4/5 pb-32 relative flex flex-col gap-12 z-40">
-      <p className="font-bold max-sm:text-base text-4xl">Adira já aos nossos serviços!</p>
+    <section className="w-full pb-32 relative flex flex-col gap-12 z-40">
+      <p className="font-bold max-sm:text-2xl text-4xl ml-10">Adira já aos nossos serviços!</p>
       <marquee>
         <div className="w-full h-full flex gap-8">
           {cardInfo.map((info, index) => (
             <div
               key={index}
-              className="w-[363px] h-[187px] flex relative p-8 bg-[#0E1937] rounded-[24px]"
+              className="min-w-[363px] min-h-[187px] flex relative p-8 bg-[#0E1937] rounded-[24px]"
             >
               <img src={info.icon} alt="" className="absolute object-none" />
               <div className="flex flex-col absolute start-28">
