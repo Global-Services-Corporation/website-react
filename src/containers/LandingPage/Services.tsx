@@ -24,7 +24,7 @@ const Services: React.FC = () => {
 
   return (
     <section className="w-4/5 pb-32 relative flex flex-col gap-12 z-40">
-      <p className="font-bold text-4xl">Adira já aos nossos serviços!</p>
+      <p className="font-bold max-sm:text-base text-4xl">Adira já aos nossos serviços!</p>
       <marquee>
         <div className="w-full h-full flex gap-8">
           {cardInfo.map((info, index) => (
