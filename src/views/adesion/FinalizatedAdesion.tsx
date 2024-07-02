@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useParams, useNavigate, Link } from "react-router-dom"
-import { downloadPay, logoDoc, logoLyrics } from "../../assets"
+import { logoDoc, logoLyrics } from "../../assets"
 import { User } from "../../services/utils/types"
 import Loading from "./Loading"
 import jsPDF from "jspdf"
@@ -11,7 +11,6 @@ const FinalizatedAdesion: React.FC = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
 	const [user, setUser] = useState<User | null>(null)
-	const [file, setFile] = useState<File | null>(null)
 	const [isLoading, setIsLoading] = useState(false)
 	const [personalData, setPersonalData] = useState<any>(null)
 	const [ticketData, setTicketData] = useState<any>(null)
@@ -75,7 +74,7 @@ const FinalizatedAdesion: React.FC = () => {
 		doc.addImage(logoDoc, "PNG", 15, 15, 35, 15)
 		doc.setFontSize(10)
 
-		const pageWidth = doc.internal.pageSize.width // Largura da porra da página
+		const pageWidth = doc.internal.pageSize.width
 
 		doc.text(`Nome: ${personalData.nome}`, pageWidth - 20, 25, {
 			align: "right",
@@ -89,7 +88,7 @@ const FinalizatedAdesion: React.FC = () => {
 
 		const ticketList =
 			ticketData?.selectedTickets?.map((ticket: any) => [
-				"Credencial para participante no BUSINESS AFTER WORK - Líder Tech 2024",
+				"BUSINESS AFTER WORK - Líder Tech 2024",
 				ticket.label,
 				`${ticketData.totalQuantity}`,
 				`${ticketData.total.toLocaleString("pt-PT", {
@@ -100,24 +99,23 @@ const FinalizatedAdesion: React.FC = () => {
 
 		autoTable(doc, {
 			startY: 50,
-			head: [["Descrição", "Plafond", "Qnt", "Total Geral"]],
+			head: [["Evento", "Plafond", "Qnt", "Total Geral"]],
 			body: ticketList,
 			theme: "grid",
 			headStyles: { fontSize: 10, fillColor: [0, 102, 204] },
 			bodyStyles: { fontSize: 10 },
 		})
 
-		// Ajuste o tamanho da fonte e defina o texto como negrito
-		doc.setFontSize(12) // Tamanho da fonte menor
-		doc.setFont("helvetica", "bold") // Fonte em negrito
+		doc.setFontSize(12)
+		doc.setFont("helvetica", "bold")
 		doc.text(
 			"PASSO A PASSO PARA O PAGAMENTO:",
 			15,
 			(doc as any).autoTable.previous.finalY + 10
 		)
 
-		doc.setFontSize(10) // Voltar ao tamanho da fonte normal
-		doc.setFont("helvetica", "normal") // Voltar ao estilo normal
+		doc.setFontSize(10)
+		doc.setFont("helvetica", "normal")
 		doc.text(
 			"1. Após o pagamento efetuado com sucesso o participante irá se dirigir ao HCTA (Hotel de Convenções Talatona) \n para obter a credencial de acesso ao evento, deverá fazer-se acompanhar do NIF ou BI cadastrado no formulário.",
 			15,
@@ -128,14 +126,29 @@ const FinalizatedAdesion: React.FC = () => {
 			15,
 			(doc as any).autoTable.previous.finalY + 30
 		)
+
+		// Adding the hyperlink
+		const linkText = "https://api.whatsapp.com/send/?phone=+244941064919"
 		doc.text(
-			'3. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp "937509214".',
+			"3. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp:",
 			15,
 			(doc as any).autoTable.previous.finalY + 40
 		)
 
+		doc.setFontSize(10)
+		doc.setTextColor(0, 0, 255)
+		doc.textWithLink(
+			"+244 941 064 919",
+			15,
+			(doc as any).autoTable.previous.finalY + 50,
+
+			{ url: linkText }
+		)
+		doc.setTextColor(0, 0, 0)
+		doc.setFontSize(10)
+
 		autoTable(doc, {
-			startY: (doc as any).autoTable.previous.finalY + 50,
+			startY: (doc as any).autoTable.previous.finalY + 60,
 			head: [["Forma de Pagamento:", "Transferência Bancária"]],
 			body: [
 				["Entidade:", "GLOBAL SC PRESTACAO SERVICOS LDA"],
@@ -156,8 +169,7 @@ const FinalizatedAdesion: React.FC = () => {
 			headStyles: { fillColor: [220, 220, 220] },
 			didParseCell: function (data) {
 				if (data.row.index === 1 && data.section === "body") {
-					// Definindo o fundo da segunda linha
-					data.cell.styles.fillColor = [210, 210, 210]
+					data.cell.styles.fillColor = [220, 220, 220]
 				}
 			},
 		})
