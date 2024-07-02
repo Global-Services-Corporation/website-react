@@ -1,203 +1,229 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import { downloadPay, logoLyrics } from "../../assets";
-import { User } from "../../services/utils/types";
-import Loading from "./Loading";
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+import { useParams, useNavigate, Link } from "react-router-dom"
+import { downloadPay, logoDoc, logoLyrics } from "../../assets"
+import { User } from "../../services/utils/types"
+import Loading from "./Loading"
+import jsPDF from "jspdf"
+import autoTable from "jspdf-autotable"
 
 const FinalizatedAdesion: React.FC = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [user, setUser] = useState<User | null>(null);
-  const [file, setFile] = useState<File | null>(null);
-  const [isLoading, setIsLoading] = useState(false); // Estado para controlar o loading
-  const [personalData, setPersonalData] = useState<any>(null);
-  const [ticketData, setTicketData] = useState<any>(null);
-  const [pedidoEnviado, setPedidoEnviado] = useState(false); // Estado para controlar se o pedido foi enviado com sucesso
-  const [okClicked, setOkClicked] = useState(false); // Estado para controlar se o botão OK foi clicado
+	const { id } = useParams()
+	const navigate = useNavigate()
+	const [user, setUser] = useState<User | null>(null)
+	const [file, setFile] = useState<File | null>(null)
+	const [isLoading, setIsLoading] = useState(false)
+	const [personalData, setPersonalData] = useState<any>(null)
+	const [ticketData, setTicketData] = useState<any>(null)
+	const [pedidoEnviado, setPedidoEnviado] = useState(false)
+	const [okClicked, setOkClicked] = useState(false)
 
-  useEffect(() => {
-    fetchUserData(id);
-    const personalFormData = localStorage.getItem("personalFormData");
-    const ticketFormData = localStorage.getItem("accumulatedTicketData");
+	useEffect(() => {
+		fetchUserData(id)
+		const personalFormData = localStorage.getItem("personalFormData")
+		const ticketFormData = localStorage.getItem("accumulatedTicketData")
 
-    if (personalFormData) {
-      setPersonalData(JSON.parse(personalFormData));
-    }
+		if (personalFormData) {
+			setPersonalData(JSON.parse(personalFormData))
+		}
 
-    if (ticketFormData) {
-      setTicketData(JSON.parse(ticketFormData));
-    }
-  }, [id]);
+		if (ticketFormData) {
+			setTicketData(JSON.parse(ticketFormData))
+		}
+	}, [id])
 
-  const fetchUserData = async (userId: string | undefined) => {
-    try {
-      const response = await axios.get(
-        `http://gsc.api.unocura.ao/user/${userId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      setUser(response.data);
-    } catch (error) {
-      console.error("Erro ao carregar dados do usuário:", error);
-    }
-  };
+	const fetchUserData = async (userId: string | undefined) => {
+		try {
+			const response = await axios.get(
+				`http://gsc.api.unocura.ao/user/${userId}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
+				}
+			)
+			setUser(response.data)
+		} catch (error) {
+			console.error("Erro ao carregar dados do usuário:", error)
+		}
+	}
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const fileList = event.target.files;
-    if (fileList && fileList.length > 0) {
-      setFile(fileList[0]);
-    }
-  };
+	const handleFinalizar = async () => {
+		setIsLoading(true)
 
-  const handleFinalizar = async () => {
-    if (!file || !personalData) {
-      console.error("Nenhum arquivo selecionado ou dados pessoais ausentes.");
-      return;
-    }
+		const formData = new FormData()
 
-    setIsLoading(true); // Ativar o estado de loading antes da requisição
+		formData.append("name", personalData.nome)
+		formData.append("email", personalData.email)
+		formData.append(
+			"price",
+			ticketData.total.toLocaleString("pt-PT", {
+				style: "currency",
+				currency: "AOA",
+			})
+		)
+		formData.append("contact", personalData.contacto)
+		formData.append("ticketsData", JSON.stringify(ticketData))
 
-    const formData = new FormData();
-    formData.append("doc", file);
+		gerarPDF()
+		setIsLoading(false)
+	}
 
-    // Adicionar dados pessoais ao FormData
-    formData.append("name", personalData.nome);
-    formData.append("email", personalData.email);
-    formData.append(
-      "price",
-      ticketData.total.toLocaleString("pt-PT", {
-        style: "currency",
-        currency: "AOA",
-      })
-    );
-    formData.append("contact", personalData.contacto);
-    formData.append("ticketsData", JSON.stringify(ticketData));
+	const gerarPDF = () => {
+		const doc = new jsPDF()
 
-    try {
-      const response = await axios.post(
-        `https://gsc.api.unocura.ao/send-email`,
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log("Resposta do servidor:", response.data);
-      setPedidoEnviado(true); // Marcar o pedido como enviado com sucesso
-    } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
-    } finally {
-      setIsLoading(false); // Desativar o estado de loading após a requisição
-    }
-  };
+		doc.addImage(logoDoc, "PNG", 15, 15, 35, 15)
+		doc.setFontSize(10)
 
-  const handleOkClick = () => {
-    localStorage.removeItem("accumulatedTicketData");
-    setOkClicked(true);
+		const pageWidth = doc.internal.pageSize.width // Largura da porra da página
 
-    navigate(`/personal/${user?.uuid}`); // Navegar para a página pessoal
-  };
+		doc.text(`Nome: ${personalData.nome}`, pageWidth - 20, 25, {
+			align: "right",
+		})
+		doc.text(`Email: ${personalData.email}`, pageWidth - 20, 30, {
+			align: "right",
+		})
+		doc.text(`Contacto: ${personalData.contacto}`, pageWidth - 20, 35, {
+			align: "right",
+		})
 
-  if (isLoading) {
-    return <Loading />;
-  }
+		const ticketList =
+			ticketData?.selectedTickets?.map((ticket: any) => [
+				"Credencial para participante no BUSINESS AFTER WORK - Líder Tech 2024",
+				ticket.label,
+				`${ticketData.totalQuantity}`,
+				`${ticketData.total.toLocaleString("pt-PT", {
+					style: "currency",
+					currency: "AOA",
+				})}`,
+			]) || []
 
-  return (
-    <main className="h-screen relative bg-[#001032] flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
-      <header className="w-full py-4 px-6 z-10 flex items-center justify-between">
-        <a href={user ? `/${user?.uuid}` : "/"}>
-          <img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
-        </a>
+		autoTable(doc, {
+			startY: 50,
+			head: [["Descrição", "Plafond", "Qnt", "Total Geral"]],
+			body: ticketList,
+			theme: "grid",
+			headStyles: { fontSize: 10, fillColor: [0, 102, 204] },
+			bodyStyles: { fontSize: 10 },
+		})
 
-        <Link
-          to={`/tickets-datas/${user?.uuid}`}
-          className="text-white font-bold"
-          onClick={() => {
-            localStorage.removeItem("accumulatedTicketData");
-          }}
-        >
-          Cancelar
-        </Link>
-      </header>
+		// Ajuste o tamanho da fonte e defina o texto como negrito
+		doc.setFontSize(12) // Tamanho da fonte menor
+		doc.setFont("helvetica", "bold") // Fonte em negrito
+		doc.text(
+			"PASSO A PASSO PARA O PAGAMENTO:",
+			15,
+			(doc as any).autoTable.previous.finalY + 10
+		)
 
-      <section className="text-white flex flex-col z-50 h-3/4 w-2/3 max-sm:w-[90%] rounded-md justify-between p-10 bg-[#1B223C] my-auto items-center">
-        <h1 className="text-[35px] text-white font-semibold text-center max-sm:text-[25px]">
-          FINALIZAR RESERVA
-        </h1>
+		doc.setFontSize(10) // Voltar ao tamanho da fonte normal
+		doc.setFont("helvetica", "normal") // Voltar ao estilo normal
+		doc.text(
+			"1. Após o pagamento efetuado com sucesso o participante irá se dirigir ao HCTA (Hotel de Convenções Talatona) \n para obter a credencial de acesso ao evento, deverá fazer-se acompanhar do NIF ou BI cadastrado no formulário.",
+			15,
+			(doc as any).autoTable.previous.finalY + 20
+		)
+		doc.text(
+			"2. A credencial poderá ser levantada apenas no local indicado, entre 10 a 12 de Junho de 2024 ou ainda no primeiro \n dia do evento no secretariado.",
+			15,
+			(doc as any).autoTable.previous.finalY + 30
+		)
+		doc.text(
+			'3. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp "937509214".',
+			15,
+			(doc as any).autoTable.previous.finalY + 40
+		)
 
-        <div className="flex items-center flex-col gap-1">
-          <p className="text-lg font-bold">Coordenadas Bancárias:</p>
-          <p className="text-center max-sm:text-sm flex flex-col gap-1">
-            <span className="text-[#00A7E1]">BAI</span>
-            <span>GLOBAL SC PRESTACAO SERVICOS LDA</span>
-            IBAN: 0040.0000.0066.0285.1016.3
-          </p>
-        </div>
+		autoTable(doc, {
+			startY: (doc as any).autoTable.previous.finalY + 50,
+			head: [["Forma de Pagamento:", "Transferência Bancária"]],
+			body: [
+				["Entidade:", "GLOBAL SC PRESTACAO SERVICOS LDA"],
+				[
+					"IBAN (Pagamento em Kwanza):",
+					"0040.0000.0066.0285.1016.3 - Banco BAI",
+				],
+				[
+					"Montante:",
+					`${ticketData.total.toLocaleString("pt-PT", {
+						style: "currency",
+						currency: "AOA",
+					})}`,
+				],
+			],
+			theme: "plain",
+			styles: { fontSize: 10, cellPadding: 3 },
+			headStyles: { fillColor: [220, 220, 220] },
+			didParseCell: function (data) {
+				if (data.row.index === 1 && data.section === "body") {
+					// Definindo o fundo da segunda linha
+					data.cell.styles.fillColor = [210, 210, 210]
+				}
+			},
+		})
 
-        <div className="text-center">
-          <p className="font-bold text-[#00A7E1]">Valor total a enviar:</p>
+		doc.setFontSize(8)
+		doc.text(
+			"Documento Processado por Computador.",
+			80,
+			(doc as any).autoTable.previous.finalY + 10
+		)
 
-          <p>
-            {`${ticketData?.total.toLocaleString("pt-PT", {
-              style: "currency",
-              currency: "AOA",
-            })}` || "Nenhum"}
-          </p>
-        </div>
+		doc.save("BusinessAfterWork2024_Ticket.pdf")
+	}
 
-        <form className="w-[90%] max-sm:w-full flex flex-col items-center h-30 justify-around max-sm:flex max-sm:flex-col gap-3">
-          <p className="font-semibold">Enviar Comprovativo</p>
+	const handleOkClick = () => {
+		localStorage.removeItem("accumulatedTicketData")
+		setOkClicked(true)
+		navigate(`/personal/`)
+	}
 
-          <label
-            htmlFor="doc"
-            className="cursor-pointer  text-white  max-lg:w-auto max-sm:w-auto flex items-center justify-center rounded-lg text-center p-2"
-          >
-            {file ? (
-              <p className="bg-[#00A7E1] p-4 rounded-lg w-5/6">{file.name}</p>
-            ) : (
-              <img src={downloadPay} />
-            )}
-            <input
-              type="file"
-              id="doc"
-              accept=".pdf"
-              onChange={handleFileChange}
-              className="hidden"
-            />
-          </label>
-        </form>
+	if (isLoading) {
+		return <Loading />
+	}
 
-        {pedidoEnviado && !okClicked && (
-          <div className="fixed top-0 left-0 w-screen h-screen flex flex-col gap-5 items-center justify-center bg-black bg-opacity-75 z-50">
-            <div className="bg-white text-[#00A7E1] p-4 rounded-lg flex flex-col justify-around items-center max-sm:h-1/4 h-1/3">
-              Pedido enviado com sucesso!
-              <button
-                className="font-bold w-1/2 h-10 rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center text-white"
-                onClick={handleOkClick}
-              >
-                OK
-              </button>
-            </div>
-          </div>
-        )}
+	return (
+		<main className="h-screen relative bg-[#001032] flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
+			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
+				<a href={user ? `/${user?.uuid}` : "/"}>
+					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
+				</a>
 
-        <div className="w-[60%] flex flex-col items-center gap-8">
-          <button
-            className="max-sm:w-full font-bold w-[300px] h-14 rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
-            onClick={handleFinalizar}
-          >
-            Finalizar
-          </button>
-        </div>
-      </section>
-    </main>
-  );
-};
+				<Link
+					to={`/tickets-datas/${user?.uuid}`}
+					className="text-white font-bold"
+					onClick={() => {
+						localStorage.removeItem("accumulatedTicketData")
+					}}
+				>
+					Cancelar
+				</Link>
+			</header>
 
-export default FinalizatedAdesion;
+			<section className="text-white flex flex-col z-50 h-3/4 w-2/3 max-sm:w-[90%] rounded-md justify-around p-10 bg-[#1B223C] my-auto items-center">
+				<h1 className="text-[35px] text-white font-semibold text-center max-sm:text-[25px]">
+					FINALIZAR RESERVA
+				</h1>
+
+				<div className="flex items-center flex-col gap-1 w-2/3 text-center">
+					<p className="text-lg">
+						Após confirmada a reserva, clique em{" "}
+						<span className="font-bold">FINALIZAR</span> para receber as
+						instruções de pagamento.
+					</p>
+				</div>
+
+				<div className="w-[60%] flex flex-col items-center gap-8">
+					<button
+						className="max-sm:w-full font-bold w-[300px] h-14 rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+						onClick={handleFinalizar}
+					>
+						Finalizar
+					</button>
+				</div>
+			</section>
+		</main>
+	)
+}
+
+export default FinalizatedAdesion
