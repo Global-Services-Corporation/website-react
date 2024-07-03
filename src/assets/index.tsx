@@ -1,4 +1,5 @@
 import logoLyrics from "./logo-lyrics.svg";
+import logoDoc from "./logo-lyrics.png";
 import bannerIllustration from "./events/Banner/Event-Banner.jpg";
 import parceiro1 from "./events/Parceiros/HCTA.png";
 import parceiro2 from "./events/Parceiros/deloite.png";
@@ -85,6 +86,7 @@ export {
   dimbo,
   manuelHomem,
   Edivania,
+  logoDoc,
   ManuelHomem,
   tisWhiteLogo,
   sistecLogo,

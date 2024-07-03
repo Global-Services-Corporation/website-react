@@ -8,7 +8,7 @@ interface Props  {
 
 const FormativeActionCard: React.FC<Props> = ({ img, title, description }) => {
   return (
-    <div className="mr-3 w-80 flex flex-col bg-[#0E1937] rounded-xl">
+    <div className="mr-3 w-80 flex flex-col bg-[#0E1937] rounded-xl items-center">
       <img src={img} alt="" className="h-56" />
       <div className="w-full h-60  px-7 py-7 flex flex-col gap-2.5">
         {" "}
