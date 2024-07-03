@@ -51,7 +51,7 @@ const ConfirmAdesionEnterprise: React.FC = () => {
 	}
 
 	return (
-		<main className="relative bg-[#001032] h-screen flex flex-col items-center max-sm:overflow-y-auto">
+		<main className="relative bg-[#001032] h-full flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
 				<a href={user ? `/${user?.uuid}` : "/"}>
 					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
