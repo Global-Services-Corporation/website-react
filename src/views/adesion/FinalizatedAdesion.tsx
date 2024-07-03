@@ -189,6 +189,7 @@ const FinalizatedAdesion: React.FC = () => {
 			)
 
 			doc.save("BusinessAfterWork2024_Ticket.pdf")
+			setPedidoEnviado(true)
 		}
 	}
 
@@ -242,6 +243,13 @@ const FinalizatedAdesion: React.FC = () => {
 					</button>
 				</div>
 			</section>
+
+			{pedidoEnviado && (
+				<div className="p-10 flex flex-col gap-3">
+					Pedido enviado!
+					<button onClick={() => setPedidoEnviado(false)}>OK</button>
+				</div>
+			)}
 		</main>
 	)
 }
