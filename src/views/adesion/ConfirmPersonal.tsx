@@ -42,18 +42,18 @@ const ConfirmAdesionPersonal: React.FC = () => {
 	}, [id])
 
 	const handleAvancar = () => {
-		navigate(`/finalizado/${user?.uuid}`)
+		navigate(`/finalizado/`)
 	}
 
 	const handleCancelar = () => {
 		localStorage.removeItem("accumulatedTicketData")
-		navigate(`/tickets-datas/${user?.uuid}`)
+		navigate(`/tickets-datas/`)
 	}
 
 	return (
 		<main className="relative bg-[#001032] h-full flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
-				<a href={user ? `/${user?.uuid}` : "/"}>
+				<a href={"/"}>
 					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
 				</a>
 

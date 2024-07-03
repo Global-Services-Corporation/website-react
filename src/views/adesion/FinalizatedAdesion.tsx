@@ -245,9 +245,16 @@ const FinalizatedAdesion: React.FC = () => {
 			</section>
 
 			{pedidoEnviado && (
-				<div className="p-10 flex flex-col gap-3">
-					Pedido enviado!
-					<button onClick={() => setPedidoEnviado(false)}>OK</button>
+				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+					<div className="bg-white p-6 rounded-md text-center">
+						<p className="mb-4">Pedido enviado!</p>
+						<button
+							className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+							onClick={handleOkClick}
+						>
+							OK
+						</button>
+					</div>
 				</div>
 			)}
 		</main>

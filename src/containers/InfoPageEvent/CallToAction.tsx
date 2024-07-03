@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { User } from "../../services/utils/types";
-import { bgCallToAction } from "../../assets";
 
 const CallToAction: React.FC = () => {
   const { id } = useParams();

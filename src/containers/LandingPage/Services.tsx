@@ -23,7 +23,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="w-full pb-32 relative flex flex-col gap-12 z-40">
+    <section className="w-full pb-32 max-2xl:pb-10 relative flex flex-col gap-12 z-40">
       <p className="font-bold max-sm:text-2xl text-4xl ml-36 max-sm:ml-8">Adira já aos nossos serviços!</p>
       <marquee>
         <div className="w-full h-full flex gap-8">

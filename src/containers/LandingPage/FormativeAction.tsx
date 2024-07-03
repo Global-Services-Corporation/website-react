@@ -2,16 +2,37 @@ import Slider from "react-slick"
 import FormativeActionCard from "../../components/formative-action-card"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useEffect, useState } from "react"
 
 const FormativeAction: React.FC = () => {
+	const [qtdSlide, setQtdSlide] = useState(3)
+	const [arrows, setArrows] = useState(false)
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth <= 768) {
+				setQtdSlide(1)
+				setArrows(true)
+			} else {
+				setQtdSlide(3)
+			}
+		}
+
+		handleResize()
+
+		window.addEventListener("resize", handleResize)
+
+		return () => window.removeEventListener("resize", handleResize)
+	}, [])
+
 	const settings = {
 		infinite: true,
 		speed: 500,
 		autoplay: true,
-		autoplaySpeed: 4000,
-		slidesToShow: 4,
+		autoplaySpeed: 2000,
+		slidesToShow: qtdSlide,
 		slidesToScroll: 2,
-		arrows: false,
+		arrows: arrows,
 	}
 
 	const cardInfo = [
@@ -19,7 +40,7 @@ const FormativeAction: React.FC = () => {
 			img: "",
 			title: "Gestão de sinistros nas empresas",
 			description:
-				" Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
+				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 		{
 			img: "",
@@ -54,12 +75,12 @@ const FormativeAction: React.FC = () => {
 	]
 
 	return (
-		<section className="w-full flex flex-col justify-center gap-12 py-24 items-center z-40">
+		<section className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40">
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
-				<p className="font-bold text-4xl"> Ação Formativa</p>
-				<p className="text-[#c5c5c5]">
-					Veja as soluções que a
-					<span className="text-[#30CBE8]"> Global Services Corporation</span>{" "}
+				<p className="font-bold text-4xl max-sm:text-2xl"> Ação Formativa</p>
+				<p className="text-[#c5c5c5] max-sm:text-sm text-center w-2/3">
+					Veja as soluções que a{" "}
+					<span className="text-[#30CBE8]">Global Services Corporation</span>{" "}
 					tem para a sua empresa.
 				</p>
 			</div>
