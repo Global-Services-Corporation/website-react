@@ -2,14 +2,13 @@ import EnterpriseForm from "../../views/adesion/EnterpriseForm"
 import PersonalForm from "../../views/adesion/PersonalForm"
 import { RouteType } from "../../services/config/types"
 import InfoPage from "../../views/landing/Baw2024"
-import HomePage from "../../views/landing/Home"
 import Events from "../../views/landing/Events"
 
 const Routes: RouteType[] = [
 	{
 		label: "",
 		path: "/",
-		element: <HomePage />,
+		element: <InfoPage />,
 		type: "public",
 	},
 	{

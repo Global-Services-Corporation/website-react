@@ -23,7 +23,7 @@ function App() {
 					element={<ConfirmAdesionPersonal />}
 				/>
 
-				<Route path="/finalizado/:id" element={<FinalizatedAdesion />} />
+				<Route path="/finalizado/" element={<FinalizatedAdesion />} />
 
 				<Route
 					path="/finalizado-enterprise/"

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react"
-import { aboutImage, adesionBg, bannerIllustration, bannerImage, logoLyrics } from "../assets"
-import { useLocation, useNavigate, useParams } from "react-router-dom"
-import axios from "axios"
-import { User } from "../services/utils/types"
+import React from "react"
+import {
+	bannerIllustration,
+
+	logoLyrics,
+} from "../assets"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 	children,
@@ -18,33 +20,14 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 		}
 	}, [])
 
-	const { id } = useParams()
-	const [user, setUser] = useState<User | null>(null)
 	const navigate = useNavigate()
 
-	const fetchUserData = async (userId: string | undefined) => {
-		try {
-			const response = await axios.get(`http://localhost:3333/user/${userId}`, {
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem("token")}`,
-				},
-			})
-			setUser(response.data)
-		} catch (error) {
-			console.error("Erro ao carregar dados do usuário:", error)
-		}
-	}
-
-	useEffect(() => {
-		fetchUserData(id)
-	}, [id])
-
 	const onParticular = () => {
-		user ? navigate(`/personal/${user?.uuid}`) : navigate(`/personal`)
+		navigate(`/personal`)
 	}
 
 	const onEnterprise = () => {
-		user ? navigate(`/enterprise/${user?.uuid}`) : navigate(`/enterprise`)
+		navigate(`/enterprise`)
 	}
 
 	return (
@@ -58,7 +41,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 					}}
 				>
 					<header className="text-white max-sm:w-screen flex p-6 justify-between items-center w-full box-border h-[100px]">
-						<a href={user ? `/${user?.uuid}` : "/"}>
+						<a href={"/"}>
 							<img src={logoLyrics} alt="" className="w-[100px]" />
 						</a>
 
@@ -67,7 +50,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 								<button
 									onClick={onParticular}
 									className={`${
-										location.pathname === `/personal/${user?.uuid}` ||
+										location.pathname === `/personal/` ||
 										location.pathname === "/personal"
 											? "active"
 											: ""
@@ -75,7 +58,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 								>
 									Particular
 								</button>
-								{(location.pathname === `/personal/${user?.uuid}` ||
+								{(location.pathname === `/personal/` ||
 									location.pathname === `/personal`) && (
 									<hr className="w-full border-[2px] rounded-full border-[#0399CD]" />
 								)}
@@ -85,7 +68,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 								<button
 									onClick={onEnterprise}
 									className={`${
-										location.pathname === `/enterprise/${user?.uuid}` ||
+										location.pathname === `/enterprise/` ||
 										location.pathname === "/enterprise"
 											? "active"
 											: ""
@@ -93,7 +76,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 								>
 									Empresa
 								</button>
-								{(location.pathname === `/enterprise/${user?.uuid}` ||
+								{(location.pathname === `/enterprise/` ||
 									location.pathname === "/enterprise") && (
 									<hr className="w-full border-[2px] rounded-full border-[#0399CD]" />
 								)}

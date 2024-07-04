@@ -1,9 +1,6 @@
-import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { logoDoc, logoLyrics } from "../../assets"
-
-import { User } from "../../services/utils/types"
 import Loading from "./Loading"
 import jsPDF from "jspdf"
 import autoTable from "jspdf-autotable"
@@ -12,6 +9,7 @@ interface EnterpriseData {
 	nome: string
 	email: string
 	contacto: string
+	nif: string
 }
 
 interface Ticket {
@@ -24,19 +22,18 @@ interface TicketData {
 	selectedTickets: Ticket[]
 }
 
-
 const FinalizatedAdesionEnterprise: React.FC = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
-	const [user, setUser] = useState<User | null>(null)
 	const [isLoading, setIsLoading] = useState(false)
-  const [enterpriseData, setEnterpriseData] = useState<EnterpriseData | null>(null)
+	const [enterpriseData, setEnterpriseData] = useState<EnterpriseData | null>(
+		null
+	)
 	const [ticketData, setTicketData] = useState<TicketData | null>(null)
 	const [pedidoEnviado, setPedidoEnviado] = useState(false)
 	const [okClicked, setOkClicked] = useState(false)
 
 	useEffect(() => {
-		fetchUserData(id)
 		const enterpriseFormData = localStorage.getItem("enterpriseFormData")
 		const ticketFormData = localStorage.getItem("accumulatedTicketData")
 
@@ -49,49 +46,25 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 		}
 	}, [id])
 
-	const fetchUserData = async (userId: string | undefined) => {
-		try {
-			const response = await axios.get(
-				`https://gsc.api.unocura.ao/user/${userId}`,
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
-			)
-			setUser(response.data)
-		} catch (error) {
-			console.error("Erro ao carregar dados do usuário:", error)
-		}
-	}
-
-	const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const fileList = event.target.files
-		if (fileList && fileList.length > 0) {
-			setFile(fileList[0])
-		}
-	}
-
 	const handleFinalizar = async () => {
 		setIsLoading(true)
 
-		const formData = new FormData()
-
 		if (enterpriseData && ticketData) {
-			formData.append("name", enterpriseData.nome)
-			formData.append("email", enterpriseData.email)
-			formData.append(
-				"price",
-				ticketData.total.toLocaleString("pt-PT", {
+			const data = {
+				name: enterpriseData.nome,
+				email: enterpriseData.email,
+				price: ticketData.total.toLocaleString("pt-PT", {
 					style: "currency",
 					currency: "AOA",
-				})
-			)
-			formData.append("contact", enterpriseData.contacto)
-			formData.append("ticketsData", JSON.stringify(ticketData))
+				}),
+				contact: enterpriseData.contacto,
+				ticketsData: JSON.stringify(ticketData),
+			}
 
+			setPedidoEnviado(true)
 			gerarPDF()
 		}
+
 		setIsLoading(false)
 	}
 
@@ -99,18 +72,20 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 		const doc = new jsPDF()
 
 		if (enterpriseData && ticketData) {
-			doc.addImage(logoDoc, "PNG", 15, 15, 35, 15)
+			doc.addImage(logoDoc, "PNG", 15, 20, 35, 15)
 			doc.setFontSize(10)
 
 			const pageWidth = doc.internal.pageSize.width
-
-			doc.text(`Nome: ${enterpriseData.nome}`, pageWidth - 20, 25, {
+			doc.text(`NIF: ${enterpriseData.nif}`, pageWidth - 20, 25, {
 				align: "right",
 			})
-			doc.text(`Email: ${enterpriseData.email}`, pageWidth - 20, 30, {
+			doc.text(`Nome: ${enterpriseData.nome}`, pageWidth - 20, 30, {
 				align: "right",
 			})
 			doc.text(`Contacto: ${enterpriseData.contacto}`, pageWidth - 20, 35, {
+				align: "right",
+			})
+			doc.text(`Email: ${enterpriseData.email}`, pageWidth - 20, 40, {
 				align: "right",
 			})
 
@@ -136,7 +111,7 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 				bodyStyles: { fontSize: 10 },
 			})
 
-			doc.setFontSize(12)
+			doc.setFontSize(11)
 			doc.setFont("helvetica", "bold")
 			doc.text(
 				"PASSO A PASSO PARA O PAGAMENTO:",
@@ -146,34 +121,34 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 
 			doc.setFontSize(10)
 			doc.setFont("helvetica", "normal")
+			const linkText = "https://api.whatsapp.com/send/?phone=+244941064919"
 			doc.text(
-				"1. Após o pagamento efetuado com sucesso o participante irá se dirigir ao HCTA (Hotel de Convenções Talatona) \n para obter a credencial de acesso ao evento, deverá fazer-se acompanhar do NIF ou BI cadastrado no formulário.",
+				"1. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp:",
 				15,
 				(doc as any).autoTable.previous.finalY + 20
 			)
-			doc.text(
-				"2. A credencial poderá ser levantada apenas no local indicado, entre 10 a 12 de Junho de 2024 ou ainda no primeiro \n dia do evento no secretariado.",
-				15,
-				(doc as any).autoTable.previous.finalY + 30
-			)
-
-			const linkText = "https://api.whatsapp.com/send/?phone=+244941064919"
-			doc.text(
-				"3. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp:",
-				15,
-				(doc as any).autoTable.previous.finalY + 40
-			)
-
 			doc.setFontSize(10)
 			doc.setTextColor(0, 0, 255)
 			doc.textWithLink(
-				"+244 941 064 919",
+				"+244941064919",
 				15,
-				(doc as any).autoTable.previous.finalY + 50,
+				(doc as any).autoTable.previous.finalY + 30,
 
 				{ url: linkText }
 			)
+
 			doc.setTextColor(0, 0, 0)
+			doc.text(
+				"2. Após o pagamento efetuado com sucesso o participante irá se dirigir ao HCTA (Hotel de Convenções Talatona) \n para obter a credencial  de acesso ao evento, deverá fazer-se acompanhar do NIF ou BI cadastrado no formulário.",
+				15,
+				(doc as any).autoTable.previous.finalY + 37
+			)
+			doc.text(
+				"3.  A credencial poderá ser levantada apenas no local indicado, no dia 18 de Julho de 2024 ou ainda duas horas \n antes do evento no balcão.",
+				15,
+				(doc as any).autoTable.previous.finalY + 50
+			)
+
 			doc.setFontSize(10)
 
 			autoTable(doc, {
@@ -217,7 +192,7 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 	const handleOkClick = () => {
 		localStorage.removeItem("accumulatedTicketData")
 		setOkClicked(true)
-		navigate(`/enterprise/${user?.uuid}`)
+		navigate(`/enterprise/`)
 	}
 
 	if (isLoading) {
@@ -227,12 +202,12 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 	return (
 		<main className="h-screen relative bg-[#001032] flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
-				<a href={user ? `/${user?.uuid}` : "/"}>
+				<a href={"/"}>
 					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
 				</a>
 
 				<Link
-					to={`/tickets-datas/${user?.uuid}`}
+					to={`/tickets-datas/`}
 					className="text-white font-bold"
 					onClick={() => {
 						localStorage.removeItem("accumulatedTicketData")
@@ -264,6 +239,20 @@ const FinalizatedAdesionEnterprise: React.FC = () => {
 					</button>
 				</div>
 			</section>
+
+			{pedidoEnviado && (
+				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+					<div className="bg-white p-6 rounded-md text-center">
+						<p className="mb-4">Pedido enviado!</p>
+						<button
+							className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+							onClick={handleOkClick}
+						>
+							OK
+						</button>
+					</div>
+				</div>
+			)}
 		</main>
 	)
 }

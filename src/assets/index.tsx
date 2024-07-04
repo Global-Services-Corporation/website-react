@@ -80,8 +80,12 @@ import ManuelHomem from "./events/Oradores-e-Moderadores/ManuelHomempng.png";
 import Edivania from "./events/Oradores-e-Moderadores/edivania2.png";
 import manuelHomem from "./events/KeynoteSpeaker/manuelHomem.png";
 import ruiMiguens from "./events/Oradores-e-Moderadores/Rui1.png"
+import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg"
+import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
 
 export {
+  williamOliveira, 
+  matuzalemSukete,
   ruiMiguens,
   dimbo,
   manuelHomem,
