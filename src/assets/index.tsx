@@ -63,6 +63,7 @@ import seguro from "./landing/Banner/seguro.png";
 import academia from "./landing/Banner/academia.png";
 import saude from "./landing/Banner/saude.png";
 import mundo from "./landing/Banner/mundo.svg";
+import mundoWeb from "./landing/Banner/mundoWeb.svg";
 import elipse2 from "./landing/Services/elipse2.svg";
 import elipse1 from "./landing/Banner/elipse1.svg";
 import seguros from "./landing/Services/Seguros.png";
@@ -84,6 +85,7 @@ import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg
 import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
 
 export {
+  mundoWeb,
   williamOliveira, 
   matuzalemSukete,
   ruiMiguens,

@@ -3,6 +3,14 @@ import FormativeActionCard from "../../components/formative-action-card"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useEffect, useState } from "react"
+import {
+	comunicacaoAssertiva,
+	elaboracaoDePlano,
+	gestaoDeMarketing,
+	gestaoDeRH,
+	gestaoDeSinistro,
+	gestaoFinanceira,
+} from "../../assets/landing/FormativeAction"
 
 const FormativeAction: React.FC = () => {
 	const [qtdSlide, setQtdSlide] = useState(3)
@@ -37,40 +45,46 @@ const FormativeAction: React.FC = () => {
 
 	const cardInfo = [
 		{
-			img: "",
-			title: "Gestão de sinistros nas empresas",
+			naviageTo: "",
+			img: gestaoDeSinistro,
+			title: "Gestão de Sinistros nas Empresas",
 			description:
 				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 		{
-			img: "",
-			title: "Gestão e estratégia de recursos humanos",
+			naviageTo: "",
+			img: gestaoDeRH,
+			title: "Gestão e Estratégia de Recursos Humanos",
 			description:
-				" Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
+				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 		{
-			img: "",
-			title: "Técnicas de comunicação assertiva",
+			naviageTo: "",
+			img: comunicacaoAssertiva,
+			title: "Técnicas de Comunicação Assertiva",
 			description:
-				" Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
+				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 		{
-			img: "",
-			title: "Gestão financeira e tesouraria",
+			naviageTo: "",
+			img: gestaoFinanceira,
+			title: "Gestão Financeira e Tesouraria",
 			description:
-				" Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
+				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 		{
-			img: "",
-			title: "Elaboração de plano de negócios",
+			naviageTo: "",
+			img: elaboracaoDePlano,
+			title: "Elaboração de Plano de Negócios",
 			description:
-				" Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
+				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 		{
-			img: "",
-			title: "Consultoria em marketing",
+			naviageTo: "",
+			img: gestaoDeMarketing,
+			title: "Consultoria em Marketing",
 			description:
-				" Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
+				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
 		},
 	]
 
@@ -94,6 +108,7 @@ const FormativeAction: React.FC = () => {
 							img={info.img}
 							title={info.title}
 							description={info.description}
+							navigateTo={info.naviageTo}
 						/>
 					))}
 				</Slider>

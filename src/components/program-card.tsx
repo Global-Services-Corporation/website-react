@@ -32,13 +32,13 @@ const ProgramCard: React.FC<Props> = ({ image, description, title, link }) => {
         ) : (
           <></>
         )}
-        <p className="text-[#ffff] max-2xl:text-[14px]">
+        <p className="text-sm text-[#c5c5c5]">
           {limitText(description, 150)}
         </p>
         {link ? (
           <a
             href={link}
-            className="text-[#30CBE8] font-bold max-2xl:text-[14px]"
+            className=" text-xs text-[#30CBE8]"
           >
             Saiba Mais...
           </a>

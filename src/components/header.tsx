@@ -28,12 +28,17 @@ export const Header = () => {
 					: "transition duration-[4s]"
 			} z-50`}
 		>
-			<a href={"/landing-events/"} className="max-md:w-[75px]">
+			<a href={"/"} className="max-sm:w-[75px]">
 				<img
 					src={logoLyrics}
 					alt="Logotipo GSC com as letras"
 					className="w-full"
 				/>
+			</a>
+
+			<a href="/" className="text-white font-semibold">Início</a>
+			<a href="/landing-events" className="text-white font-semibold">
+				Eventos
 			</a>
 		</header>
 	)

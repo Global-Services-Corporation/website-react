@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
 
 	useEffect(() => {
 		if (user !== null) {
-			navigate(`/${user.uuid}`)
+			navigate(`/`)
 		}
 	}, [user, navigate])
 
