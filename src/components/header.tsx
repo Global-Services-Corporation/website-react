@@ -36,10 +36,14 @@ export const Header = () => {
 				/>
 			</a>
 
-			<a href="/" className="text-white font-semibold">Início</a>
-			<a href="/landing-events" className="text-white font-semibold">
-				Eventos
-			</a>
+			<div>
+				<a href="/" className="text-white font-semibold">
+					Início
+				</a>
+				<a href="/landing-events" className="text-white font-semibold">
+					Eventos
+				</a>
+			</div>
 		</header>
 	)
 }
