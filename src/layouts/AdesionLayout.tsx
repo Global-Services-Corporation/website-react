@@ -1,9 +1,5 @@
 import React from "react"
-import {
-	bannerIllustration,
-
-	logoLyrics,
-} from "../assets"
+import { bannerIllustration, logoLyrics } from "../assets"
 import { useLocation, useNavigate } from "react-router-dom"
 
 const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
@@ -42,7 +38,7 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 				>
 					<header className="text-white max-sm:w-screen flex p-6 justify-between items-center w-full box-border h-[100px]">
 						<a href={"/"}>
-							<img src={logoLyrics} alt="" className="w-[100px]" />
+							<img src={logoLyrics} alt="" className="max-sm:w-[75px]" />
 						</a>
 
 						<nav className="flex gap-3 text-[20px] max-2xl:text-[18px]">

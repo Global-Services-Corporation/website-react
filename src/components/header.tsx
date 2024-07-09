@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { logoLyrics } from "../assets" // Importe o ícone do menu
+import { logoLyrics, menu } from "../assets" // Importe o ícone do menu
 
 export const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
+	const [menuOpen, setMenuOpen] = useState(false)
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -36,13 +37,48 @@ export const Header = () => {
 				/>
 			</a>
 
-			<div>
-				<a href="/" className="text-white font-semibold">
+			<div className="flex gap-4 max-sm:hidden">
+				<a href="/" className="text-white">
 					Início
 				</a>
-				<a href="/landing-events" className="text-white font-semibold">
+
+				<a href="/landing-events" className="text-white">
 					Eventos
 				</a>
+			</div>
+
+			<div className="hidden max-sm:flex relative">
+				<img
+					src={menu}
+					alt=""
+					className=""
+					onClick={() => {
+						setMenuOpen(true)
+					}}
+				/>
+
+				{menuOpen && (
+					<div
+						className="bg-white absolute gap-2 top-12 right-0 rounded-lg flex flex-col py-2 px-4"
+						onMouseLeave={() => {
+							setMenuOpen(false)
+						}}
+					>
+						<a
+							href="/"
+							className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white"
+						>
+							<img src="" alt="" /> Início
+						</a>
+
+						<a
+							href="/landing-events"
+							className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white"
+						>
+							<img src="" alt="" /> Eventos
+						</a>
+					</div>
+				)}
 			</div>
 		</header>
 	)

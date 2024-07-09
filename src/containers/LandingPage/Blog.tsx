@@ -70,8 +70,8 @@ Matuzalém também trabalhou em empresas como: Empresa Nacional de Electricidade
 		<section className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40">
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
 				<p className="font-bold text-4xl max-sm:text-2xl">Blog</p>
-				<p className="text-[#c5c5c5] max-sm:text-sm text-center w-2/3">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				<p className="text-[#c5c5c5] max-sm:text-sm text-center max-sm:w-2/3">
+					Esteja atualizado sobre todas as novidades da Global Services Corporation
 				</p>
 			</div>
 
