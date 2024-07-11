@@ -3,7 +3,6 @@ import {
   instagramIcon,
   linkedinIcon,
   logoLyrics,
-  twitterIcon,
 } from "../assets";
 
 const Footer: React.FC = () => {
@@ -18,22 +17,20 @@ const Footer: React.FC = () => {
           />
 
           <p className="max-sm:text-[16px] ">
-            Saiba mais sobre nós nas redes sociais...
+            Siga-nos nas nossas redes sociais.
           </p>
 
           <div className="flex gap-4">
-            <a href="">
+            <a href="https://web.facebook.com/people/Global-Services-Corporation/100094301594638/">
               <img src={facebookIcon} alt="Facebook" />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/globalservicescorporation/">
               <img src={instagramIcon} alt="Instagram" />
             </a>
-            <a href="">
+            <a href="https://www.linkedin.com/company/global-service-corporations/">
               <img src={linkedinIcon} alt="LinkedIn" />
             </a>
-            <a href="">
-              <img src={twitterIcon} alt="Twitter" />
-            </a>
+           
           </div>
         </div>
 
@@ -63,16 +60,19 @@ const Footer: React.FC = () => {
 
               <ul className="flex max-sm:text-[#656666] flex-col gap-3 max-sm:text-[12px]">
                 <li>
-                  <a href="/">(+244) 222 731 031</a>
+                  <a href="tel:+244222731031">(+244) 222 731 031</a>
                 </li>
                 <li>
-                  <a href="/">(+244) 925 835 848</a>
+                  <a href="tel:+244925835848">(+244) 925 835 848</a>
                 </li>
                 <li>
-                  <a href="/">geral@globalsc.ao</a>
+                  <a href="tel:+244941064919">(+244) 941 064 919</a>
                 </li>
                 <li>
-                  <a href="/">sinistros@globalsc.ao</a>
+                  <a href="mailto:geral@globalsc.ao">geral@globalsc.ao</a>
+                </li>
+                <li>
+                  <a href="mailto:sinistros@globalsc.ao">sinistros@globalsc.ao</a>
                 </li>
               </ul>
             </div>
@@ -83,10 +83,10 @@ const Footer: React.FC = () => {
 
             <ul className="flex flex-col max-sm:text-[#656666] max-sm:text-[12px] gap-3">
               <li>
-                <a href="/">GSC Academy</a>
+                <a href="/">GSC</a>
               </li>
               <li>
-                <a href="/">GSC Tour</a>
+                <a href="/">GSC Academy</a>
               </li>
             </ul>
           </div>
