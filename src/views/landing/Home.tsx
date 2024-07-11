@@ -2,7 +2,6 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { User } from "../../services/utils/types"
-import Banner from "../../containers/LandingPage/Banner"
 import AboutUs from "../../containers/LandingPage/AboutUs"
 import Services from "../../containers/LandingPage/Services"
 import EnterpriseSolution from "../../containers/LandingPage/EnterpriseSolution"
@@ -11,6 +10,7 @@ import { elipse2 } from "../../assets"
 import FormativeAction from "../../containers/LandingPage/FormativeAction"
 import Blog from "../../containers/LandingPage/Blog"
 import Newsletter from "../../containers/LandingPage/Newsletter"
+import BannerBaw from "../../containers/LandingPage/BannerBaws"
 
 const HomePage: React.FC = () => {
 	const navigate = useNavigate()
@@ -44,13 +44,13 @@ const HomePage: React.FC = () => {
 	}, [user, navigate])
 
 	return (
-		<div className="font-interTight bg-[#001032] h-full text-white gap-16 flex flex-col justify-center items-center py-48">
+		<div className="font-interTight bg-[#001032] h-full text-white gap-16 flex flex-col justify-center items-center pb-48">
 			<img
 				src={elipse2}
 				className="absolute start-0 -top-[750px] object-cover z-0 rotate-180 animate-pulse"
 				alt=""
 			/>
-			<Banner />
+			<BannerBaw />
 			<img
 				src={elipse2}
 				className="absolute end-0 object-cover z-0 top-[200px] animate-pulse"

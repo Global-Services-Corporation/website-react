@@ -20,6 +20,29 @@ export const Header = () => {
 		}
 	}, [])
 
+	const menuInfo = [
+		{
+			title: "Início",
+			link: "",
+		},
+		{
+			title: "Serviços",
+			link: "",
+		},
+		{
+			title: "Organização",
+			link: "",
+		},
+		{
+			title: "Atividades",
+			link: "",
+		},
+		{
+			title: "Contactos",
+			link: "",
+		},
+	]
+
 	return (
 		<header
 			className={`fixed h-[80px]
@@ -37,14 +60,16 @@ export const Header = () => {
 				/>
 			</a>
 
-			<div className="flex gap-4 max-lg:hidden">
-				<a href="/" className="text-white">
-					Início
-				</a>
-
-				<a href="/landing-events" className="text-white">
-					Eventos
-				</a>
+			<div className="flex gap-8 max-lg:hidden h-14 items-center">
+				{menuInfo.map((menu, index) => (
+					<a
+						key={index}
+						href={menu.link}
+						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
+					>
+						{menu.title}
+					</a>
+				))}
 			</div>
 
 			<div className="hidden max-lg:flex relative">
@@ -65,23 +90,22 @@ export const Header = () => {
 						}}
 					>
 						<div>
-							<a
-								href="/"
-								className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
-							>
-								<img src="" alt="" /> Início
-							</a>
+							{menuInfo.map((menu, index) => (
+								<a
+									key={index}
+									href={menu.link}
+									className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
+								>
+									{menu.title}
+								</a>
+							))}
 
 							<a
 								href="https://www.businessafterwork.globalsc.ao"
 								className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
 							>
-								<img src="" alt="" /> Eventos
-							</a>
-
-							<button className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm">
 								Inscreva-se
-							</button>
+							</a>
 						</div>
 					</div>
 				)}
