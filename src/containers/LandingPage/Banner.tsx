@@ -12,7 +12,7 @@ const Banner: React.FC = () => {
 					Explore o poder de proteger o seu futuro com escolhas inteligentes em
 					seguros.
 				</p>
-				<button className="w-[219px] h-[45px] bg-[#30CBE8] opacity-60 max-sm:opacity-100 rounded-[10px] animate-pulse hover:opacity-100 max-sm:rounded-full">
+				<button className="w-[219px] min-h-[50px] bg-[#30CBE8] opacity-60 max-sm:opacity-100 rounded-[10px] animate-pulse hover:opacity-100 max-sm:rounded-full">
 					Começar
 				</button>
 			</div>

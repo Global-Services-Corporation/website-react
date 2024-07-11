@@ -72,7 +72,7 @@ export const Header = () => {
 						</a>
 
 						<a
-							href="/landing-events"
+							href="https://www.businessafterwork.globalsc.ao"
 							className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white"
 						>
 							<img src="" alt="" /> Eventos
