@@ -29,17 +29,17 @@ const BannerBaw: React.FC = () => {
 						Participe do maior evento corporativo.
 					</p>
 
-					<div className="flex gap-2">
+					<div className="flex gap-2 max-lg:flex-col">
 						<a
 							href="https://www.businessafterwork.globalsc.ao/personal"
-							className=" bg-[#d3aa51] font-bold flex items-center justify-center px-[25px] py-[25px] w-[217px] h-[50px] text-white hover:bg-[#ffff] rounded-[10px]"
+							className=" bg-[#d3aa51] font-bold flex items-center justify-center px-[25px] py-[25px] w-[217px] h-[50px] text-white transition-colors hover:bg-[#ffff] hover:text-black rounded-[10px]"
 						>
 							Participar
 						</a>
 
 						<a
 							href="https://www.businessafterwork.globalsc.ao/"
-							className="text-[#000] bg-[#fff] font-bold flex items-center justify-center px-[50px] py-[25px] w-[217px] h-[50px] hover:text-white hover:bg-[#30CBE8] rounded-[10px]"
+							className="text-[#000] bg-[#fff] font-bold flex items-center justify-center px-[50px] py-[25px] w-[217px] h-[50px] transition-colors hover:text-[#d3aa51]  rounded-[10px]"
 						>
 							Saber mais
 						</a>
