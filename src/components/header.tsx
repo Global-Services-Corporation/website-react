@@ -35,7 +35,7 @@ export const Header = () => {
 		},
 		{
 			title: "Atividades",
-			link: "/events",
+			link: "/",
 		},
 		{
 			title: "Contactos",
