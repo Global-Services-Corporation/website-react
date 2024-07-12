@@ -35,7 +35,7 @@ export const Header = () => {
 		},
 		{
 			title: "Atividades",
-			link: "/events",
+			link: "/",
 		},
 		{
 			title: "Contactos",
@@ -113,7 +113,7 @@ export const Header = () => {
 
 			<a
 				href="https://www.businessafterwork.globalsc.ao"
-				className="bg-[#30CBE8] text-white rounded-lg px-4 py-2 max-lg:hidden transition-colors hover:bg-white hover:text-black duration-200"
+				className="hover:bg-[#30CBE8] hover:text-white rounded-lg px-4 py-2 max-lg:hidden transition-colors bg-white text-black duration-200"
 			>
 				Inscreva-se
 			</a>
