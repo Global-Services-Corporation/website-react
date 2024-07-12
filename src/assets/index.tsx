@@ -84,8 +84,10 @@ import ruiMiguens from "./events/Oradores-e-Moderadores/Rui1.png"
 import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg"
 import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
 import EventsBackground from "./landing/Events/background-events.png"
+import academy1 from "./landing/Academy/academy1.png"
 
 export {
+  academy1,
   EventsBackground,
   mundoWeb,
   williamOliveira, 
