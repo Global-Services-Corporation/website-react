@@ -23,15 +23,15 @@ export const Header = () => {
 	const menuInfo = [
 		{
 			title: "Início",
-			link: "",
+			link: "/",
 		},
 		{
 			title: "Serviços",
-			link: "",
+			link: "/",
 		},
 		{
 			title: "Organização",
-			link: "",
+			link: "/",
 		},
 		{
 			title: "Atividades",
@@ -39,7 +39,7 @@ export const Header = () => {
 		},
 		{
 			title: "Contactos",
-			link: "",
+			link: "/",
 		},
 	]
 
