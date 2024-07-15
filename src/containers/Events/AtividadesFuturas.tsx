@@ -18,7 +18,7 @@ const AtividadesFuturas: React.FC = () => {
 				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
 			Data: "10/05/2024",
 			tipo: "Publico",
-			website: "",
+			website: "https://businessafterwork.globalsc.ao",
 		},
 	]
 
@@ -27,8 +27,8 @@ const AtividadesFuturas: React.FC = () => {
 		else return text.substring(0, limit) + "..."
 	}
 	return (
-		<div className="w-full flex flex-col justify-center items-center gap-8 px-24 h-[650px]">
-			<div className="flex gap-96">
+		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px] py-11">
+			<div className="flex justify-between w-full items-center">
 				<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold">
 					Atividades Futuras
 				</h1>
@@ -53,7 +53,7 @@ const AtividadesFuturas: React.FC = () => {
 
 			<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-x-4 gap-y-4 w-full">
 				{cardInfo.map((info, index) => (
-					<div className="flex items-center justify-center">
+					<div className="flex items-center ">
 						<div
 							key={index}
 							className="flex flex-col items-center max-sm:w-[370px] max-2xl:w-[300px] w-[350px] max-2xl:h-[450px] h-[500px]  rounded-[16px] bg-[#1B223C] max-2xl:gap-0"
@@ -82,7 +82,7 @@ const AtividadesFuturas: React.FC = () => {
 
 										<a
 											href={info.website}
-											className="bg-[#30CBE8] flex justify-center items-center font-semibold text-xs rounded-full w-28 h-9 "
+											className="bg-white text-black hover:text-white hover:bg-[#30CBE8] flex justify-center items-center font-semibold text-xs rounded-full w-28 h-8 transition-colors duration-300 "
 										>
 											Saiba mais
 										</a>
