@@ -26,7 +26,9 @@ const ProgramCard: React.FC<Props> = ({ image, description, title, link }) => {
 
 			<div
 				className={`${
-					title ? "flex flex-col h-[272px] px-7 py-5 gap-2 justify-between" : "hidden"
+					title
+						? "flex flex-col h-[272px] px-7 py-5 gap-2 justify-between"
+						: "hidden"
 				}`}
 			>
 				<div className="flex flex-col justify-between gap-2">

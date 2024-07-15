@@ -9,6 +9,7 @@ const AtividadesFuturas: React.FC = () => {
 				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
 			Data: "29/04/2024",
 			tipo: "Privado",
+			website: "",
 		},
 		{
 			imagem: FIB,
@@ -17,6 +18,7 @@ const AtividadesFuturas: React.FC = () => {
 				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
 			Data: "10/05/2024",
 			tipo: "Publico",
+			website: "",
 		},
 	]
 
@@ -56,7 +58,11 @@ const AtividadesFuturas: React.FC = () => {
 							key={index}
 							className="flex flex-col items-center max-sm:w-[370px] max-2xl:w-[300px] w-[350px] max-2xl:h-[450px] h-[500px]  rounded-[16px] bg-[#1B223C] max-2xl:gap-0"
 						>
-							<img src={info.imagem} alt="" className="object-cover w-full h-56 rounded-[16px]" />
+							<img
+								src={info.imagem}
+								alt=""
+								className="object-cover w-full h-56 rounded-[16px]"
+							/>
 							<div className="flex flex-col h-[250px] px-7 py-5 gap-2 justify-between">
 								<div className="flex flex-col gap-2">
 									<p className="text-white text-[22px] max-2xl:text-[18px] font-bold">
@@ -68,23 +74,18 @@ const AtividadesFuturas: React.FC = () => {
 								</div>
 
 								<div className="flex flex-col gap-2">
-									<p className="font-bold text-xs">
-										{" "}
-										Data:{" "}
-										<span className=" text-transparent bg-gradient-to-r from-[#30CBE8] to-[#FFF] bg-clip-text">
-											{info.Data}
-										</span>{" "}
-									</p>
-									<div className="flex justify-between">
+	
+									<div className="flex justify-between items-center">
+										<p className="bg-[#1c1c1c5e] text-xs flex justify-center items-center rounded-[200px] w-20 h-9">
+											{info.tipo}
+										</p>
+
 										<a
-											href="#"
-											className="bg-[#00A7E1] flex justify-center items-center font-semibold text-xs rounded-md w-28 h-9 "
+											href={info.website}
+											className="bg-[#30CBE8] flex justify-center items-center font-semibold text-xs rounded-full w-28 h-9 "
 										>
 											Saiba mais
 										</a>
-										<p className="bg-[#1C1C1C] text-xs flex justify-center items-center rounded-[200px] w-20 h-9">
-											{info.tipo}
-										</p>
 									</div>
 								</div>
 							</div>
