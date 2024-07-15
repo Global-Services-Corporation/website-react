@@ -65,7 +65,7 @@ const Oradores = () => {
 					Oradores
 				</h1>
 
-				<div className="grid grid-cols-4 max-2xl:w-4/5 w-3/5 p-4 max-sm:grid-cols-1 gap-8 ">
+				<div className="grid grid-cols-4 max-lg:grid-cols-1 w-4/5 p-4  gap-8 ">
 					{orador.map((dados, index) => (
 						<div
 							key={index}
@@ -88,59 +88,59 @@ const Oradores = () => {
 							</div>
 						</div>
 					))}
-					<div className="flex justify-center items-start col-span-4 w-3/4 mx-auto max-lg:flex-col max-sm:grid-cols-1">
-						<div className="flex flex-col items-center justify-center text-center">
-							<img
-								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-								src={williamOliveira}
-								alt=""
-							/>
+				</div>
+				<div className="flex justify-center items-center col-span-4 w-3/4 mx-auto max-lg:flex-col max-sm:grid-cols-1">
+					<div className="flex flex-col items-center justify-center text-center">
+						<img
+							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
+							src={williamOliveira}
+							alt=""
+						/>
 
-							<div className="w-[70%] mx-auto">
-								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-									William Oliveira
-								</h2>
+						<div className="w-[70%] mx-auto">
+							<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
+								William Oliveira
+							</h2>
 
-								<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-									Director Geral da TIS Tech Angola
-								</h3>
-							</div>
+							<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
+								Director Geral da TIS Tech Angola
+							</h3>
 						</div>
+					</div>
 
-						<div className="flex flex-col items-center justify-center text-center">
-							<img
-								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-								src={matuzalemSukete}
-								alt=""
-							/>
+					<div className="flex flex-col items-center justify-center text-center">
+						<img
+							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
+							src={matuzalemSukete}
+							alt=""
+						/>
 
-							<div className="w-[70%] mx-auto">
-								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-									Matuzalém Sukete
-								</h2>
+						<div className="w-[70%] mx-auto">
+							<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
+								Matuzalém Sukete
+							</h2>
 
-								<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-									CEO da Angola Environmental Services
-								</h3>
-							</div>
+							<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
+								CEO da Angola Environmental Services
+							</h3>
 						</div>
+					</div>
 
-						<div className="flex flex-col items-center justify-center text-center">
-							<img
-								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-								src={matuzalemSukete}
-								alt=""
-							/>
+					<div className="flex flex-col items-center justify-center text-center">
+						<img
+							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
+							src={matuzalemSukete}
+							alt=""
+						/>
 
-							<div className="w-[70%] mx-auto">
-								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-									Matuzalém Sukete
-								</h2>
+						<div className="w-[70%] mx-auto">
+							<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
+								Matuzalém Sukete
+							</h2>
 
-								<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-									CEO da Angola Environmental Services
-								</h3>
-							</div>
+							<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
+								CEO da Angola Environmental Services
+							</h3>
 						</div>
 					</div>
 				</div>
