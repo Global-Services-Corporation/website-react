@@ -65,7 +65,7 @@ const Oradores = () => {
 					Oradores
 				</h1>
 
-				<div className="grid grid-cols-4 max-2xl:w-4/5 w-3/5 p-4 max-sm:grid max-sm:grid-cols-1 gap-8 ">
+				<div className="grid grid-cols-4 max-2xl:w-4/5 w-3/5 p-4 max-sm:grid-cols-1 gap-8 ">
 					{orador.map((dados, index) => (
 						<div
 							key={index}
@@ -88,7 +88,7 @@ const Oradores = () => {
 							</div>
 						</div>
 					))}
-					<div className="flex justify-center items-start col-span-4 w-3/4 mx-auto">
+					<div className="flex justify-center items-start col-span-4 w-3/4 mx-auto max-lg:flex-col max-sm:grid-cols-1">
 						<div className="flex flex-col items-center justify-center text-center">
 							<img
 								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"

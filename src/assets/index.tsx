@@ -83,8 +83,12 @@ import manuelHomem from "./events/KeynoteSpeaker/manuelHomem.png";
 import ruiMiguens from "./events/Oradores-e-Moderadores/Rui1.png"
 import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg"
 import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
+import logoAes from "./events/Sponsors/logoAes.png"
+import logoTaag from "./events/Sponsors/logoTaag.png"
 
 export {
+  logoAes,
+  logoTaag,
   mundoWeb,
   williamOliveira, 
   matuzalemSukete,
