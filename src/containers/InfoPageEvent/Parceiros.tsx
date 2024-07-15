@@ -7,6 +7,10 @@ import {
   acadBai,
   gdaLogo,
   dimbo,
+  logoTda,
+  logoEnglishAcademy,
+  logoAecipa,
+  logoIsptec
 } from "../../assets";
 
 const Parceiros: React.FC = () => {
@@ -63,6 +67,26 @@ const Parceiros: React.FC = () => {
             src={dimbo}
             alt=""
             className="object-contain h-[100px] w-[100px] max-2xl:h-[100px]  max-2xl:w-[100px]"
+          />
+          <img
+            src={logoTda}
+            alt=""
+            className="object-contain h-[100px] w-[100px] max-2xl:h-[100px]  max-2xl:w-[100px]"
+          />
+          <img
+            src={logoEnglishAcademy}
+            alt=""
+            className="object-contain h-[100px] w-[100px] max-2xl:h-[100px]  max-2xl:w-[100px]"
+          />
+          <img
+            src={logoAecipa}
+            alt=""
+            className="object-contain h-[100px] w-[100px] max-2xl:h-[100px]  max-2xl:w-[100px]"
+          />
+          <img
+            src={logoIsptec}
+            alt=""
+            className="object-contain w-[400px] max-2xl:h-[100px]  max-2xl:w-[100px]"
           />
         </div>
       </marquee>

@@ -85,8 +85,16 @@ import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg
 import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
 import logoAes from "./events/Sponsors/logoAes.png"
 import logoTaag from "./events/Sponsors/logoTaag.png"
+import logoTda from "./events/Parceiros/logoTda.svg"
+import logoEnglishAcademy from "./events/Parceiros/logoEnglishAcademy.png"
+import logoIsptec from "./events/Parceiros/ISPTECH.png"
+import logoAecipa from "./events/Parceiros/aesipa.png"
 
 export {
+  logoAecipa,
+  logoIsptec,
+  logoEnglishAcademy,
+  logoTda,
   logoAes,
   logoTaag,
   mundoWeb,
