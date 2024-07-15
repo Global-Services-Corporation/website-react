@@ -77,7 +77,7 @@ const Oradores = () => {
 								alt=""
 							/>
 
-							<div className="w-[80%] mx-auto">
+							<div className="w-[70%] mx-auto">
 								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
 									{dados.nome}
 								</h2>
@@ -88,44 +88,61 @@ const Oradores = () => {
 							</div>
 						</div>
 					))}
-					<div className="col-span-1"></div>
-					<div className="flex flex-col items-center justify-center text-center">
-						<img
-							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-							src={williamOliveira}
-							alt=""
-						/>
+					<div className="flex justify-center items-start col-span-4 w-3/4 mx-auto">
+						<div className="flex flex-col items-center justify-center text-center">
+							<img
+								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
+								src={williamOliveira}
+								alt=""
+							/>
 
-						<div className="w-[80%] mx-auto">
-							<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-								William Oliveira
-							</h2>
+							<div className="w-[70%] mx-auto">
+								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
+									William Oliveira
+								</h2>
 
-							<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-								Director Geral da TIS Tech Angola
-							</h3>
+								<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
+									Director Geral da TIS Tech Angola
+								</h3>
+							</div>
+						</div>
+
+						<div className="flex flex-col items-center justify-center text-center">
+							<img
+								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
+								src={matuzalemSukete}
+								alt=""
+							/>
+
+							<div className="w-[70%] mx-auto">
+								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
+									Matuzalém Sukete
+								</h2>
+
+								<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
+									CEO da Angola Environmental Services
+								</h3>
+							</div>
+						</div>
+
+						<div className="flex flex-col items-center justify-center text-center">
+							<img
+								className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
+								src={matuzalemSukete}
+								alt=""
+							/>
+
+							<div className="w-[70%] mx-auto">
+								<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
+									Matuzalém Sukete
+								</h2>
+
+								<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
+									CEO da Angola Environmental Services
+								</h3>
+							</div>
 						</div>
 					</div>
-
-					<div className="flex flex-col items-center justify-center text-center">
-						<img
-							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-							src={matuzalemSukete}
-							alt=""
-						/>
-
-						<div className="w-[80%] mx-auto">
-							<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-								Matuzalém Sukete
-							</h2>
-
-							<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-								CEO da Angola Environmental Services
-							</h3>
-						</div>
-					</div>
-
-					<div className="col-span-1"></div>
 				</div>
 			</div>
 		</section>
