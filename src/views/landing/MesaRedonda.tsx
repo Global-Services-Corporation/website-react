@@ -1,6 +1,7 @@
 import AboutEvent from "../../containers/MesaRedonda/AboutEvent"
 import Banner from "../../containers/MesaRedonda/Banner"
 import PorqueParticipar from "../../containers/MesaRedonda/PorqueParticipar"
+import Speakers from "../../containers/MesaRedonda/Speakers"
 
 const MesaRedonda: React.FC = () => {
 	return (
@@ -8,6 +9,7 @@ const MesaRedonda: React.FC = () => {
 			<Banner />
 			<AboutEvent/>
 			<PorqueParticipar/>
+			<Speakers/>
 		</main>
 	)
 }
