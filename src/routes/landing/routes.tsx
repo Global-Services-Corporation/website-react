@@ -5,6 +5,7 @@ import InfoPage from "../../views/landing/Baw2024"
 import Events from "../../views/landing/Events"
 import Academy from "../../views/landing/Academy"
 
+
 const Routes: RouteType[] = [
 	{
 		label: "",
