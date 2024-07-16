@@ -95,18 +95,30 @@ import expor from "./mesa-redonda/aboutEvent/Vector-2.png"
 import patrocinar from "./mesa-redonda/aboutEvent/Vector-3.png"
 import speaker from "./mesa-redonda/aboutEvent/Vector-4.png"
 import porqueParticipar from "./mesa-redonda/porqueParticipar/porqueParticipar.png"
+import logoAes from "./events/Sponsors/logoAes.png"
+import logoTaag from "./events/Sponsors/logoTaag.png"
+import logoAecipa from "./events/Parceiros/aesipa.png"
+import logoEnglishAcademy from "./events/Parceiros/logoEnglishAcademy.png"
+import logoIsptec from "./events/Parceiros/ISPTECH.png"
+import logoTda from "./events/Parceiros/logoTda.svg"
 
 export {
+	logoAecipa,
+	logoEnglishAcademy,
+	logoIsptec,
+	logoTaag,
+	logoTda,
+	logoAes,
 	antonioDosSantos,
 	downloadIcon,
 	mesaRedonda,
-  porqueParticipar,
-  agenda,
-  expor,
-  patrocinar,
-  participar,
-  speaker,
-  aboutEvent,
+	porqueParticipar,
+	agenda,
+	expor,
+	patrocinar,
+	participar,
+	speaker,
+	aboutEvent,
 	academy1,
 	EventsBackground,
 	mundoWeb,
