@@ -1,3 +1,4 @@
+import AberturaOficial from "../../containers/MesaRedonda/AberturaOficial"
 import BaixarAgenda from "../../containers/MesaRedonda/BaixarAgenda"
 import Banner from "../../containers/MesaRedonda/Banner"
 import Estatisticas from "../../containers/MesaRedonda/Estátisticas"
@@ -10,6 +11,7 @@ const MesaRedonda: React.FC = () => {
 			<BaixarAgenda />
 			<Estatisticas />
 			<PorqueParticipar />
+			<AberturaOficial />
 		</main>
 	)
 }
