@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { logoLyrics, menu } from "../assets" // Importe o ícone do menu
+import { logoLyrics} from "../assets" // Importe o ícone do menu
 
 export const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
-	const [menuOpen, setMenuOpen] = useState(false)
+
 
 	useEffect(() => {
 		const handleScroll = () => {
