@@ -84,11 +84,13 @@ import ruiMiguens from "./events/Oradores-e-Moderadores/Rui1.png"
 import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg"
 import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
 import EventsBackground from "./landing/Events/background-events.png"
+import antonioDosSantos from "./events/Oradores-e-Moderadores/antonioDosSantos.png"
 import academy1 from "./landing/Academy/academy1.png"
 import mesaRedonda from "./mesa-redonda/MesaRedondaLogo.svg"
 import downloadIcon from "./mesa-redonda/download.svg"
 
 export {
+	antonioDosSantos,
 	downloadIcon,
 	mesaRedonda,
 	academy1,
