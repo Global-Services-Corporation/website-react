@@ -90,7 +90,7 @@ const Oradores = () => {
 						</div>
 					))}
 				</div>
-				<div className="flex justify-center items-center col-span-4 w-3/4 mx-auto max-lg:flex-col max-sm:grid-cols-1 max-lg:gap-8 max-lg:mt-8">
+				<div className="flex justify-around items-center col-span-4 w-3/4 mx-auto max-lg:flex-col max-sm:grid-cols-1 max-lg:gap-8 max-lg:mt-8">
 					<div className="flex flex-col items-center justify-center text-center">
 						<img
 							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"

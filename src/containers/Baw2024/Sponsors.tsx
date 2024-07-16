@@ -1,4 +1,4 @@
-import { tisWhiteLogo, logoAes, sistecLogo, logoTaag } from "../../assets";
+import { tisWhiteLogo, sistecLogo } from "../../assets";
 
 const Sponsors: React.FC = () => {
   return (
@@ -18,16 +18,7 @@ const Sponsors: React.FC = () => {
           alt=""
           className="object-contain h-[200px] w-[200px] max-sm:w-32"
         />
-        <img
-          src={logoAes}
-          alt=""
-          className="object-contain h-[200px] w-[200px] max-sm:w-32"
-        />
-        <img
-          src={logoTaag}
-          alt=""
-          className="object-contain h-[200px] w-[200px] max-sm:w-32"
-        />
+      
       </div>
     </section>
   );
