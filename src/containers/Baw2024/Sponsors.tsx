@@ -1,8 +1,8 @@
-import { tisWhiteLogo, acadBai, sistecLogo, gdaLogo } from "../../assets";
+import { tisWhiteLogo, logoAes, sistecLogo, logoTaag } from "../../assets";
 
 const Sponsors: React.FC = () => {
   return (
-    <section className="w-full flex flex-col justify-center items-center py-[80px] max-sm:py-0 gap-12 max-sm:m-0 max-sm:h-[400px]">
+    <section className="w-full flex flex-col justify-center items-center py-[80px] max-sm:py-0 gap-12 max-sm:m-0 ">
       <h1 className="font-bold text-[45px] max-sm:text-[25px]   max-2xl:text-[35px] text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
         Patrocinadores
       </h1>
@@ -15,6 +15,16 @@ const Sponsors: React.FC = () => {
         />
         <img
           src={sistecLogo}
+          alt=""
+          className="object-contain h-[200px] w-[200px] max-sm:w-32"
+        />
+        <img
+          src={logoAes}
+          alt=""
+          className="object-contain h-[200px] w-[200px] max-sm:w-32"
+        />
+        <img
+          src={logoTaag}
           alt=""
           className="object-contain h-[200px] w-[200px] max-sm:w-32"
         />
