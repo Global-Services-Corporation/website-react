@@ -6,11 +6,7 @@ import {
   superbock,
   acadBai,
   gdaLogo,
-  dimbo,
-  logoTda,
-  logoEnglishAcademy,
-  logoAecipa,
-  logoIsptec
+  dimbo 
 } from "../../assets";
 
 const Parceiros: React.FC = () => {

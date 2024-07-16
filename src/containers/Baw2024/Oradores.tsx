@@ -8,6 +8,7 @@ import {
 	Edsondossantos,
 	williamOliveira,
 	matuzalemSukete,
+	antonioDosSantos,
 } from "../../assets"
 import KeynoteSpeaker from "./KeynoteSpeaker"
 
@@ -111,17 +112,17 @@ const Oradores = () => {
 					<div className="flex flex-col items-center justify-center text-center">
 						<img
 							className="rounded-[50%] border-[#00A7E1] border-4 w-32 max-sm:w-28 mx-auto"
-							src={matuzalemSukete}
+							src={antonioDosSantos}
 							alt=""
 						/>
 
 						<div className="w-[70%] mx-auto">
 							<h2 className="text-[20px] max-2xl:text-[25px] max-sm:text-xl font-semibold text-center mb-2 mt-2">
-								Matuzalém Sukete
+								António do Santos
 							</h2>
 
 							<h3 className="text-[18px] max-2xl:text-[15px] max-sm:text-lg  mb-2">
-								CEO da Angola Environmental Services
+								PCA da TAAG
 							</h3>
 						</div>
 					</div>
