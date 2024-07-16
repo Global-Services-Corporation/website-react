@@ -43,6 +43,7 @@ const Routes: RouteType[] = [
 		element: <PersonalForm />,
 		type: "adesion",
 	},
+	
 ]
 
 export const PublicRoutes = Routes

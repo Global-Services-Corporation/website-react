@@ -8,6 +8,7 @@ import FinalizatedAdesion from "./views/adesion/FinalizatedAdesion"
 import FinalizatedAdesionEnterprise from "./views/adesion/FinalizatedAdesionEnterprise"
 import TicketsPrices from "./views/adesion/TicketsPrices"
 import TicketsPricesEnterprise from "./views/adesion/TicketsPricesEnterprise"
+import MesaRedonda from "./views/landing/MesaRedonda"
 
 function App() {
 	return (
@@ -35,6 +36,8 @@ function App() {
 					path="/tickets-datas-enterprise/"
 					element={<TicketsPricesEnterprise />}
 				/>
+
+				<Route path="/mesa-redonda" element={<MesaRedonda />} />
 
 				{AllRoutes.map((route) => (
 					<Route

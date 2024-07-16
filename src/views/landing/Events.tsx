@@ -1,5 +1,5 @@
 import BannerBaw from "../../containers/LandingPage/BannerBaws"
-import AtividadesRecentes from "../../containers/InfoPageEvent/AtividadesRecentes"
+import AtividadesRecentes from "../../containers/Baw2024/AtividadesRecentes"
 import AtividadesFuturas from "../../containers/Events/AtividadesFuturas"
 
 const Events: React.FC = () => {
