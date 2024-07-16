@@ -91,8 +91,10 @@ import participar from "./mesa-redonda/aboutEvent/Vector-1.png"
 import expor from "./mesa-redonda/aboutEvent/Vector-2.png"
 import patrocinar from "./mesa-redonda/aboutEvent/Vector-3.png"
 import speaker from "./mesa-redonda/aboutEvent/Vector-4.png"
+import porqueParticipar from "./mesa-redonda/porqueParticipar/porqueParticipar.png"
 
 export {
+  porqueParticipar,
   agenda,
   expor,
   patrocinar,
