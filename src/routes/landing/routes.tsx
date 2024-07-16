@@ -6,6 +6,7 @@ import Events from "../../views/landing/Events"
 import HomePage from "../../views/landing/Home"
 import Academy from "../../views/landing/Academy"
 
+
 const Routes: RouteType[] = [
 	{
 		label: "",

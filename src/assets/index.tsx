@@ -85,8 +85,20 @@ import williamOliveira from "./events/Oradores-e-Moderadores/williamOliveira.jpg
 import matuzalemSukete from "./events/Oradores-e-Moderadores/MatuzalemSukete.jpg"
 import EventsBackground from "./landing/Events/background-events.png"
 import academy1 from "./landing/Academy/academy1.png"
+import aboutEvent from "./mesa-redonda/aboutEvent/aboutEventimage.png"
+import agenda from "./mesa-redonda/aboutEvent/Vector.png"
+import participar from "./mesa-redonda/aboutEvent/Vector-1.png"
+import expor from "./mesa-redonda/aboutEvent/Vector-2.png"
+import patrocinar from "./mesa-redonda/aboutEvent/Vector-3.png"
+import speaker from "./mesa-redonda/aboutEvent/Vector-4.png"
 
 export {
+  agenda,
+  expor,
+  patrocinar,
+  participar,
+  speaker,
+  aboutEvent,
   academy1,
   EventsBackground,
   mundoWeb,
