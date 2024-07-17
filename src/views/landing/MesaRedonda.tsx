@@ -7,6 +7,9 @@ import PorquePatrocinar from "../../containers/MesaRedonda/PorquePatrocinar"
 import PorqueParticipar from "../../containers/MesaRedonda/PorqueParticipar"
 import Speakers from "../../containers/MesaRedonda/Speakers"
 import SponsorsAndPartners from "../../containers/MesaRedonda/SponsorAndPartners"
+import OQueEsperar from "../../containers/MesaRedonda/OQueEsperar"
+import Footer from "../../components/footer"
+import MediaPartners from "../../containers/MesaRedonda/MediaPartners"
 
 const MesaRedonda: React.FC = () => {
 	return (
@@ -20,6 +23,9 @@ const MesaRedonda: React.FC = () => {
 			<PorquePatrocinar />
 			<Speakers />
 			<SponsorsAndPartners/>
+			<OQueEsperar/>
+			<MediaPartners/>
+			<Footer/>
 		</main>
 	)
 }
