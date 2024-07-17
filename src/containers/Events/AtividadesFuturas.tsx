@@ -28,11 +28,11 @@ const AtividadesFuturas: React.FC = () => {
 	}
 	return (
 		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px] py-11">
-			<div className="flex justify-between w-full items-center">
+			<div className="flex justify-center w-full items-center">
 				<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold">
 					Atividades Futuras
 				</h1>
-				<form action="" className="flex gap-3">
+				<form action="" className=" gap-3 hidden">
 					<input
 						type="date"
 						name=""
@@ -63,7 +63,7 @@ const AtividadesFuturas: React.FC = () => {
 								alt=""
 								className="object-cover w-full h-56 rounded-[16px]"
 							/>
-							<div className="flex flex-col h-[250px] px-7 py-5 gap-2 justify-between">
+							<div className="flex flex-col h-[300px] px-7 py-5 gap-2 justify-between">
 								<div className="flex flex-col gap-2">
 									<p className="text-white text-[22px] max-2xl:text-[18px] font-bold">
 										{info.title}
@@ -74,7 +74,6 @@ const AtividadesFuturas: React.FC = () => {
 								</div>
 
 								<div className="flex flex-col gap-2">
-	
 									<div className="flex justify-between items-center">
 										<p className="bg-[#1c1c1c5e] text-xs flex justify-center items-center rounded-[200px] w-20 h-9">
 											{info.tipo}
@@ -82,7 +81,7 @@ const AtividadesFuturas: React.FC = () => {
 
 										<a
 											href={info.website}
-											className="bg-white text-black hover:text-white hover:bg-[#30CBE8] flex justify-center items-center font-semibold text-xs rounded-full w-28 h-8 transition-colors duration-300 "
+											className="hover:bg-white hover:text-black text-white bg-[#30CBE8] flex justify-center items-center font-semibold text-xs rounded-full w-28 h-8 transition-colors duration-300 "
 										>
 											Saiba mais
 										</a>
