@@ -36,7 +36,11 @@ const ConfirmAdesionPersonal: React.FC = () => {
 		<main className="relative bg-[#001032] h-full flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
 				<a href={"/"}>
-					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
+				<img
+					src={logoLyrics}
+					alt="Logotipo GSC com as letras"
+					className="w-32"
+				/>
 				</a>
 
 				<button onClick={handleCancelar} className="text-white font-bold">

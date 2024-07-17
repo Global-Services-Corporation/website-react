@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
 
 						<ul className="flex flex-col max-sm:text-[#656666] max-sm:text-[12px] gap-3">
 							<li>
-								<a href="/">GSC</a>
+								<a href="https://www.globalsc.ao">GSC</a>
 							</li>
 							<li>
 								<a href="/">GSC Academy</a>

@@ -38,7 +38,11 @@ const AdesionLayout: React.FC<{ children: React.ReactNode }> = ({
 				>
 					<header className="text-white max-sm:w-screen flex p-6 justify-between items-center w-full box-border h-[100px]">
 						<a href={"/"}>
-							<img src={logoLyrics} alt="" className="max-sm:w-[75px]" />
+						<img
+					src={logoLyrics}
+					alt="Logotipo GSC com as letras"
+					className="w-32"
+				/>
 						</a>
 
 						<nav className="flex gap-3 text-[20px] max-2xl:text-[18px]">

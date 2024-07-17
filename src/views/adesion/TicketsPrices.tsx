@@ -120,7 +120,11 @@ const TicketsPrices: React.FC = () => {
 		<main className="max-sm:h-full h-full relative bg-[#001032] flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex justify-between items-center ">
 				<a href={"/"}>
-					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
+				<img
+					src={logoLyrics}
+					alt="Logotipo GSC com as letras"
+					className="w-32"
+				/>
 				</a>
 
 				<Link

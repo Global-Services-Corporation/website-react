@@ -1,4 +1,4 @@
-import logoLyrics from "./logo-lyrics.svg"
+import logoLyrics from "./logo-lyrics.png"
 import logoDoc from "./logo-lyrics.png"
 import bannerIllustration from "./events/Banner/Event-Banner.jpg"
 import parceiro1 from "./events/Parceiros/HCTA.png"

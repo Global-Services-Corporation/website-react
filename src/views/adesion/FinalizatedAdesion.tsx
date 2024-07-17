@@ -205,7 +205,11 @@ const FinalizatedAdesion: React.FC = () => {
 		<main className="h-screen relative bg-[#001032] flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
 				<a href={"/"}>
-					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
+				<img
+					src={logoLyrics}
+					alt="Logotipo GSC com as letras"
+					className="w-32"
+				/>
 				</a>
 
 				<Link
