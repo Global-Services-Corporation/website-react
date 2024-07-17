@@ -3,7 +3,6 @@ import PersonalForm from "../../views/adesion/PersonalForm"
 import { RouteType } from "../../services/config/types"
 import InfoPage from "../../views/landing/Baw2024"
 import Events from "../../views/landing/Events"
-import HomePage from "../../views/landing/Home"
 import Academy from "../../views/landing/Academy"
 
 
@@ -11,7 +10,7 @@ const Routes: RouteType[] = [
 	{
 		label: "",
 		path: "/",
-		element: <HomePage />,
+		element: <InfoPage />,
 		type: "public",
 	},
 	{
