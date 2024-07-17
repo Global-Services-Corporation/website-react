@@ -2,6 +2,8 @@
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 // import { Banner1, Banner2, Banner3, Banner4, Banner5 } from "../../assets"
+import bannerPic from "../../assets/bannerPic.png"
+import bannerPicMobile from "../../assets/bannerPicMobile.png"
 
 const BannerBaw: React.FC = () => {
 	{
@@ -16,10 +18,19 @@ const BannerBaw: React.FC = () => {
 	}*/
 	}
 	return (
-		<div className="h-[800px] max-sm:min-h-[0] relative max-sm:h-[600px] w-full">
-			<img src="" alt="" />
-			<img src="" alt="" />
-			
+		<div className="h-[800px] max-lg:min-h-[0] relative max-lg:h-[500px] w-full ">
+			<img
+				src={bannerPic}
+				alt=""
+				className=" w-full max-lg:hidden object-cover opacity-90 object-top rounded-[50px] max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+			/>
+
+			<img
+				src={bannerPicMobile}
+				alt=""
+				className="hidden w-full max-lg:block opacity-90 object-top rounded-[50px] max-sm:rounded-none z-0 h-full"
+			/>
+
 			{/*<div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-48 gap-[50px] z-40">
 				<div className="flex flex-col max-sm:absolute max-sm:top-10 max-sm:items-center max-sm:flex justify-center items-center text-[#fff] w-[1075px] max-lg:w-full max-lg:px-8 gap-6">
 					<h1 className="text-[60px] max-md:text-5xl font-bold max-sm:text-[24px] text-center shadow-md">
