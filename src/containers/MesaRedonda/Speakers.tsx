@@ -12,10 +12,14 @@ const Speakers: React.FC = () => {
       imagem: "",
       title: "",
     },
+    {
+        imagem: "",
+        title: "",
+      },
   ];
 
   return (
-    <section className="flex flex-col w-[1514px] justify-center items-center gap-24">
+    <section className="flex flex-col w-full p-6 justify-center items-center gap-24">
       <p className="font-bold text-4xl">Speakers do Evento</p>
       <div className="flex pb-4 ">
         <div className="h-[424px] items-center justify-center w-[1314px] flex gap-4">
