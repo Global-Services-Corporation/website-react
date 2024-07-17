@@ -6,6 +6,7 @@ import Estatisticas from "../../containers/MesaRedonda/Estátisticas"
 import PorquePatrocinar from "../../containers/MesaRedonda/PorquePatrocinar"
 import PorqueParticipar from "../../containers/MesaRedonda/PorqueParticipar"
 import Speakers from "../../containers/MesaRedonda/Speakers"
+import SponsorsAndPartners from "../../containers/MesaRedonda/SponsorAndPartners"
 
 const MesaRedonda: React.FC = () => {
 	return (
@@ -18,6 +19,7 @@ const MesaRedonda: React.FC = () => {
 			<AboutEvent />
 			<PorquePatrocinar />
 			<Speakers />
+			<SponsorsAndPartners/>
 		</main>
 	)
 }
