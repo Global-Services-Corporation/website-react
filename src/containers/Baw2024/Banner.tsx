@@ -1,4 +1,5 @@
 import bannerPic from "../../assets/bannerPic.png"
+import bannerPicMobile from "../../assets/bannerPicMobile.png"
 // import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -16,11 +17,17 @@ const Banner: React.FC = () => {
 	} */
 
 	return (
-		<div className="h-[800px] max-sm:min-h-[0] relative max-sm:h-[600px] w-full ">
+		<div className="h-[800px] max-lg:min-h-[0] relative max-lg:h-[500px] w-full ">
 			<img
 				src={bannerPic}
 				alt=""
-				className="w-full object-cover opacity-90 object-top rounded-[50px] max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+				className=" w-full max-lg:hidden object-cover opacity-90 object-top rounded-[50px] max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+			/>
+
+			<img
+				src={bannerPicMobile}
+				alt=""
+				className="hidden w-full max-lg:block opacity-90 object-top rounded-[50px] max-sm:rounded-none z-0 h-full"
 			/>
 			{/* <div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-48 gap-[50px] z-40">
 				<div className="flex flex-col max-sm:absolute max-sm:top-10 max-sm:items-center max-sm:flex justify-center items-center text-[#fff] w-[1075px] max-lg:w-full max-lg:px-8 gap-6">

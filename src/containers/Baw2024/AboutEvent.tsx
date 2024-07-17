@@ -1,4 +1,4 @@
-import { aboutImage } from "../../assets";
+import  aboutImage from "../../assets/bannerPicMobile.png";
 
 const AboutEvent: React.FC = () => {
   return (
