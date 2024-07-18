@@ -4,13 +4,13 @@ import { RouteType } from "../../services/config/types"
 import InfoPage from "../../views/landing/Baw2024"
 import Events from "../../views/landing/Events"
 import Academy from "../../views/landing/Academy"
-
+import MesaRedonda from "../../views/landing/MesaRedonda"
 
 const Routes: RouteType[] = [
 	{
 		label: "",
 		path: "/",
-		element: <InfoPage />,
+		element: <MesaRedonda />,
 		type: "public",
 	},
 	{
@@ -43,7 +43,6 @@ const Routes: RouteType[] = [
 		element: <PersonalForm />,
 		type: "adesion",
 	},
-	
 ]
 
 export const PublicRoutes = Routes
