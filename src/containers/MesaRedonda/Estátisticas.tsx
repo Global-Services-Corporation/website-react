@@ -1,9 +1,9 @@
 const Estatisticas: React.FC = () => {
 	const statisticDatas = [
-		{ number: "+1000", title: "Participantes" },
+		{ number: "3", title: "Edições Realizadas" },
 		{ number: "+1000", title: "Expositores" },
-		{ number: "+1000", title: "Oradores" },
-		{ number: "+1000", title: "Apresentadores" },
+		{ number: "+50", title: "Oradores" },
+		{ number: "+250", title: "Empresas" },
 	]
 	return (
 		<section className="h-80 text-white flex flex-col w-full justify-around bg-[#3D52D5] px-52 py-12 items-center">

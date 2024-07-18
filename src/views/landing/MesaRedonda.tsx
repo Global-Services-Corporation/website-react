@@ -10,6 +10,7 @@ import SponsorsAndPartners from "../../containers/MesaRedonda/SponsorAndPartners
 import OQueEsperar from "../../containers/MesaRedonda/OQueEsperar"
 import Footer from "../../components/footer"
 import MediaPartners from "../../containers/MesaRedonda/MediaPartners"
+import ContactUs from "../../containers/MesaRedonda/ContactUs"
 
 const MesaRedonda: React.FC = () => {
 	return (
@@ -25,6 +26,7 @@ const MesaRedonda: React.FC = () => {
 			<SponsorsAndPartners/>
 			<OQueEsperar/>
 			<MediaPartners/>
+			<ContactUs/>
 			<Footer/>
 		</main>
 	)
