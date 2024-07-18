@@ -12,7 +12,7 @@ const Estatisticas: React.FC = () => {
 			<div className="flex justify-between w-4/5">
 				{statisticDatas.map((statistic, index) => (
 					<div key={index} className="flex flex-col gap-2 items-center font-bold">
-						<p className="text-3xl">{statistic.number}</p>
+						<p className="text-3xl text-[#D7AF26]">{statistic.number}</p>
 						<p className="texl-xl">{statistic.title}</p>
 					</div>
 				))}

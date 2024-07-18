@@ -15,13 +15,13 @@ const MesaRedonda: React.FC = () => {
 	return (
 		<main className="bg-[#ffff] w-screen h-screen overflow-y-auto">
 			<Banner />
-			<BaixarAgenda />
-			<Estatisticas />
-			<PorqueParticipar />
-			<AberturaOficial />
 			<AboutEvent />
+			<BaixarAgenda />
+			<PorqueParticipar />
+			<Estatisticas />
 			<PorquePatrocinar />
 			<Speakers />
+			<AberturaOficial />
 			<SponsorsAndPartners/>
 			<OQueEsperar/>
 			<MediaPartners/>
