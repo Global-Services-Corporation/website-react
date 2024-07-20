@@ -37,7 +37,7 @@ const Banner: React.FC = () => {
 	}, [timeLeft])
 
 	return (
-		<main className="bg-[#00000079] h-screen relative flex justify-center items-center">
+		<main className="bg-[#00000079] h-[700px] relative flex justify-center items-center">
 			<video src="" className="h-full w-full" autoPlay muted={true}></video>
 
 			<div className="absolute w-full h-full top-0 left-0 flex flex-col p-10">
@@ -51,7 +51,7 @@ const Banner: React.FC = () => {
 							CEOs TECH REVELAM O PRÓXIMO GRANDE SALTO CORPORATIVO
 						</h1>
 
-						<button className="hover:bg-[#ffff] hover:text-[#0000FF] bg-[#0000FF] py-2.5 px-6 font-semibold rounded-md transition-colors duration-300 w-56">
+						<button className="hover:bg-[#ffff] hover:text-[#065CAB] bg-[#065CAB00] border border-white py-2.5 px-6 font-semibold rounded-md transition-colors duration-300 w-56">
 							Inscrever-se
 						</button>
 					</div>

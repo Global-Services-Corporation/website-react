@@ -15,7 +15,7 @@ const PorqueParticipar: React.FC = () => {
 					rem! Numquam culpa quo quas. Necessitatibus quo nostrum laudantium.
 				</p>
 			</div>
-			<img src={porqueParticipar} alt="" className="w-[550px] object-contain" />
+			<img src={porqueParticipar} alt="" className="object-cover w-[650px] h-[530px] rounded-2xl" />
 		</section>
 	)
 }

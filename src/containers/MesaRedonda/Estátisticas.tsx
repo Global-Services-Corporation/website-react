@@ -34,7 +34,7 @@ const Estatisticas: React.FC = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className="h-80 text-white flex flex-col w-full justify-around bg-[#3D52D5] px-52 py-12 items-center"
+			className="h-80 text-white flex flex-col w-full justify-around bg-[#065CAB] px-52 py-12 items-center"
 		>
 			<h1 className="font-bold text-3xl">Estatística do evento</h1>
 
