@@ -2,7 +2,7 @@ import { OQueEsperarImg } from "../../assets"
 
 const OQueEsperar: React.FC = () => {
 	return (
-		<section className="h-[650px] bg-[#1b1a1acb] text-white flex justify-between gap-36 py-10 px-36 items-center">
+		<section className="h-[650px] bg-[#6c6c6c32] text-white flex justify-between gap-36 py-10 px-36 items-center">
 			<img
 				src={OQueEsperarImg}
 				alt=""
@@ -13,7 +13,7 @@ const OQueEsperar: React.FC = () => {
 					O que esperar deste evento?
 				</h1>
 
-				<p>
+				<p className="text-black">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
 					maxime consequatur reprehenderit tempore ratione, omnis unde quisquam
 					iusto nemo nesciunt dolores rem! Numquam culpa quo quas.

@@ -19,7 +19,7 @@ const Speakers: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col w-full p-6 justify-center items-center gap-24 h-[750px]">
+    <section className="flex flex-col w-full p-6 justify-center items-center gap-24 h-[750px] bg-[#6c6c6c32]">
       <p className="font-semibold text-3xl">Speakers do Evento</p>
       <div className="flex pb-4 ">
         <div className="h-[424px] items-center justify-center w-[1314px] flex gap-4">
