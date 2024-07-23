@@ -6,18 +6,28 @@ import Estatisticas from "../../containers/MesaRedonda/Estátisticas"
 import PorquePatrocinar from "../../containers/MesaRedonda/PorquePatrocinar"
 import PorqueParticipar from "../../containers/MesaRedonda/PorqueParticipar"
 import Speakers from "../../containers/MesaRedonda/Speakers"
+import SponsorsAndPartners from "../../containers/MesaRedonda/SponsorAndPartners"
+import OQueEsperar from "../../containers/MesaRedonda/OQueEsperar"
+import Footer from "../../components/footer"
+import MediaPartners from "../../containers/MesaRedonda/MediaPartners"
+import ContactUs from "../../containers/MesaRedonda/ContactUs"
 
 const MesaRedonda: React.FC = () => {
 	return (
 		<main className="bg-[#ffff] w-screen h-screen overflow-y-auto">
 			<Banner />
-			<BaixarAgenda />
-			<Estatisticas />
-			<PorqueParticipar />
-			<AberturaOficial />
 			<AboutEvent />
+			<BaixarAgenda />
+			<PorqueParticipar />
+			<Estatisticas />
 			<PorquePatrocinar />
 			<Speakers />
+			<AberturaOficial />
+			<SponsorsAndPartners/>
+			<OQueEsperar/>
+			<MediaPartners/>
+			<ContactUs/>
+			<Footer/>
 		</main>
 	)
 }

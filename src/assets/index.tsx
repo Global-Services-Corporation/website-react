@@ -101,8 +101,20 @@ import logoAecipa from "./events/Parceiros/aesipa.png"
 import logoEnglishAcademy from "./events/Parceiros/logoEnglishAcademy.png"
 import logoIsptec from "./events/Parceiros/ISPTECH.png"
 import logoTda from "./events/Parceiros/logoTda.svg"
+import OQueEsperarImg from "./mesa-redonda/OQueEsperar/OQueEsperar.png"
+import logoTpa from "./mesa-redonda/MediaPartners/logoTpa.png"
+import logoPlatinaLine from "./mesa-redonda/MediaPartners/logoPlatinaLine.png"
+import logoRna from "./mesa-redonda/MediaPartners/logoRna.png"
+import logoTvZimbo from "./mesa-redonda/MediaPartners/logoTvZimbo.png"
+import logoZap from "./mesa-redonda/MediaPartners/logoZap.png"
 
 export {
+	logoRna,
+	logoPlatinaLine,
+	logoTvZimbo,
+	logoTpa,
+	logoZap,
+	OQueEsperarImg,
 	logoAecipa,
 	logoEnglishAcademy,
 	logoIsptec,

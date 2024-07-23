@@ -1,6 +1,6 @@
 const PorquePatrocinar: React.FC = () => {
 	return (
-		<section className="h-[550px] bg-[#1b1a1acb] text-white flex justify-between gap-36 py-24 px-36 items-center">
+		<section className="h-[550px] bg-[#BEBEBE] text-white flex justify-between gap-36 py-24 px-36 items-center">
 			<video
 				src=""
 				className="h-full w-96"
