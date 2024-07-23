@@ -3,10 +3,10 @@ import CountUp from "react-countup"
 
 const Estatisticas: React.FC = () => {
 	const statisticDatas = [
-		{ number: 1000, title: "Participantes" },
-		{ number: 1000, title: "Expositores" },
-		{ number: 1000, title: "Oradores" },
-		{ number: 1000, title: "Apresentadores" },
+		{ number: 600, title: "Participantes" },
+		{ number: 60, title: "Expositores" },
+		{ number: 70, title: "Speakers" },
+		{ number: 25, title: "Apresentações" },
 	]
 	const [isVisible, setIsVisible] = useState(false)
 	const sectionRef = useRef<HTMLDivElement>(null)
