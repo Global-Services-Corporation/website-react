@@ -49,7 +49,7 @@ export const Header = () => {
       top-0 flex w-full justify-between items-center px-[55px] max-lg:px-8 box-border ${
 				isScrolled
 					? "bg-[#0000009f] transition duration-[4s] backdrop-blur-sm max-lg:fixed"
-					: "transition duration-[4s]"
+					: "transition duration-[4s] lg:invert"
 			} z-50`}
 		>
 			<a href={"/"} className="max-lg:w-[75px]">
@@ -65,7 +65,7 @@ export const Header = () => {
 					<a
 						key={index}
 						href={menu.link}
-						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
+						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8] "
 					>
 						{menu.title}
 					</a>
@@ -113,7 +113,7 @@ export const Header = () => {
 
 			<a
 				href="https://www.businessafterwork.globalsc.ao"
-				className="hover:bg-[#30CBE8] hover:text-white rounded-lg px-4 py-2 max-lg:hidden transition-colors bg-white text-black duration-200"
+				className="hover:bg-[#ffffff] rounded-lg px-4 py-2 max-lg:hidden transition-colors bg-black text-white hover:text-black duration-300"
 			>
 				Inscreva-se
 			</a>

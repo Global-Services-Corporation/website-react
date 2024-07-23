@@ -34,7 +34,7 @@ const AboutUs: React.FC = () => {
 						</p>
 					</div>
 				</div>
-				<img src={sobrenos} alt="" className="max-sm:hidden" />
+				<img src={sobrenos} alt="" className="max-sm:hidden rounded-2xl" />
 			</div>
 		</section>
 	)

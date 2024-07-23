@@ -10,7 +10,8 @@ import { elipse2 } from "../../assets"
 import FormativeAction from "../../containers/LandingPage/FormativeAction"
 import Blog from "../../containers/LandingPage/Blog"
 import Newsletter from "../../containers/LandingPage/Newsletter"
-import BannerBaw from "../../containers/LandingPage/BannerBaws"
+
+import BannerMesaRedonda from "../../containers/LandingPage/BannerMR"
 
 const HomePage: React.FC = () => {
 	const navigate = useNavigate()
@@ -50,7 +51,7 @@ const HomePage: React.FC = () => {
 				className="absolute start-0 -top-[750px] object-cover z-0 rotate-180 animate-pulse"
 				alt=""
 			/>
-			<BannerBaw />
+			<BannerMesaRedonda />
 			<img
 				src={elipse2}
 				className="absolute end-0 object-cover z-0 top-[200px] animate-pulse"
