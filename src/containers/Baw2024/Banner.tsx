@@ -21,7 +21,7 @@ const Banner: React.FC = () => {
 			<img
 				src={bannerPic}
 				alt=""
-				className=" w-full max-lg:hidden object-cover opacity-90 object-top rounded-[50px] max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+				className=" w-full max-lg:hidden object-contain opacity-90 object-top rounded-[50px] max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
 			/>
 
 			<img
