@@ -37,7 +37,7 @@ function App() {
 					element={<TicketsPricesEnterprise />}
 				/>
 
-				<Route path="/" element={<MesaRedonda />} />
+				<Route path="/mesa-redonda" element={<MesaRedonda />} />
 
 				{AllRoutes.map((route) => (
 					<Route

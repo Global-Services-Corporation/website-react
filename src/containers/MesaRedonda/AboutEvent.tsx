@@ -73,4 +73,4 @@ const AboutEvent: React.FC = () => {
 	)
 }
 
-export default AboutEvent
+export default AboutEvent;

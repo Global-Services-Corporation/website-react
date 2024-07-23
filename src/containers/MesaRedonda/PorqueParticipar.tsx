@@ -1,4 +1,4 @@
-import { porqueParticipar } from "../../assets"
+import { porqueParticipar } from "../../assets";
 
 const PorqueParticipar: React.FC = () => {
 	return (
@@ -20,4 +20,4 @@ const PorqueParticipar: React.FC = () => {
 	)
 }
 
-export default PorqueParticipar
+export default PorqueParticipar;
