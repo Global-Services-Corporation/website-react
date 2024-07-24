@@ -1,4 +1,3 @@
-
 import { RouteType } from "../../services/config/types"
 import Events from "../../views/landing/Events"
 
@@ -17,7 +16,6 @@ const Routes: RouteType[] = [
 		element: <Events />,
 		type: "public",
 	},
-	
 ]
 
 export const PublicRoutes = Routes

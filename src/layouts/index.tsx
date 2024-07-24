@@ -1,5 +1,4 @@
 import React from "react"
-import AdesionLayout from "./AdesionLayout"
 import LandingLayout from "./LandingLayout"
 
 interface LayoutProps {
@@ -10,10 +9,6 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ element, type }) => {
 	switch (type) {
 		case "public":
-			return <LandingLayout>{element}</LandingLayout>
-		case "adesion":
-			return <AdesionLayout>{element}</AdesionLayout>
-		default:
 			return <LandingLayout>{element}</LandingLayout>
 	}
 }
