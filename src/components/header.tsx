@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { logoLyrics, menu } from "../assets" // Importe o ícone do menu
+import { logoNoLyrics, menu } from "../assets"
+
 
 export const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -26,20 +27,8 @@ export const Header = () => {
 			link: "/",
 		},
 		{
-			title: "Serviços",
-			link: "/",
-		},
-		{
-			title: "Organização",
-			link: "/",
-		},
-		{
 			title: "Atividades",
 			link: "/events",
-		},
-		{
-			title: "Contactos",
-			link: "/",
 		},
 	]
 
@@ -48,15 +37,15 @@ export const Header = () => {
 			className={`fixed h-[80px]
       top-0 flex w-full justify-between items-center px-[55px] max-lg:px-8 box-border ${
 				isScrolled
-					? "bg-[#0000009f] transition duration-[4s] backdrop-blur-sm max-lg:fixed"
-					: "transition duration-[4s] lg:invert"
+					? "bg-[#0000009f] transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
+					: "transition duration-[0.5s] lg:invert"
 			} z-50`}
 		>
 			<a href={"/"} className="max-lg:w-[75px]">
 				<img
-					src={logoLyrics}
+					src={logoNoLyrics}
 					alt="Logotipo GSC com as letras"
-					className="w-full"
+					className="w-10 invert"
 				/>
 			</a>
 

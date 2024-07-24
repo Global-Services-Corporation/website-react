@@ -29,7 +29,7 @@ const AtividadesFuturas: React.FC = () => {
 	return (
 		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px] py-11">
 			<div className="flex justify-between w-full items-center">
-				<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold">
+				<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold text-transparent text-start w-full bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
 					Atividades Futuras
 				</h1>
 				<form action="" className="flex gap-3">
@@ -51,7 +51,7 @@ const AtividadesFuturas: React.FC = () => {
 				</form>
 			</div>
 
-			<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-x-4 gap-y-4 w-full">
+			<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-x-8 gap-y-4 w-full px-10">
 				{cardInfo.map((info, index) => (
 					<div className="flex items-center ">
 						<div

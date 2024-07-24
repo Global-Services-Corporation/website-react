@@ -1,11 +1,11 @@
-// import Slider from "react-slick"
+import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { bannerMesaRedonda } from "../../assets"
+import { bannerMesaRedonda, bannerMRPeople } from "../../assets"
 // import { Banner1, Banner2, Banner3, Banner4, Banner5 } from "../../assets"
 
 const BannerMesaRedonda: React.FC = () => {
-	/* const settings = {
+	const settings = {
 		infinite: true,
 		speed: 500,
 		autoplay: true,
@@ -13,21 +13,30 @@ const BannerMesaRedonda: React.FC = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-	} */
+	}
 
 	return (
 		<div className="h-[800px] max-lg:min-h-[0] relative max-lg:h-[500px] w-full ">
-			<img
-				src={bannerMesaRedonda}
-				alt=""
-				className=" w-full max-lg:hidden object-contain opacity-90 object-top rounded-[50px] max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
-			/>
+			<div className="flex flex-col absolute top-0 inset-x-0 max-sm:z-0">
+				<Slider {...settings} className="">
+					<div className="w-full flex items-center h-[800px] max-sm:h-[600px]">
+						<img
+							src={bannerMesaRedonda}
+							alt=""
+							className=" w-full max-lg:hidden object-contain opacity-90 object-top  max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+						/>
+					</div>
 
-			<img
-				src={""}
-				alt=""
-				className="hidden w-full max-lg:block opacity-90 object-top rounded-[50px] max-sm:rounded-none z-0 h-full"
-			/>
+					<div className="w-full flex items-center h-[800px] max-sm:h-[600px]">
+						<img
+							src={bannerMRPeople}
+							alt=""
+							className=" w-full max-lg:hidden object-contain opacity-90 object-top  max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+						/>
+					</div>
+				</Slider>
+			</div>
+
 			{/* <div className="flex flex-col justify-center max-sm:relative items-center w-full absolute top-48 gap-[50px] z-40">
 				<div className="flex flex-col max-sm:absolute max-sm:top-10 max-sm:items-center max-sm:flex justify-center items-center text-[#fff] w-[1075px] max-lg:w-full max-lg:px-8 gap-6">
 					<h1 className="text-[60px] max-md:text-5xl font-bold max-sm:text-[24px] text-center shadow-md">

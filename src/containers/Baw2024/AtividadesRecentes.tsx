@@ -64,7 +64,7 @@ const AtividadesRecentes = () => {
 
 	return (
 		<section className="w-full h-[650px] bg-[#001032] flex justify-center flex-col items-center gap-14 z-20 mt-[100px] max-sm:m-0 max-sm:p-0 px-[100px]">
-			<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold text-transparent bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
+			<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold text-start w-full">
 				Atividades Recentes
 			</h1>
 
