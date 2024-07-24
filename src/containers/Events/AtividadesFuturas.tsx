@@ -5,20 +5,10 @@ const AtividadesFuturas: React.FC = () => {
 		{
 			imagem: FIB,
 			title: "Mesa Redonda com os Ceo's",
-			description:
-				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
-			Data: "29/04/2024",
+			description: `O Angola Economic Forum (AEF) está projectado para se tornar no principal evento económico do país. Realizado anualmente, o AEF reúne decisores políticos nacionais, convidados internacionais, académicos, líderes empresariais e a sociedade civil, para identificar os principais desafios e debater sobre as políticas prioritárias para a economia angolana.`,
+			Data: "27/11/2024",
 			tipo: "Privado",
-			website: "",
-		},
-		{
-			imagem: FIB,
-			title: "Business After Work",
-			description:
-				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
-			Data: "10/05/2024",
-			tipo: "Publico",
-			website: "https://businessafterwork.globalsc.ao",
+			website: "https://mesaredonda.globalsc.ao",
 		},
 	]
 
@@ -74,7 +64,6 @@ const AtividadesFuturas: React.FC = () => {
 								</div>
 
 								<div className="flex flex-col gap-2">
-	
 									<div className="flex justify-between items-center">
 										<p className="bg-[#1c1c1c5e] text-xs flex justify-center items-center rounded-[200px] w-20 h-9">
 											{info.tipo}
