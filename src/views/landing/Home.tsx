@@ -45,7 +45,7 @@ const HomePage: React.FC = () => {
 	}, [user, navigate])
 
 	return (
-		<div className="font-interTight bg-[#001032] h-full text-white gap-16 flex flex-col justify-center items-center pb-48">
+		<div className="font-interTight bg-[#001032] h-full text-white flex flex-col justify-center items-center pb-48">
 			<img
 				src={elipse2}
 				className="absolute start-0 -top-[750px] object-cover z-0 rotate-180 animate-pulse"
