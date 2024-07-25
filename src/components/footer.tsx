@@ -1,8 +1,4 @@
-import {
-	facebookIcon,
-	instagramIcon,
-	linkedinIcon,
-} from "../assets"
+import { facebookIcon, instagramIcon, linkedinIcon } from "../assets"
 import { logoGSC } from "../assets/mesa-redonda"
 
 const Footer: React.FC = () => {
@@ -21,13 +17,22 @@ const Footer: React.FC = () => {
 					</p>
 
 					<div className="flex gap-4">
-						<a href="https://web.facebook.com/people/Global-Services-Corporation/100094301594638/">
+						<a
+							href="https://web.facebook.com/people/Global-Services-Corporation/100094301594638/"
+							className="hover:invert hover:brightness-0"
+						>
 							<img src={facebookIcon} alt="Facebook" />
 						</a>
-						<a href="https://www.instagram.com/globalservicescorporation/">
+						<a
+							href="https://www.instagram.com/globalservicescorporation/"
+							className="hover:invert hover:brightness-0"
+						>
 							<img src={instagramIcon} alt="Instagram" />
 						</a>
-						<a href="https://www.linkedin.com/company/global-service-corporations/">
+						<a
+							href="https://www.linkedin.com/company/global-service-corporations/"
+							className="hover:invert hover:brightness-0"
+						>
 							<img src={linkedinIcon} alt="LinkedIn" />
 						</a>
 					</div>
