@@ -101,8 +101,8 @@ export const Header = () => {
 			</div>
 
 			<a
-				href="https://www.businessafterwork.globalsc.ao"
-				className="hover:bg-[#ffffff] rounded-lg px-4 py-2 max-lg:hidden transition-colors bg-black text-white hover:text-black duration-300"
+				href="https://www.mesaredonda.globalsc.ao"
+				className="duration-300q invert text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] transition-colors hover:from-[#000000] hover:to-[#000000] hover:text-white rounded-[10px]"
 			>
 				Inscreva-se
 			</a>
