@@ -1,9 +1,5 @@
-import {
-	facebookIcon,
-	instagramIcon,
-	linkedinIcon,
-	logoLyrics,
-} from "../assets"
+import { facebookIcon, instagramIcon, linkedinIcon } from "../assets"
+import { logoGsc } from "../assets/mesa-redonda"
 
 const Footer: React.FC = () => {
 	return (
@@ -11,9 +7,9 @@ const Footer: React.FC = () => {
 			<div className="flex text-[#fff] max-sm:gap-7 px-[50px] max-sm:px-10 max-sm:flex-col py-[60px] justify-around">
 				<div className="flex flex-col gap-[34px] max-sm:gap-5 max-sm:w-full max-sm:h-full w-[350px] h-[203px] box-border">
 					<img
-						src={logoLyrics}
+						src={logoGsc}
 						alt="Logotipo da Global Services Corporation"
-						className="w-[87px]"
+						className="w-[45px]"
 					/>
 
 					<p className="max-sm:text-[16px] ">
@@ -21,13 +17,22 @@ const Footer: React.FC = () => {
 					</p>
 
 					<div className="flex gap-4">
-						<a href="https://web.facebook.com/people/Global-Services-Corporation/100094301594638/">
+						<a
+							href="https://web.facebook.com/people/Global-Services-Corporation/100094301594638/"
+							className="hover:invert hover:brightness-0"
+						>
 							<img src={facebookIcon} alt="Facebook" />
 						</a>
-						<a href="https://www.instagram.com/globalservicescorporation/">
+						<a
+							href="https://www.instagram.com/globalservicescorporation/"
+							className="hover:invert hover:brightness-0"
+						>
 							<img src={instagramIcon} alt="Instagram" />
 						</a>
-						<a href="https://www.linkedin.com/company/global-service-corporations/">
+						<a
+							href="https://www.linkedin.com/company/global-service-corporations/"
+							className="hover:invert hover:brightness-0"
+						>
 							<img src={linkedinIcon} alt="LinkedIn" />
 						</a>
 					</div>

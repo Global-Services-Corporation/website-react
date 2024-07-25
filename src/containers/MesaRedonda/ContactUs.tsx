@@ -2,7 +2,7 @@ import { bgEntreEmContacto } from "../../assets/mesa-redonda/entreEmContacto"
 
 const ContactUs: React.FC = () => {
 	return (
-		<section className="h-[800px] w-full relative">
+		<section className="h-screen w-full relative">
 			<img
 				src={bgEntreEmContacto}
 				alt=""
@@ -11,7 +11,7 @@ const ContactUs: React.FC = () => {
 			<div className="h-full w-full items-center justify-center bg-[#065bab80] flex absolute inset-y-0 ">
 				<div className="flex items-center justify-around w-full">
 					<div className="box-border max-sm:h-fit flex flex-col gap-[10px]">
-						<h1 className=" text-[#D7AF26] text-2xl">Linha de Apoio</h1>
+						<h1 className=" text-[#D7AF26] text-2xl font-bold">Linha de Apoio</h1>
 
 						<ul className="flex text-white text-base flex-col gap-3 max-sm:text-[12px]">
 							<li>
@@ -30,7 +30,7 @@ const ContactUs: React.FC = () => {
 								<a href="mailto:sinistros@globalsc.ao">sinistros@globalsc.ao</a>
 							</li>
 						</ul>
-						<h1 className=" text-[#D7AF26] text-2xl">Endereço</h1>
+						<h1 className=" text-[#D7AF26] text-2xl font-bold">Endereço</h1>
 						<ul className="flex text-white text-base flex-col gap-3 max-sm:text-[12px]">
 							<li>
 								<a href="https://maps.app.goo.gl/n1WaehYtnB417gaY7">
@@ -40,7 +40,7 @@ const ContactUs: React.FC = () => {
 						</ul>
 					</div>
 
-					<div className="w-[550px] items-center flex-col justify-center bg-white flex rounded-2xl gap-5 px-16 py-10">
+					<div className="w-[550px] items-center flex-col justify-center bg-white flex rounded-2xl gap-5 px-16 py-10 h-full">
 						<div className="flex flex-col items-center w-full">
 							<p className="text-4xl font-bold text-[#D7AF26]">
 								Entre em contacto
@@ -63,7 +63,7 @@ const ContactUs: React.FC = () => {
 								<p className="text-base text-[#0E1937]">Email</p>
 								<input
 									type="email"
-									name="nome"
+									name="email"
 									id=""
 									placeholder="Insira o seu email"
 									className="w-full h-11 rounded-md p-4 bg-[#6c6c6c33]"
@@ -74,7 +74,7 @@ const ContactUs: React.FC = () => {
 								<p className="text-base text-[#0E1937]">Telefone</p>
 								<input
 									type="tel"
-									name="nome"
+									name="contact"
 									id=""
 									placeholder="Insira o seu telefone"
 									className="w-full h-11 rounded-md p-4 bg-[#6c6c6c33]"
@@ -83,12 +83,11 @@ const ContactUs: React.FC = () => {
 
 							<div>
 								<p className="text-base text-[#0E1937]">Mensagem</p>
-								<input
-									type="text"
-									name="nome"
-									id=""
+								<textarea
+									name="message"
+									id="message"
 									placeholder="Escreva aqui a sua mensagem"
-									className="w-full h-36 rounded-md p-4 pb-24 bg-[#6c6c6c33]"
+									className="w-full h-28 rounded-md p-4 bg-[#6c6c6c33]"
 								/>
 							</div>
 
