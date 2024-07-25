@@ -7,23 +7,26 @@ const Services: React.FC = () => {
 			title: "Seguros",
 			description: "Começa aderindo o serviço.",
 			buttonTitle: "Solicitar",
+			link: "#",
 		},
 		{
 			icon: eventosicon,
 			title: "Eventos",
 			description: "Começa aderindo o serviço.",
 			buttonTitle: "Aderir",
+			link: "https://www.mesaredonda.globalsc.ao",
 		},
 		{
 			icon: academiaicon,
 			title: "Academia",
 			description: "Começa aderindo o serviço.",
 			buttonTitle: "Inscreva-se",
+			link: "#",
 		},
 	]
 
 	return (
-		<section className="w-full pb-32 max-2xl:pb-10 relative flex flex-col gap-12 z-40">
+		<section className="w-full pb-20 pt-4 max-2xl:pb-10 relative flex flex-col gap-12 z-40">
 			<p className="font-bold max-sm:text-2xl text-4xl ml-36 max-sm:ml-8">
 				Adira já aos nossos serviços!
 			</p>
@@ -44,12 +47,13 @@ const Services: React.FC = () => {
 								</p>
 							</div>
 
-							<button
+							<a
+								href={info.link}
 								className="hover:bg-[#30CBE8] hover:text-white bg-white text-black
-               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors"
+               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center"
 							>
 								{info.buttonTitle}
-							</button>
+							</a>
 						</div>
 					))}
 				</div>

@@ -34,7 +34,7 @@ const EnterpriseSolution: React.FC = () => {
 		},
 	]
 	return (
-		<section className="w-full flex flex-col justify-center gap-12 py-24  items-center">
+		<section className="w-full flex flex-col justify-center gap-12 py-24  items-center ">
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
 				<p className="font-bold text-4xl max-sm:text-2xl">
 					{" "}
@@ -50,7 +50,7 @@ const EnterpriseSolution: React.FC = () => {
 				{CardInfo.map((info, index) => (
 					<div
 						key={index}
-						className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg bg-[#0E1937]"
+						className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg bg-[#0E1937] hover:-translate-y-2 z-40 transition-all duration-500"
 					>
 						<img
 							src={info.cardIcon}

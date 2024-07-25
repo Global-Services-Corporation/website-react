@@ -17,28 +17,12 @@ const AtividadesFuturas: React.FC = () => {
 		else return text.substring(0, limit) + "..."
 	}
 	return (
-		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px] py-11">
-			<div className="flex justify-between w-full items-center">
-				<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold text-transparent text-start w-full bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
+		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px]">
+			<div className="flex w-full items-center">
+				<h1 className="font-bold max-sm:text-2xl text-4xl text-transparent text-start w-full bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
 					Atividades Futuras
 				</h1>
-				<form action="" className="flex gap-3">
-					<input
-						type="date"
-						name=""
-						id=""
-						className="bg-[#00A7E1] w-40 h-11 rounded-3xl flex justify-center"
-					/>
-					<select
-						name="Categoria"
-						id=""
-						className="w-40 h-11 rounded-3xl bg-[#1C1C1C]"
-					>
-						<option value="corporate">Corporativo</option>
-						<option value="Party">Festa</option>
-						<option value="feira">Feira</option>
-					</select>
-				</form>
+
 			</div>
 
 			<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-x-8 gap-y-4 w-full px-10">

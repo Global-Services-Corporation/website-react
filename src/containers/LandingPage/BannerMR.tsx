@@ -19,7 +19,7 @@ const BannerMesaRedonda: React.FC = () => {
 		<div className="h-[800px] max-lg:min-h-[0] relative max-lg:h-[500px] w-full ">
 			<div className="flex flex-col absolute top-0 inset-x-0 max-sm:z-0">
 				<Slider {...settings} className="">
-					<div className="w-full flex items-center h-[800px] max-sm:h-[600px]">
+					<div className="w-full flex items-center h-full max-sm:h-[600px]">
 						<img
 							src={bannerMesaRedonda}
 							alt=""
