@@ -1,8 +1,9 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import { AllRoutes } from "./routes"
 import Layout from "./layouts"
-import ErrorPage from "./routes/error-page"
-import Events from "./views/landing/Events"
+import ErrorPage from "./routes/error-page";
+import Events from "./views/landing/Events";
+import PersonalForm  from "./views/adesion/PersonalForm";
 
 function App() {
 	return (
@@ -19,6 +20,8 @@ function App() {
 				<Route path="/events" element={<Events />} />
 
 				<Route path="*" element={<ErrorPage />} />
+
+				<Route path="/personalForm" element={<PersonalForm/>} />
 			</Routes>
 		</BrowserRouter>
 	)
