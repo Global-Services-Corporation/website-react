@@ -1,16 +1,34 @@
-
+import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { logoLyrics } from "../../assets"
-
+import { User } from "../../services/utils/types"
 
 const ConfirmAdesionPersonal: React.FC = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
+	const [user, setUser] = useState<User | null>(null)
 	const [personalData, setPersonalData] = useState<any>(null)
 	const [ticketsData, setTicketsData] = useState<any>(null)
 
+	const fetchUserData = async (userId: string | undefined) => {
+		try {
+			const response = await axios.get(
+				`https://gsc.api.unocura.ao/user/${userId}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
+				}
+			)
+			setUser(response.data)
+		} catch (error) {
+			console.error("Erro ao carregar dados do usuário:", error)
+		}
+	}
+
 	useEffect(() => {
+		fetchUserData(id)
 		const personalFormData = localStorage.getItem("personalFormData")
 		const personalTicketsData = localStorage.getItem("accumulatedTicketData")
 
@@ -24,18 +42,18 @@ const ConfirmAdesionPersonal: React.FC = () => {
 	}, [id])
 
 	const handleAvancar = () => {
-		navigate(`/finalizado/`)
+		navigate(`/finalizado/${user?.uuid}`)
 	}
 
 	const handleCancelar = () => {
 		localStorage.removeItem("accumulatedTicketData")
-		navigate(`/tickets-datas/`)
+		navigate(`/tickets-datas/${user?.uuid}`)
 	}
 
 	return (
-		<main className="relative bg-[#001032] h-full flex flex-col items-center max-sm:overflow-y-auto">
+		<main className="relative bg-[#001032] h-screen flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
-				<a href={"/"}>
+				<a href={user ? `/${user?.uuid}` : "/"}>
 					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
 				</a>
 
@@ -80,15 +98,6 @@ const ConfirmAdesionPersonal: React.FC = () => {
 					</div>
 
 					<div className="flex flex-col gap-3 items-center ">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
-							NIF
-						</label>
-						<p className="bg-transparent bg-[#171818] h-[50px] text-white text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
-							{personalData?.nif || ""}
-						</p>
-					</div>
-
-					<div className="flex flex-col gap-3 items-center col-span-2">
 						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
 							Quantidade de Tickets
 						</label>

@@ -1,8 +1,12 @@
-import React, { useEffect } from "react"
+import axios from "axios"
+import React, { useEffect, useState } from "react"
 import { useForm, Controller, FieldError } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { User } from "../../services/utils/types"
 
 const EnterpriseForm: React.FC = () => {
+	const { id } = useParams()
+	const [user, setUser] = useState<User | null>(null)
 	const navigate = useNavigate()
 	const {
 		handleSubmit,
@@ -14,11 +18,31 @@ const EnterpriseForm: React.FC = () => {
 		localStorage.clear()
 	}, [])
 
-	const onSubmit = async (data: object) => {
+	const fetchUserData = async (userId: string | undefined) => {
+		try {
+			const response = await axios.get(
+				`https://gsc.api.unocura.ao/user/${userId}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
+				}
+			)
+			setUser(response.data)
+		} catch (error) {
+			console.error("Erro ao carregar dados do usuário:", error)
+		}
+	}
+
+	useEffect(() => {
+		fetchUserData(id)
+	}, [id])
+
+	const onSubmit = async (data: any) => {
 		const formData = { ...data }
 		console.log("Dados enviados com sucesso", formData)
 		localStorage.setItem("enterpriseFormData", JSON.stringify(formData))
-		navigate(`/tickets-datas-enterprise/`)
+		navigate(`/tickets-datas-enterprise/${user?.uuid}`)
 	}
 
 	return (
@@ -128,39 +152,6 @@ const EnterpriseForm: React.FC = () => {
 						{typeof errors.contacto === "string"
 							? errors.contacto
 							: (errors.contacto as FieldError).message}
-					</span>
-				)}
-			</div>
-
-			<div className="flex flex-col gap-3">
-				<label htmlFor="nif" className="font-semibold text-[15px]">
-					NIF
-				</label>
-				<Controller
-					name="nif"
-					control={control}
-					defaultValue=""
-					render={({ field }) => (
-						<input
-							{...field}
-							type="text"
-							className={`w-[400px] h-[50px] max-sm:w-auto max-lg:w-auto flex p-4 bg-[#1B223C] rounded-[4px] text-[#9E9E9E] ${
-								errors.nif ? "border-red-500" : ""
-							}`}
-							placeholder="Insira o seu NIF ou BI..."
-						/>
-					)}
-					rules={{
-						required: "Campo obrigatório",
-						minLength: { value: 5, message: "Mínimo de 5 caracteres" },
-						maxLength: { value: 16, message: "Máximo de 16 caracteres" },
-					}}
-				/>
-				{errors.nif !== undefined && (
-					<span className="text-red-500 text-xs">
-						{typeof errors.nif === "string"
-							? errors.nif
-							: (errors.nif as FieldError).message}
 					</span>
 				)}
 			</div>

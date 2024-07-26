@@ -58,9 +58,9 @@ const Banner: React.FC = () => {
 							CEOs TECH REVELAM O PRÓXIMO GRANDE SALTO CORPORATIVO
 						</h1>
 
-						<button className="hover:bg-[#ffff] hover:text-[#065CAB] bg-[#065CAB00] border border-white py-2.5 px-6 font-semibold rounded-md transition-colors duration-300 w-56">
+						<a href="/finalizado" className="hover:bg-[#ffff] hover:text-[#065CAB] bg-[#065CAB00] border border-white py-2.5 px-6 font-semibold rounded-md transition-colors duration-300 w-56">
 							Inscrever-se
-						</button>
+						</a>
 					</div>
 
 					<div className="flex gap-5 w-3/5 justify-between">

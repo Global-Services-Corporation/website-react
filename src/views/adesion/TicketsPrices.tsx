@@ -1,5 +1,7 @@
-import React, { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import { Link, useNavigate, useParams } from "react-router-dom"
+import axios from "axios"
+import { User } from "../../services/utils/types"
 import { logoLyrics } from "../../assets"
 
 type TicketType = {
@@ -44,7 +46,26 @@ const TicketsPrices: React.FC = () => {
 		}, {} as { [key: string]: number })
 	)
 
+	const { id } = useParams()
 	const navigate = useNavigate()
+	const [user, setUser] = useState<User | null>(null)
+
+	const fetchUserData = async (userId: string | undefined) => {
+		try {
+			const response = await axios.get(
+				`https://gsc.api.unocura.ao/user/${userId}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
+				}
+			)
+			setUser(response.data)
+		} catch (error) {
+			console.error("Erro ao carregar dados do usuário:", error)
+		}
+	}
+
 	const handleIncrease = (id: string) => {
 		setQuantities((prev) => ({
 			...prev,
@@ -63,6 +84,10 @@ const TicketsPrices: React.FC = () => {
 		(sum, ticket) => sum + quantities[ticket.id] * ticket.price,
 		0
 	)
+
+	useEffect(() => {
+		fetchUserData(id)
+	}, [id])
 
 	const saveToLocalStorage = (
 		key: string,
@@ -110,21 +135,21 @@ const TicketsPrices: React.FC = () => {
 				total,
 				totalQuantity
 			)
-			navigate(`/confirm-adesion-personal/`)
+			navigate(`/confirm-adesion-personal/${user?.uuid}`)
 		} else {
 			alert("Selecione algum ticket!")
 		}
 	}
 
 	return (
-		<main className="max-sm:h-full h-full relative bg-[#001032] flex flex-col items-center max-sm:overflow-y-auto">
+		<main className="max-sm:h-full h-screen relative bg-[#001032] flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex justify-between items-center ">
-				<a href={"/"}>
+				<a href={user ? `/${user?.uuid}` : "/"}>
 					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
 				</a>
 
 				<Link
-					to={"/personal"}
+					to={user ? `/personal/${user?.uuid}` : "/personal"}
 					className="text-white font-bold"
 					onClick={() => {
 						localStorage.removeItem("accumulatedTicketData")
