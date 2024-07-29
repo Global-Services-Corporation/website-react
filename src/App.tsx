@@ -4,6 +4,13 @@ import Layout from "./layouts"
 import ErrorPage from "./routes/error-page";
 import Events from "./views/landing/Events";
 import PersonalForm  from "./views/adesion/PersonalForm";
+import ConfirmAdesionEnterprise from "./views/adesion/ConfirmEnterprise";
+import ConfirmAdesionPersonal from "./views/adesion/ConfirmPersonal";
+import FinalizatedAdesion from "./views/adesion/FinalizatedAdesion";
+import FinalizatedAdesionEnterprise from "./views/adesion/FinalizatedAdesionEnterprise";
+import TicketsPrices from "./views/adesion/TicketsPrices";
+import TicketsPricesEnterprise from "./views/adesion/TicketsPricesEnterprise";
+import MesaRedonda from "./views/landing/MesaRedonda";
 
 function App() {
 	return (
