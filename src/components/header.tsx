@@ -52,9 +52,9 @@ export const Header = () => {
 
 	const scrollTo = (e: React.MouseEvent, to: string) => {
 		e.preventDefault()
-		const projectsSection = document.getElementById(to)
-		if (projectsSection) {
-			projectsSection.scrollIntoView({ behavior: "smooth" })
+		const section = document.getElementById(to)
+		if (section) {
+			section.scrollIntoView({ behavior: "smooth" })
 		}
 	}
 
@@ -73,14 +73,14 @@ export const Header = () => {
 
 			<div className="flex gap-8 max-lg:hidden h-14 items-center">
 				{menuInfo.map((menu, index) => (
-					<Link
+					<a
 						key={index}
-						to={menu.link}
-						onClick={(e) => scrollTo(e, menu.open)}
+						href={menu.link}
+						onClick={menu.open ? (e) => scrollTo(e, menu.open) : undefined}
 						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
 					>
 						{menu.title}
-					</Link>
+					</a>
 				))}
 			</div>
 
@@ -106,7 +106,9 @@ export const Header = () => {
 								<a
 									key={index}
 									href={menu.link}
-									onClick={(e) => scrollTo(e, menu.open)}
+									onClick={
+										menu.open ? (e) => scrollTo(e, menu.open) : undefined
+									}
 									className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
 								>
 									{menu.title}
