@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { logoNoLyrics, menu } from "../assets"
+import { menu } from "../assets"
 import { Link } from "react-router-dom"
+import { logoGSC } from "../assets/mesa-redonda"
 
 export const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -25,12 +26,37 @@ export const Header = () => {
 		{
 			title: "Início",
 			link: "/",
+			open: "",
 		},
 		{
-			title: "Atividades",
+			title: "Sobre",
+			link: "/",
+			open: "sobre",
+		},
+		{
+			title: "Eventos",
 			link: "/events",
+			open: "",
+		},
+		{
+			title: "Serviços",
+			link: "/",
+			open: "services",
+		},
+		{
+			title: "Contactos",
+			link: "/",
+			open: "contact",
 		},
 	]
+
+	const scrollTo = (e: React.MouseEvent, to: string) => {
+		e.preventDefault()
+		const projectsSection = document.getElementById(to)
+		if (projectsSection) {
+			projectsSection.scrollIntoView({ behavior: "smooth" })
+		}
+	}
 
 	return (
 		<header
@@ -38,15 +64,11 @@ export const Header = () => {
       top-0 flex w-full justify-between items-center px-[55px] max-lg:px-8 box-border ${
 				isScrolled
 					? "bg-[#0000009f] transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
-					: "transition duration-[0.5s] lg:invert"
+					: "transition duration-[0.5s]"
 			} z-50`}
 		>
 			<a href={"/"} className="max-lg:w-[75px]">
-				<img
-					src={logoNoLyrics}
-					alt="Logotipo GSC com as letras"
-					className="w-10 invert"
-				/>
+				<img src={logoGSC} alt="Logotipo GSC com as letras" className="w-10" />
 			</a>
 
 			<div className="flex gap-8 max-lg:hidden h-14 items-center">
@@ -54,7 +76,8 @@ export const Header = () => {
 					<Link
 						key={index}
 						to={menu.link}
-						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8] "
+						onClick={(e) => scrollTo(e, menu.open)}
+						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
 					>
 						{menu.title}
 					</Link>
@@ -83,6 +106,7 @@ export const Header = () => {
 								<a
 									key={index}
 									href={menu.link}
+									onClick={(e) => scrollTo(e, menu.open)}
 									className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
 								>
 									{menu.title}
@@ -102,7 +126,7 @@ export const Header = () => {
 
 			<a
 				href="https://www.mesaredonda.globalsc.ao"
-				className="max-lg:hidden duration-300 invert text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] transition-colors hover:from-[#000000] hover:to-[#000000] hover:text-white rounded-[10px]"
+				className="max-lg:hidden duration-300 text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] transition-colors hover:from-[#000000] hover:to-[#000000] hover:text-white rounded-[10px]"
 			>
 				Inscreva-se
 			</a>

@@ -34,7 +34,10 @@ const EnterpriseSolution: React.FC = () => {
 		},
 	]
 	return (
-		<section className="w-full flex flex-col justify-center gap-12 py-24  items-center ">
+		<section
+			id="services"
+			className="w-full flex flex-col justify-center gap-12 py-24  items-center "
+		>
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
 				<p className="font-bold text-4xl max-sm:text-2xl">
 					{" "}
