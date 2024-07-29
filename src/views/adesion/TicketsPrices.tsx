@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import axios from "axios"
 import { User } from "../../services/utils/types"
-import { logoLyrics } from "../../assets"
+import { mesaRedonda } from "../../assets"
 
 type TicketType = {
 	id: string
@@ -135,22 +135,22 @@ const TicketsPrices: React.FC = () => {
 				total,
 				totalQuantity
 			)
-			navigate(`/confirm-adesion-personal/${user?.uuid}`)
+			navigate(`/confirm-adesion-personal${user?.uuid}`)
 		} else {
 			alert("Selecione algum ticket!")
 		}
 	}
 
 	return (
-		<main className="max-sm:h-full h-screen relative bg-[#001032] flex flex-col items-center max-sm:overflow-y-auto">
+		<main className="max-sm:h-full h-screen relative bg-white flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex justify-between items-center ">
 				<a href={user ? `/${user?.uuid}` : "/"}>
-					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
+					<img src={mesaRedonda} alt="Logotipo da Global Services Corporation" />
 				</a>
 
 				<Link
 					to={user ? `/personal/${user?.uuid}` : "/personal"}
-					className="text-white font-bold"
+					className="text-[#000] font-bold"
 					onClick={() => {
 						localStorage.removeItem("accumulatedTicketData")
 					}}
@@ -159,18 +159,18 @@ const TicketsPrices: React.FC = () => {
 				</Link>
 			</header>
 
-			<div className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between p-10 bg-[#1B223C] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0">
-				<h1 className="font-semibold text-center text-3xl text-white">
+			<div className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between p-10 bg-[#EEEDED] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0">
+				<h1 className="font-semibold text-center text-3xl text-[#FF9800]">
 					TICKETS
 				</h1>
 				{ticketTypes.map((ticket) => (
 					<div
 						key={ticket.id}
-						className="flex w-full max-sm:flex-col justify-between items-center shadow-inner shadow-black rounded-md p-4 max-sm:gap-3 mb-3"
+						className="flex w-full max-sm:flex-col justify-between items-center shadow-inner shadow-black rounded-md p-4 max-sm:gap-3 mb-3 bg-[rgba(79,79,79,0.2)]"
 					>
-						<p className="font-bold text-[#00A7E1] text-lg">{ticket.label}</p>
+						<p className="font-bold text-lg text-[#4F4F4F]">{ticket.label}</p>
 
-						<p className="font-bold">
+						<p className="font-bold text-[#000]">
 							{ticket.price.toLocaleString("pt-PT", {
 								style: "currency",
 								currency: "AOA",
@@ -180,7 +180,7 @@ const TicketsPrices: React.FC = () => {
 						<div className="flex items-center justify-center h-8">
 							<button
 								onClick={() => handleDecrease(ticket.id)}
-								className="bg-[#00A7E1] px-4 h-full"
+								className="bg-[#FF9800] px-4 h-full"
 							>
 								-
 							</button>
@@ -191,7 +191,7 @@ const TicketsPrices: React.FC = () => {
 
 							<button
 								onClick={() => handleIncrease(ticket.id)}
-								className="bg-[#00A7E1] px-4 h-full"
+								className="bg-[#FF9800] px-4 h-full"
 							>
 								+
 							</button>
@@ -201,14 +201,14 @@ const TicketsPrices: React.FC = () => {
 
 				<div className="flex flex-col w-full justify-between items-center h-1/4 gap-2">
 					<div className="flex gap-2 flex-col">
-						<p className="flex font-bold gap-1">
+						<p className="flex font-bold gap-1 text-[#000]">
 							Quantidade de Tickets:
 							<span className="font-medium">
 								{Object.values(quantities).reduce((sum, qty) => sum + qty, 0)}
 							</span>
 						</p>
 
-						<p className="flex font-bold gap-1">
+						<p className="flex font-bold gap-1 text-[#000]">
 							Total:
 							<span className="font-medium">
 								{total.toLocaleString("pt-PT", {
@@ -221,7 +221,7 @@ const TicketsPrices: React.FC = () => {
 
 					<button
 						onClick={handleAdvance}
-						className="font-bold w-[300px] h-14 rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+						className="font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center"
 					>
 						Avançar
 					</button>
