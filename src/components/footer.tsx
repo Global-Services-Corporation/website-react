@@ -3,7 +3,10 @@ import { logoLyricsTwo } from "../assets/mesa-redonda"
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="h-[417px] w-full  max-sm:h-auto flex flex-col bg-[#000000]  justify-between">
+		<footer
+			className="h-[417px] w-full  max-sm:h-auto flex flex-col bg-[#000000] justify-between"
+			id="footer"
+		>
 			<div className="flex text-[#fff] max-sm:gap-7 px-[50px] max-sm:px-10 max-sm:flex-col py-[60px] justify-around">
 				<div className="flex flex-col gap-[34px] max-sm:gap-5 max-sm:w-full max-sm:h-full w-[350px] h-[203px] box-border">
 					<img

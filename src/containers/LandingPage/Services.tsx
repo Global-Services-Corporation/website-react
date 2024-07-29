@@ -7,7 +7,7 @@ const Services: React.FC = () => {
 			title: "Seguros",
 			description: "Começa aderindo o serviço.",
 			buttonTitle: "Solicitar",
-			link: "#",
+			link: "/insurance",
 		},
 		{
 			icon: eventosicon,
@@ -31,7 +31,7 @@ const Services: React.FC = () => {
 				Adira já aos nossos serviços!
 			</p>
 
-			<div className="w-full h-full flex gap-8 lg:px-28 max-lg:px-8 overflow-x-auto">
+			<div className="w-full h-full flex gap-16 lg:px-28 max-lg:px-8 overflow-x-auto">
 				{cardInfo.map((info, index) => (
 					<div
 						key={index}

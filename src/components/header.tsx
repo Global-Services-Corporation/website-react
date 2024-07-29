@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { logoGSC } from "../assets/mesa-redonda"
+import { menu } from "../assets"
 
 export const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -44,7 +45,7 @@ export const Header = () => {
 		{
 			title: "Contactos",
 			link: "/",
-			open: "contact",
+			open: "footer",
 		},
 	]
 
