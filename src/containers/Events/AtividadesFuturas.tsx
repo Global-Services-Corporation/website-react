@@ -5,20 +5,10 @@ const AtividadesFuturas: React.FC = () => {
 		{
 			imagem: FIB,
 			title: "Mesa Redonda com os Ceo's",
-			description:
-				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
-			Data: "29/04/2024",
+			description: `O Angola Economic Forum (AEF) está projectado para se tornar no principal evento económico do país. Realizado anualmente, o AEF reúne decisores políticos nacionais, convidados internacionais, académicos, líderes empresariais e a sociedade civil, para identificar os principais desafios e debater sobre as políticas prioritárias para a economia angolana.`,
+			Data: "27/11/2024",
 			tipo: "Privado",
-			website: "",
-		},
-		{
-			imagem: FIB,
-			title: "Business After Work",
-			description:
-				"Write an amazing description in this dedicated card section. Each word counts.Holles an amazing description in this dedicated card section. Each word counts.An amazing description in this dedicated card section. Each word counts.Write an amazing description in this dedicated card section. Each word counts.",
-			Data: "10/05/2024",
-			tipo: "Publico",
-			website: "https://businessafterwork.globalsc.ao",
+			website: "https://mesaredonda.globalsc.ao",
 		},
 	]
 
@@ -27,31 +17,15 @@ const AtividadesFuturas: React.FC = () => {
 		else return text.substring(0, limit) + "..."
 	}
 	return (
-		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px] py-11">
-			<div className="flex justify-between w-full items-center">
-				<h1 className="text-[45px] max-2xl:text-[35px] max-sm:text-[25px] font-bold">
+		<div className="w-full flex flex-col justify-center items-center gap-8 px-[100px]">
+			<div className="flex w-full items-center">
+				<h1 className="font-bold max-sm:text-2xl text-4xl text-transparent text-start w-full bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] bg-clip-text">
 					Atividades Futuras
 				</h1>
-				<form action="" className="flex gap-3">
-					<input
-						type="date"
-						name=""
-						id=""
-						className="bg-[#00A7E1] w-40 h-11 rounded-3xl flex justify-center"
-					/>
-					<select
-						name="Categoria"
-						id=""
-						className="w-40 h-11 rounded-3xl bg-[#1C1C1C]"
-					>
-						<option value="corporate">Corporativo</option>
-						<option value="Party">Festa</option>
-						<option value="feira">Feira</option>
-					</select>
-				</form>
+
 			</div>
 
-			<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-x-4 gap-y-4 w-full">
+			<div className="grid grid-cols-3 max-lg:grid-cols-1 gap-x-8 gap-y-4 w-full px-10">
 				{cardInfo.map((info, index) => (
 					<div className="flex items-center ">
 						<div
@@ -74,7 +48,6 @@ const AtividadesFuturas: React.FC = () => {
 								</div>
 
 								<div className="flex flex-col gap-2">
-	
 									<div className="flex justify-between items-center">
 										<p className="bg-[#1c1c1c5e] text-xs flex justify-center items-center rounded-[200px] w-20 h-9">
 											{info.tipo}

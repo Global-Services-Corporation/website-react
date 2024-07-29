@@ -104,8 +104,14 @@ import logoPlatinaLine from "./mesa-redonda/MediaPartners/logoPlatinaLine.png"
 import logoRna from "./mesa-redonda/MediaPartners/logoRna.png"
 import logoTvZimbo from "./mesa-redonda/MediaPartners/logoTvZimbo.png"
 import logoZap from "./mesa-redonda/MediaPartners/logoZap.png"
+import bannerMesaRedonda from "./mesa-redonda/banner/bannerMesaRedonda.jpg"
+import bannerMRPeople from "./mesa-redonda/banner/bannerMesaRedondaPeople.jpg"
+import logoNoLyrics from "./logo-no-lyrics.png"
 
 export {
+	bannerMRPeople,
+	logoNoLyrics,
+	bannerMesaRedonda,
 	logoRna,
 	logoPlatinaLine,
 	logoTvZimbo,

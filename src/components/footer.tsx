@@ -1,19 +1,22 @@
 import { facebookIcon, instagramIcon, linkedinIcon } from "../assets"
-import { logoGsc } from "../assets/mesa-redonda"
+import { logoLyricsTwo } from "../assets/mesa-redonda"
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="h-[417px] w-full  max-sm:h-auto flex flex-col bg-[#000000]  justify-between">
+		<footer
+			className="h-[417px] w-full  max-sm:h-auto flex flex-col bg-[#000000] justify-between"
+			id="footer"
+		>
 			<div className="flex text-[#fff] max-sm:gap-7 px-[50px] max-sm:px-10 max-sm:flex-col py-[60px] justify-around">
 				<div className="flex flex-col gap-[34px] max-sm:gap-5 max-sm:w-full max-sm:h-full w-[350px] h-[203px] box-border">
 					<img
-						src={logoGsc}
+						src={logoLyricsTwo}
 						alt="Logotipo da Global Services Corporation"
-						className="w-[45px]"
+						className="w-[80px]"
 					/>
 
-					<p className="max-sm:text-[16px] ">
-						Siga-nos nas nossas redes sociais.
+					<p className="max-sm:text-xs text-sm ">
+						Global Services Corporation, empresa angolana de multisserviços.
 					</p>
 
 					<div className="flex gap-4">
@@ -67,18 +70,7 @@ const Footer: React.FC = () => {
 									<a href="tel:+244222731031">(+244) 222 731 031</a>
 								</li>
 								<li>
-									<a href="tel:+244925835848">(+244) 925 835 848</a>
-								</li>
-								<li>
 									<a href="tel:+244941064919">(+244) 941 064 919</a>
-								</li>
-								<li>
-									<a href="mailto:geral@globalsc.ao">geral@globalsc.ao</a>
-								</li>
-								<li>
-									<a href="mailto:sinistros@globalsc.ao">
-										sinistros@globalsc.ao
-									</a>
 								</li>
 							</ul>
 						</div>
