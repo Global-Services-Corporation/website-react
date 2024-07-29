@@ -27,33 +27,32 @@ const Services: React.FC = () => {
 			<p className="font-bold max-sm:text-2xl text-4xl ml-36 max-sm:ml-8">
 				Adira já aos nossos serviços!
 			</p>
-			<marquee>
-				<div className="w-full h-full flex gap-8">
-					{cardInfo.map((info, index) => (
-						<div
-							key={index}
-							className="min-w-[363px] min-h-[187px] flex relative p-8 bg-[#0E1937] rounded-[24px]"
-						>
-							<img src={info.icon} alt="" className="absolute object-none" />
-							<div className="flex flex-col absolute start-28">
-								<p className="text-[#30CBE8] font-semibold text-[20.88px]">
-									{info.title}
-								</p>
-								<p className="text-[#C5C5C5] text-[16.71px]">
-									{info.description}
-								</p>
-							</div>
 
-							<button
-								className="hover:bg-[#30CBE8] hover:text-white bg-white text-black
-               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors"
-							>
-								{info.buttonTitle}
-							</button>
+			<div className="w-full h-full flex gap-8">
+				{cardInfo.map((info, index) => (
+					<div
+						key={index}
+						className="min-w-[363px] min-h-[187px] flex relative p-8 bg-[#0E1937] rounded-[24px]"
+					>
+						<img src={info.icon} alt="" className="absolute object-none" />
+						<div className="flex flex-col absolute start-28">
+							<p className="text-[#30CBE8] font-semibold text-[20.88px]">
+								{info.title}
+							</p>
+							<p className="text-[#C5C5C5] text-[16.71px]">
+								{info.description}
+							</p>
 						</div>
-					))}
-				</div>
-			</marquee>
+
+						<button
+							className="hover:bg-[#30CBE8] hover:text-white bg-white text-black
+               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors"
+						>
+							{info.buttonTitle}
+						</button>
+					</div>
+				))}
+			</div>
 		</section>
 	)
 }

@@ -2,27 +2,29 @@ import pauloPortas from "../../assets/mesa-redonda/aberturaOficial/pauloPortas.p
 
 const AberturaOficial: React.FC = () => {
 	return (
-		<section className="bg-[#065CAB] flex h-[650px] gap-24 px-40 pt-12 justify-center ">
-			<div className="flex flex-col w-[400px] h-full justify-center px-12 gap-5">
-				<h1 className="text-4xl text-[#D7AF26] font-bold">Abertura oficial</h1>
-				<p className="text-lg text-white font-medium">Novembro de 2024</p>
-				<h1 className="text-4xl text-[#D7AF26] font-bold">Paulo Portas</h1>
-				<p
-					className="
-				text-lg text-white font-medium"
-				>
-					Ex. Vice-Primeiro Ministro de Portugal
-				</p>
-
+		<section className=" flex justify-center relative ">
+			<div className="flex flex-col w- h-full justify-center px-12 gap-8 absolute top-0 right-1/2">
+				<div className="w-full">
+					<h1 className="text-4xl text-[#FF9800] font-bold">
+						Abertura oficial
+					</h1>
+					<p className="text-4xl text-[#FF9800] font-bold">Novembro de 2024</p>
+				</div>
+				<div className="w-full flex flex-col gap-2">
+					<h1 className="text-3xl text-white font-bold">Paulo Portas</h1>
+					<p className="text- text-white font-light w-2/3">
+						Ex. Vice-Primeiro Ministro de Portugal
+					</p>
+				</div>
 				<a
 					href=""
-					className="flex justify-center items-center p-3 w-36 border border-white text-white font-semibold rounded-lg hover:bg-[#ffff] hover:text-[#065CAB] transition-colors duration-300"
+					className="flex justify-center items-center p-2 w-32 border border-white text-[#FF9800] font-semibold rounded-xl bg-[#ffff] hover:bg-transparent hover:text-[#FF9800] transition-colors duration-300"
 				>
-					Ver biografia
+					Ver mais
 				</a>
 			</div>
 
-			<img src={pauloPortas} alt="" className="w-[500px] object-cover"/>
+			<img src={pauloPortas} alt="" className="w-full object-cover" />
 		</section>
 	)
 }
