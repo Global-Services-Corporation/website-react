@@ -1,10 +1,10 @@
+import { aboutEvent } from "../../assets"
 import {
-	aboutEvent,
 	participar,
 	expor,
 	patrocinar,
-	speaker,
-} from "../../assets"
+	speakers,
+} from "../../assets/mesa-redonda/aboutEvent"
 
 const AboutEvent: React.FC = () => {
 	const cardInfo = [
@@ -21,36 +21,35 @@ const AboutEvent: React.FC = () => {
 			title: "Patrocinar",
 		},
 		{
-			imagem: speaker,
+			imagem: speakers,
 			title: "Speaker",
 		},
 	]
 	return (
-		<section className="w-full h-[1000px] justify-between flex items-center flex-col px-16 py-28">
-			<div className="flex w-3/5 justify-between">
+		<section className="w-full justify-center flex items-center flex-col ">
+			<div className="flex justify-around bg-[#010D49] w-full px-24 py-14">
 				{cardInfo.map((info, index) => (
 					<a key={index} href="" className="hover:invert">
 						<div className="flex flex-col items-center gap-3 ">
 							<img src={info.imagem} alt="" className="h-15 w-16 " />
-							<p className="font-semibold text-xl text-[#D7AF26] ">
-								{info.title}
-							</p>
+							<p className="font-semibold text-xl text-white">{info.title}</p>
 						</div>
 					</a>
 				))}
 			</div>
 
-			<div className="flex justify-around h-[530px] w-full ">
+			<div className="flex justify-between w-full py-20 px-24  gap-10">
 				<img
 					src={aboutEvent}
 					alt=""
-					className="object-cover w-[650px] h-full rounded-2xl"
+					className="object-cover min-h-full min-w-[550px]"
 				/>
-				<div className="gap-5 flex flex-col h-full justify-around	">
-					<div className="flex flex-col gap-3">
-						<h1 className="font-semibold text-3xl">Sobre</h1>
+
+				<div className="gap-10 flex flex-col h-full w-2/4 justify-center py-12 max-w-[550px]">
+					<div className="flex flex-col gap-3 text-[#010D49] ">
+						<h1 className="text-3xl font-black">Sobre</h1>
 						<h2 className="font-semibold text-3xl">Mesa Redonda com CEO's</h2>
-						<p className="h-64 w-[534px]">
+						<p className="text-xl text-justify">
 							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 							Explicabo maxime consequatur reprehenderit tempore ratione, omnis
 							unde quisquam iusto nemo nesciunt dolores rem! Numquam culpa quo
@@ -63,7 +62,7 @@ const AboutEvent: React.FC = () => {
 					</div>
 					<a
 						href=""
-						className="w-56 hover:bg-[#ffff] hover:text-[#065CAB] bg-[#065CAB] border-[#065CAB] hover:border transition-colors duration-300 rounded-md text-white font-bold flex items-center justify-center mb-10 py-2.5 px-6"
+						className="w-56 hover:bg-[#ffff] hover:text-[#FF9800] bg-[#FF9800] border-[#FF9800] hover:border transition-colors duration-300 rounded-md text-white font-bold flex items-center justify-center py-2.5 px-6 h-12"
 					>
 						Participe do evento
 					</a>
@@ -73,4 +72,4 @@ const AboutEvent: React.FC = () => {
 	)
 }
 
-export default AboutEvent;
+export default AboutEvent

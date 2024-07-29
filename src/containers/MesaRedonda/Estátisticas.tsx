@@ -34,7 +34,7 @@ const Estatisticas: React.FC = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className="h-80 text-white flex flex-col w-full justify-around bg-[#065CAB] px-52 py-12 items-center"
+			className="h-80 text-white flex flex-col w-full justify-around bg-gradient-to-r from-[#010D29] to-[#032087] px-40 py-12 items-center"
 		>
 			<h1 className="font-bold text-3xl">Estatística do evento</h1>
 
@@ -44,7 +44,7 @@ const Estatisticas: React.FC = () => {
 						key={index}
 						className="flex flex-col gap-2 items-center font-bold"
 					>
-						<p className="text-3xl text-[#D7AF26]">
+						<p className="text-3xl text-[#FF9800]">
 							+{isVisible ? <CountUp end={statistic.number} duration={2} /> : 0}
 						</p>
 						<p className="texl-xl">{statistic.title}</p>

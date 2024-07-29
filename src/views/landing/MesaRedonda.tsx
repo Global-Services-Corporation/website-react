@@ -14,7 +14,7 @@ import ContactUs from "../../containers/MesaRedonda/ContactUs"
 
 const MesaRedonda: React.FC = () => {
 	return (
-		<main className="bg-[#ffff] w-screen h-screen overflow-y-auto">
+		<main className="bg-[#ffff] w-screen h-screen overflow-y-auto font-montserrat">
 			<Banner />
 			<AboutEvent />
 			<BaixarAgenda />

@@ -53,33 +53,37 @@ const Banner: React.FC = () => {
 				</nav>
 
 				<div className="flex flex-col justify-center items-center mx-auto my-auto text-white gap-20 p-12">
-					<div className="flex flex-col gap-5 w-4/5 justify-center items-center">
-						<h1 className="font-bold text-4xl text-center">
-							CEOs TECH REVELAM O PRÓXIMO GRANDE SALTO CORPORATIVO
+					<div className="flex flex-col h-3/4 gap-10 w-3/5 justify-between items-center">
+						<h1 className="font-bold text-5xl text-center">
+							Leadership <span className="text-[#FF9800]">Innovation</span> Tech
+							In Oil Gas Sector
 						</h1>
 
-						<a href="/finalizado" className="hover:bg-[#ffff] hover:text-[#065CAB] bg-[#065CAB00] border border-white py-2.5 px-6 font-semibold rounded-md transition-colors duration-300 w-56">
-							Inscrever-se
+						<a
+							href="/finalizado"
+							className="hover:bg-[#FF9800] hover:text-[#ffffff] bg-[#065CAB00] border-[3px] border-[#FF9800] py-2.5 px-6 font-semibold rounded-lg transition-colors duration-300 w-56 flex justify-center items-center"
+						>
+							INSCRIÇÃO
 						</a>
 					</div>
 
 					<div className="flex gap-5 w-3/5 justify-between">
 						<div className="flex flex-col items-center">
-							<span className="text-[#D7AF26] text-4xl">{timeLeft.days}</span>
+							<span className="text-[#ffffff] text-4xl">{timeLeft.days}</span>
 							<span className="text-lg font-bold">Dias</span>
 						</div>
 						<div className="flex flex-col items-center">
-							<span className="text-[#D7AF26] text-4xl">{timeLeft.hours}</span>
+							<span className="text-[#ffffff] text-4xl">{timeLeft.hours}</span>
 							<span className="text-lg font-bold">Horas</span>
 						</div>
 						<div className="flex flex-col items-center">
-							<span className="text-[#D7AF26] text-4xl">
+							<span className="text-[#ffffff] text-4xl">
 								{timeLeft.minutes}
 							</span>
 							<span className="text-lg font-bold">Minutos</span>
 						</div>
 						<div className="flex flex-col items-center">
-							<span className="text-[#D7AF26] text-4xl">
+							<span className="text-[#ffffff] text-4xl">
 								{timeLeft.seconds}
 							</span>
 							<span className="text-lg font-bold">Segundos</span>
