@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-import { menu } from "../assets"
-import { Link } from "react-router-dom"
 import { logoGSC } from "../assets/mesa-redonda"
 
 export const Header = () => {
