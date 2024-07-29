@@ -1,5 +1,4 @@
-import logoGsc from "./logo-gsc.png"
+import logoGSC from "./logo-gsc.png"
+import logoLyricsTwo from "./logo-lyrics.png"
 
-export {
-    logoGsc
-}
+export { logoGSC, logoLyricsTwo }
