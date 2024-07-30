@@ -60,7 +60,7 @@ const Banner: React.FC = () => {
 						</h1>
 
 						<a
-							href="/finalizado"
+							href="/personal-form"
 							className="hover:bg-[#FF9800] hover:text-[#ffffff] bg-[#065CAB00] border-[3px] border-[#FF9800] py-2.5 px-6 font-semibold rounded-lg transition-colors duration-300 w-56 flex justify-center items-center"
 						>
 							INSCRIÇÃO

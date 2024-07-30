@@ -1,6 +1,12 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import { AllRoutes } from "./routes"
 import Layout from "./layouts"
+import ErrorPage from "./routes/error-page"
+import PersonalForm from "./views/adesion/PersonalForm";
+import ConfirmAdesionPersonal from "./views/adesion/ConfirmPersonal"
+import TicketsPrices from "./views/adesion/TicketsPrices"
+import MesaRedonda from "./views/landing/MesaRedonda"
+import Banner from "./containers/MesaRedonda/Banner";
 import ErrorPage from "./routes/error-page";
 import Events from "./views/landing/Events";
 import PersonalForm  from "./views/adesion/PersonalForm";
@@ -16,30 +22,23 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
+			<Route path="/" element={<MesaRedonda />} />
 				<Route
-					path="/confirm-adesion-enterprise/"
-					element={<ConfirmAdesionEnterprise />}
+					path="/mesa-redonda"
+					element={<Banner />}
 				/>
 
 				<Route
-					path="/confirm-adesion-personal/"
+					path="/confirm-adesion-personal"
 					element={<ConfirmAdesionPersonal />}
 				/>
 
-				<Route path="/finalizado/" element={<FinalizatedAdesion />} />
+				<Route path="/tickets-datas" element={<TicketsPrices />} />
 
 				<Route
-					path="/finalizado-enterprise/"
-					element={<FinalizatedAdesionEnterprise />}
+					path="/personal-form"
+					element={<PersonalForm />}
 				/>
-
-				<Route path="/tickets-datas/" element={<TicketsPrices />} />
-				<Route
-					path="/tickets-datas-enterprise/"
-					element={<TicketsPricesEnterprise />}
-				/>
-
-				<Route path="/" element={<MesaRedonda />} />
 
 				{AllRoutes.map((route) => (
 					<Route
