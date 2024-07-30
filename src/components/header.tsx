@@ -35,7 +35,7 @@ export const Header = () => {
 		},
 		{
 			title: "Eventos",
-			link: "/events",
+			link: "https://mesaredonda.globalsc.ao/",
 			open: "",
 		},
 		{
@@ -61,9 +61,9 @@ export const Header = () => {
 	return (
 		<header
 			className={`fixed h-[80px]
-      top-0 flex w-full justify-between items-center px-[55px] max-lg:px-8 box-border ${
+      top-0 flex w-full justify-between bg-[#0000009f] items-center px-[55px] max-lg:px-8 box-border ${
 				isScrolled
-					? "bg-[#0000009f] transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
+					? " transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
 					: "transition duration-[0.5s]"
 			} z-50`}
 		>
@@ -77,7 +77,7 @@ export const Header = () => {
 						key={index}
 						to={menu.link}
 						onClick={menu.open ? (e) => scrollTo(e, menu.open) : undefined}
-						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
+						className="text-white text-lg font-bold  hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
 					>
 						{menu.title}
 					</Link>
@@ -109,7 +109,7 @@ export const Header = () => {
 									onClick={
 										menu.open ? (e) => scrollTo(e, menu.open) : undefined
 									}
-									className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
+									className="hover:bg-[#30CBE8] font-bold py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
 								>
 									{menu.title}
 								</a>
