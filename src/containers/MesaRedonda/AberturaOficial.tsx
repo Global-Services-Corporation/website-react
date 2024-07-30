@@ -5,10 +5,10 @@ const AberturaOficial: React.FC = () => {
 		<section className=" flex justify-center relative ">
 			<div className="flex flex-col w- h-full justify-center px-12 gap-8 absolute top-0 right-1/2">
 				<div className="w-full">
-					<h1 className="text-4xl text-[#FF9800] font-bold">
+					<h1 className="text-4xl text-[#FF9800] font-extrabold">
 						Abertura oficial
 					</h1>
-					<p className="text-4xl text-[#FF9800] font-bold">Novembro de 2024</p>
+					<p className="text-4xl text-[#FF9800] font-extrabold">Novembro de 2024</p>
 				</div>
 				<div className="w-full flex flex-col gap-2">
 					<h1 className="text-3xl text-white font-bold">Paulo Portas</h1>
