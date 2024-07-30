@@ -12,6 +12,8 @@ import {
 	studentsIcon,
 } from "../../assets/insurance"
 
+import "./landing.css"
+
 const InsurancePage: React.FC = () => {
 	const [view, setView] = useState("particular")
 
@@ -32,7 +34,7 @@ const InsurancePage: React.FC = () => {
 				{insuranceCard.map((card, index) => (
 					<div
 						key={index}
-						className="text-white h-60 w-48 bg-[#1B223C] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto"
+						className="text-white h-60 w-48 bg-[#1B223C] hover:bg-[rgba(27,34,60,0.61)] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer"
 					>
 						<img src={card.icon} alt="Icon" className="w-16" />
 						<p className="text-center">{card.title}</p>
@@ -48,10 +50,10 @@ const InsurancePage: React.FC = () => {
 				{insuranceCard.map((card, index) => (
 					<div
 						key={index}
-						className="text-white h-60 w-48 bg-[#065CAB] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto"
+						className="text-white h-60 w-48 bg-[#065CAB] hover:bg-[#065baba8] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer"
 					>
 						<img src={card.icon} alt="Icon" className="w-16" />
-						<p className="">{card.title}</p>
+						<p className="text-center">{card.title}</p>
 					</div>
 				))}
 			</div>
@@ -106,7 +108,7 @@ const InsurancePage: React.FC = () => {
 					</div>
 				</nav>
 
-				<div className="py-4 h-screen overflow-y-auto flex w-full items-center overflow-x-hidden">
+				<div className="py-4 h-screen overflow-y-auto flex w-full items-center overflow-x-hidden scrollbar-custom">
 					{view === "particular" && renderParticular()}
 					{view === "empresarial" && renderEmpresarial()}
 				</div>

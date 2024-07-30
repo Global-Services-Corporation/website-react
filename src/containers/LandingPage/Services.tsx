@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { seguros, eventosicon, academiaicon } from "../../assets"
 
 const Services: React.FC = () => {
@@ -47,13 +48,13 @@ const Services: React.FC = () => {
 							</p>
 						</div>
 
-						<a
-							href={info.link}
+						<Link
+							to={info.link}
 							className="hover:bg-[#30CBE8] hover:text-white bg-white text-black
                w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center"
 						>
 							{info.buttonTitle}
-						</a>
+						</Link>
 					</div>
 				))}
 			</div>

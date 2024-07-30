@@ -193,7 +193,7 @@ const LoginPage: React.FC = () => {
           <div className="w-full flex flex-col items-center gap-1">
             <button
               type="submit"
-              className="bg-[#039BCF] hover:bg-[#039ccfc4] rounded-md h-[45px] text-[#fff] font-semibold w-full"
+              className="bg-[#039BCF] hover:bg-[#039ccf60] rounded-md h-[45px] text-[#fff] font-semibold w-full"
             >
               Iniciar Sessão
             </button>

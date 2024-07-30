@@ -197,7 +197,7 @@ const CreateAccountPage: React.FC = () => {
               )}
             </div>
           </div>
-          <button className="bg-[#039BCF] hover:bg-[#039ccfc4] rounded-md h-[45px] text-[#fff] font-semibold w-full">
+          <button className="bg-[#039BCF] hover:bg-[#039ccf85] rounded-md h-[45px] text-[#fff] font-semibold w-full">
             Criar conta
           </button>
           <div className="w-[60%] h-[50px] flex items-center gap-[10px] mx-auto">

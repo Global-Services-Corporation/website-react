@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { logoGSC } from "../assets/mesa-redonda"
 import { menu } from "../assets"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -72,14 +73,14 @@ export const Header = () => {
 
 			<div className="flex gap-8 max-lg:hidden h-14 items-center">
 				{menuInfo.map((menu, index) => (
-					<a
+					<Link
 						key={index}
-						href={menu.link}
+						to={menu.link}
 						onClick={menu.open ? (e) => scrollTo(e, menu.open) : undefined}
 						className="text-white hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
 					>
 						{menu.title}
-					</a>
+					</Link>
 				))}
 			</div>
 
