@@ -16,6 +16,7 @@ import "./landing.css"
 
 const InsurancePage: React.FC = () => {
 	const [view, setView] = useState("particular")
+	const [modalOpen, setModalOpen] = useState(false)
 
 	const insuranceCard = [
 		{ icon: saudeIcon, title: "Saúde" },
@@ -50,6 +51,7 @@ const InsurancePage: React.FC = () => {
 				{insuranceCard.map((card, index) => (
 					<div
 						key={index}
+						onClick={() => setModalOpen(true)}
 						className="text-white h-60 w-48 bg-[#065CAB] hover:bg-[#065baba8] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer"
 					>
 						<img src={card.icon} alt="Icon" className="w-16" />
@@ -138,6 +140,12 @@ const InsurancePage: React.FC = () => {
 				className="absolute start-0 object-cover z-0 top-[3470px] rotate-180 animate-pulse"
 				alt=""
 			/> */}
+
+			{modalOpen && (
+				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+					<form className="w-4/5 h-4/5 bg-[#001032]"></form>
+				</div>
+			)}
 		</div>
 	)
 }
