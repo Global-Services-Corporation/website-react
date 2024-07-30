@@ -36,7 +36,7 @@ const Estatisticas: React.FC = () => {
 			ref={sectionRef}
 			className="h-80 text-white flex flex-col w-full justify-around bg-gradient-to-r from-[#010D29] to-[#032087] px-40 py-12 items-center"
 		>
-			<h1 className="font-bold text-3xl">Estatística do evento</h1>
+			<h1 className="font-bold text-3xl">Estatística do Evento</h1>
 
 			<div className="flex justify-between w-4/5">
 				{statisticDatas.map((statistic, index) => (

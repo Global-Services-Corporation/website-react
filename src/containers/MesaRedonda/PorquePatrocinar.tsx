@@ -11,11 +11,11 @@ const PorquePatrocinar: React.FC = () => {
 			/>
 
 			<div className="flex flex-col gap-9 w-[550px] h-full">
-				<h1 className="font-extrabold text-3xl text-[#FF9800]">
+				<h1 className="font-extrabold text-3xl text-[#010D49]">
 					Porque patrocinar e expor?
 				</h1>
 
-				<p className="text-xl text-justify text-black">
+				<p className="text-xl text-justify text-[#010D49]">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
 					maxime consequatur reprehenderit tempore ratione, omnis unde quisquam
 					iusto nemo nesciunt dolores rem! Numquam culpa quo quas.

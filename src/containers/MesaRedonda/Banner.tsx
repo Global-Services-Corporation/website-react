@@ -54,9 +54,9 @@ const Banner: React.FC = () => {
 
 				<div className="flex flex-col justify-center items-center mx-auto my-auto text-white gap-20 p-12">
 					<div className="flex flex-col h-3/4 gap-10 w-3/5 justify-between items-center">
-						<h1 className="font-bold text-5xl text-center">
-							Leadership <span className="text-[#FF9800]">Innovation</span> Tech
-							In Oil Gas Sector
+						<h1 className="font-extrabold text-5xl text-center">
+							Leadership <span className="text-[#FF9800]">Innovation</span><span className="font-light"> Tech
+							In Oil Gas Sector</span>
 						</h1>
 
 						<a
