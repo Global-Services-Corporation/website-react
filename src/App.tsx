@@ -1,44 +1,32 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import { AllRoutes } from "./routes"
 import Layout from "./layouts"
+import Banner from "./containers/Baw2024/Banner"
 import ErrorPage from "./routes/error-page"
-import PersonalForm from "./views/adesion/PersonalForm";
 import ConfirmAdesionPersonal from "./views/adesion/ConfirmPersonal"
+import PersonalForm from "./views/adesion/PersonalForm"
 import TicketsPrices from "./views/adesion/TicketsPrices"
+import Events from "./views/landing/Events"
 import MesaRedonda from "./views/landing/MesaRedonda"
-import Banner from "./containers/MesaRedonda/Banner";
-import ErrorPage from "./routes/error-page";
-import Events from "./views/landing/Events";
-import PersonalForm  from "./views/adesion/PersonalForm";
-import ConfirmAdesionEnterprise from "./views/adesion/ConfirmEnterprise";
-import ConfirmAdesionPersonal from "./views/adesion/ConfirmPersonal";
-import FinalizatedAdesion from "./views/adesion/FinalizatedAdesion";
-import FinalizatedAdesionEnterprise from "./views/adesion/FinalizatedAdesionEnterprise";
-import TicketsPrices from "./views/adesion/TicketsPrices";
-import TicketsPricesEnterprise from "./views/adesion/TicketsPricesEnterprise";
-import MesaRedonda from "./views/landing/MesaRedonda";
+import FinalizatedAdesion from "./views/adesion/FinalizatedAdesion"
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-			<Route path="/" element={<MesaRedonda />} />
-				<Route
-					path="/mesa-redonda"
-					element={<Banner />}
-				/>
+				<Route path="/" element={<MesaRedonda />} />
+				<Route path="/mesa-redonda" element={<Banner />} />
+
+				<Route path="/finalizated" element={<FinalizatedAdesion />} />
 
 				<Route
-					path="/confirm-adesion-personal"
+					path="/confirm-adesion"
 					element={<ConfirmAdesionPersonal />}
 				/>
 
 				<Route path="/tickets-datas" element={<TicketsPrices />} />
 
-				<Route
-					path="/personal-form"
-					element={<PersonalForm />}
-				/>
+				<Route path="/personal-form" element={<PersonalForm />} />
 
 				{AllRoutes.map((route) => (
 					<Route
@@ -51,8 +39,6 @@ function App() {
 				<Route path="/events" element={<Events />} />
 
 				<Route path="*" element={<ErrorPage />} />
-
-				<Route path="/personalForm" element={<PersonalForm/>} />
 			</Routes>
 		</BrowserRouter>
 	)

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { logoLyrics } from "../../assets"
+import { logoLyrics, mesaRedonda } from "../../assets"
 import { User } from "../../services/utils/types"
 
 const ConfirmAdesionPersonal: React.FC = () => {
@@ -42,7 +42,7 @@ const ConfirmAdesionPersonal: React.FC = () => {
 	}, [id])
 
 	const handleAvancar = () => {
-		navigate(`/finalizado/${user?.uuid}`)
+		navigate(`/finalizated/`)
 	}
 
 	const handleCancelar = () => {
@@ -51,66 +51,66 @@ const ConfirmAdesionPersonal: React.FC = () => {
 	}
 
 	return (
-		<main className="relative bg-[#001032] h-screen flex flex-col items-center max-sm:overflow-y-auto">
+		<main className="relative bg-[#ffffff] flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
 				<a href={user ? `/${user?.uuid}` : "/"}>
-					<img src={logoLyrics} alt="Logotipo da Global Services Corporation" />
+					<img src={mesaRedonda} alt="Logotipo da Global Services Corporation" />
 				</a>
 
-				<button onClick={handleCancelar} className="text-white font-bold">
+				<button onClick={handleCancelar} className=" font-bold">
 					Cancelar
 				</button>
 			</header>
 
-			<section className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between items-center p-10 bg-[#1B223C] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0">
-				<h1 className="text-[35px] font-semibold text-center max-sm:text-[25px] text-white">
+			<section className=" max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between items-center p-10 bg-[#EEEDED] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0">
+				<h1 className="text-[35px] font-semibold text-center max-sm:text-[25px] ">
 					CONFIRMAR DADOS
 				</h1>
 
 				<form className="w-[90%] max-sm:w-[95%] grid grid-cols-2 grid-rows-2 max-sm:flex max-sm:flex-col gap-4">
 					<div className="flex flex-col gap-3 items-center">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
+						<label htmlFor="" className="text-lg font-bold text-[#FF9800]">
 							Nome
 						</label>
 
-						<p className="bg-transparent bg-[#171818] h-[50px] text-white text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
+						<p className="bg-transparent bg-[#171818] h-[50px]  text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
 							{personalData?.nome || ""}
 						</p>
 					</div>
 
 					<div className="flex flex-col gap-3 items-center">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
+						<label htmlFor="" className="text-lg font-bold text-[#FF9800]">
 							Email
 						</label>
 
-						<p className="bg-transparent bg-[#171818] h-[50px] text-white text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
+						<p className="bg-transparent bg-[#171818] h-[50px]  text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
 							{personalData?.email || ""}
 						</p>
 					</div>
 
 					<div className="flex flex-col gap-3 items-center ">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
+						<label htmlFor="" className="text-lg font-bold text-[#FF9800]">
 							Número telefónico
 						</label>
-						<p className="bg-transparent bg-[#171818] h-[50px] text-white text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
+						<p className="bg-transparent bg-[#171818] h-[50px]  text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
 							{personalData?.contacto || ""}
 						</p>
 					</div>
 
 					<div className="flex flex-col gap-3 items-center ">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
+						<label htmlFor="" className="text-lg font-bold text-[#FF9800]">
 							Quantidade de Tickets
 						</label>
-						<p className="bg-transparent bg-[#171818] h-[50px] text-white text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
+						<p className="bg-transparent bg-[#171818] h-[50px]  text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
 							{ticketsData?.totalQuantity || ""}
 						</p>
 					</div>
 
 					<div className="flex flex-col gap-3 items-center col-span-2">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
+						<label htmlFor="" className="text-lg font-bold text-[#FF9800]">
 							Detalhes dos Tickets
 						</label>
-						<ul className="bg-transparent bg-[#171818] text-white text-[14px] w-full shadow-inner shadow-black rounded-md p-4 list-disc h-12 overflow-y-auto">
+						<ul className="bg-transparent bg-[#171818]  text-[14px] w-full shadow-inner shadow-black rounded-md p-4 list-disc h-12 overflow-y-auto">
 							{ticketsData?.selectedTickets?.length > 0 ? (
 								ticketsData.selectedTickets.map((ticket: any) => (
 									<li key={ticket.id} className="flex justify-between">
@@ -125,10 +125,10 @@ const ConfirmAdesionPersonal: React.FC = () => {
 					</div>
 
 					<div className="flex flex-col gap-3 items-center col-span-2">
-						<label htmlFor="" className="text-lg font-bold text-[#00A7E1]">
+						<label htmlFor="" className="text-lg font-bold text-[#FF9800]">
 							Total
 						</label>
-						<p className="bg-transparent bg-[#171818] h-[50px] text-white text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
+						<p className="bg-transparent bg-[#171818] h-[50px]  text-[14px] w-full shadow-inner shadow-black rounded-md flex justify-center items-center px-4 font-bold">
 							{`${ticketsData?.total.toLocaleString("pt-PT", {
 								style: "currency",
 								currency: "AOA",
@@ -139,7 +139,7 @@ const ConfirmAdesionPersonal: React.FC = () => {
 
 				<div className="w-[60%] flex flex-col items-center gap-8 max-sm:p-4">
 					<button
-						className="max-sm:mb-[100px] font-bold w-[300px] max-sm:w-[220px] max-sm:h-[50px] h-[56px] rounded-[4px] bg-[#00A7E1] hover:cursor-pointer flex justify-center items-center"
+						className="max-sm:mb-[100px] font-bold w-[300px] max-sm:w-[220px] max-sm:h-[50px] h-[56px] rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center"
 						onClick={handleAvancar}
 					>
 						Avançar

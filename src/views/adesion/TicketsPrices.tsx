@@ -135,15 +135,15 @@ const TicketsPrices: React.FC = () => {
 				total,
 				totalQuantity
 			)
-			navigate(`/confirm-adesion-personal${user?.uuid}`)
+			navigate(`/confirm-adesion`)
 		} else {
 			alert("Selecione algum ticket!")
 		}
 	}
 
 	return (
-		<main className="max-sm:h-full h-screen relative bg-white flex flex-col items-center max-sm:overflow-y-auto">
-			<header className="w-full py-4 px-6 z-10 flex justify-between items-center ">
+		<main className="max-sm:h-full relative bg-white flex flex-col items-center max-sm:overflow-y-auto">
+			<header className="w-full py-6 px-10 z-10 flex justify-between items-center ">
 				<a href={user ? `/${user?.uuid}` : "/"}>
 					<img src={mesaRedonda} alt="Logotipo da Global Services Corporation" />
 				</a>
@@ -180,7 +180,7 @@ const TicketsPrices: React.FC = () => {
 						<div className="flex items-center justify-center h-8">
 							<button
 								onClick={() => handleDecrease(ticket.id)}
-								className="bg-[#FF9800] px-4 h-full"
+								className="bg-[#FF9800] hover:bg-[#ff99008c] px-4 h-full"
 							>
 								-
 							</button>
@@ -191,7 +191,7 @@ const TicketsPrices: React.FC = () => {
 
 							<button
 								onClick={() => handleIncrease(ticket.id)}
-								className="bg-[#FF9800] px-4 h-full"
+								className="bg-[#FF9800] hover:bg-[#ff990062] px-4 h-full"
 							>
 								+
 							</button>
@@ -221,7 +221,7 @@ const TicketsPrices: React.FC = () => {
 
 					<button
 						onClick={handleAdvance}
-						className="font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center"
+						className="font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:bg-[#ff990062] hover:cursor-pointer flex justify-center items-center"
 					>
 						Avançar
 					</button>
