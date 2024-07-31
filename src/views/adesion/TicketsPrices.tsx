@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
-import axios from "axios"
-import { User } from "../../services/utils/types"
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { mesaRedonda } from "../../assets"
 
 type TicketType = {
@@ -46,25 +44,7 @@ const TicketsPrices: React.FC = () => {
 		}, {} as { [key: string]: number })
 	)
 
-	const { id } = useParams()
 	const navigate = useNavigate()
-	const [user, setUser] = useState<User | null>(null)
-
-	const fetchUserData = async (userId: string | undefined) => {
-		try {
-			const response = await axios.get(
-				`https://gsc.api.unocura.ao/user/${userId}`,
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
-			)
-			setUser(response.data)
-		} catch (error) {
-			console.error("Erro ao carregar dados do usuário:", error)
-		}
-	}
 
 	const handleIncrease = (id: string) => {
 		setQuantities((prev) => ({
@@ -84,10 +64,6 @@ const TicketsPrices: React.FC = () => {
 		(sum, ticket) => sum + quantities[ticket.id] * ticket.price,
 		0
 	)
-
-	useEffect(() => {
-		fetchUserData(id)
-	}, [id])
 
 	const saveToLocalStorage = (
 		key: string,
@@ -144,12 +120,15 @@ const TicketsPrices: React.FC = () => {
 	return (
 		<main className="max-sm:h-full relative bg-white flex flex-col items-center max-sm:overflow-y-auto">
 			<header className="w-full py-6 px-10 z-10 flex justify-between items-center ">
-				<a href={user ? `/${user?.uuid}` : "/"}>
-					<img src={mesaRedonda} alt="Logotipo da Global Services Corporation" />
+				<a href={"/"}>
+					<img
+						src={mesaRedonda}
+						alt="Logotipo da Global Services Corporation"
+					/>
 				</a>
 
 				<Link
-					to={user ? `/personal/${user?.uuid}` : "/personal"}
+					to={"/personal-form"}
 					className="text-[#000] font-bold"
 					onClick={() => {
 						localStorage.removeItem("accumulatedTicketData")

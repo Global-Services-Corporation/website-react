@@ -42,7 +42,7 @@ const AboutEvent: React.FC = () => {
 				<img
 					src={aboutEvent}
 					alt=""
-					className="object-cover min-h-full min-w-[550px]"
+					className="object-cover min-h-full min-w-[550px] rounded-md"
 				/>
 
 				<div className="gap-10 flex flex-col h-full w-2/4 justify-center py-12 max-w-[550px]">

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
-import { downloadPay, logoLyrics, mesaRedonda } from "../../assets"
+import { downloadPay, mesaRedonda } from "../../assets"
 import { User } from "../../services/utils/types"
 import Loading from "./Loading"
 
@@ -117,7 +117,7 @@ const FinalizatedAdesion: React.FC = () => {
 
 				<Link
 					to={`/`}
-					className=" font-bold"
+					className="font-bold"
 					onClick={() => {
 						localStorage.removeItem("accumulatedTicketData")
 					}}

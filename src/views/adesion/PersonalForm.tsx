@@ -1,14 +1,11 @@
-import axios from "axios"
-import React, { useEffect, useState } from "react"
+
+import React, { useEffect } from "react"
 import { useForm, Controller, FieldError } from "react-hook-form"
-import { useNavigate, useParams } from "react-router-dom"
-import { User } from "../../services/utils/types"
+import { useNavigate } from "react-router-dom"
 import { mesaRedonda } from "../../assets"
 import BannerMR from "../../../public/BannerMRGSC.png"
 
 const PersonalForm: React.FC = () => {
-	const { id } = useParams()
-	const [user, setUser] = useState<User | null>(null)
 	const navigate = useNavigate()
 	const {
 		handleSubmit,
@@ -19,44 +16,24 @@ const PersonalForm: React.FC = () => {
 	useEffect(() => {
 		localStorage.clear()
 	}, [])
-
-	useEffect(() => {
-		fetchUserData(id)
-	}, [id])
-
-	const fetchUserData = async (userId: string | undefined) => {
-		try {
-			const response = await axios.get(
-				`https://gsc.api.unocura.ao/user/${userId}`,
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
-			)
-			setUser(response.data)
-		} catch (error) {
-			console.error("Erro ao carregar dados do usuário:", error)
-		}
-	}
-
+	
 	const onSubmit = async (data: object) => {
 		try {
 			const formData = { ...data }
 			console.log("Dados enviados com sucesso", formData)
 			localStorage.setItem("personalFormData", JSON.stringify(formData))
-			navigate(`/tickets-datas/${user?.uuid}`)
+			navigate(`/tickets-datas`)
 		} catch (error) {
 			console.error("Erro ao enviar formulário:", error)
 		}
 	}
 
 	return (
-		<section className="flex">
-			<div className="flex flex-col w-1/2">
-				<nav className="px-8 py-2 w-full">
+		<section className="flex h-screen">
+			<div className="flex flex-col w-1/2 h-full">
+				<nav className="px-8 py-4 w-full">
 					<a href="/">
-						<img src={mesaRedonda} alt="logo-mesa-redonda" className="w-32" />
+						<img src={mesaRedonda} alt="logo-mesa-redonda" className="w-18" />
 					</a>
 				</nav>
 				<div className="flex flex-col gap-10 py-10 px-28">
@@ -87,7 +64,7 @@ const PersonalForm: React.FC = () => {
 									<input
 										{...field}
 										type="text"
-										className={`w-[400px] h-[50px] max-lg:w-auto max-sm:w-auto flex p-4 bg-[rgba(108,108,108,0.3)] rounded-[4px] text-[#9E9E9E] ${
+										className={`w-[400px] h-[50px] max-lg:w-auto max-sm:w-auto flex p-4 bg-[#6c6c6c0f] rounded-[4px] text-[#9E9E9E] ${
 											errors.nome ? "border-red-500" : ""
 										}`}
 										placeholder="Insira o seu nome"
@@ -123,7 +100,7 @@ const PersonalForm: React.FC = () => {
 									<input
 										{...field}
 										type="email"
-										className={`w-[400px] max-sm:w-auto max-lg:w-auto h-[50px] flex p-4 bg-[rgba(108,108,108,0.3)] rounded-[4px] text-[#9E9E9E] ${
+										className={`w-[400px] max-sm:w-auto max-lg:w-auto h-[50px] flex p-4 bg-[#6c6c6c0f] rounded-[4px] text-[#9E9E9E] ${
 											errors.email ? "border-red-500" : ""
 										}`}
 										placeholder="Insira o seu email"
@@ -161,7 +138,7 @@ const PersonalForm: React.FC = () => {
 									<input
 										{...field}
 										type="number"
-										className={`w-[400px] h-[50px] max-sm:w-auto max-lg:w-auto flex p-4 bg-[rgba(108,108,108,0.3)] rounded-[4px] text-[#4F4F4F] ${
+										className={`w-[400px] h-[50px] max-sm:w-auto max-lg:w-auto flex p-4 bg-[#6c6c6c0f] rounded-[4px] text-[#4F4F4F] ${
 											errors.contacto ? "border-red-500" : ""
 										}`}
 										placeholder="Insira o seu contacto telefónico"
@@ -183,18 +160,18 @@ const PersonalForm: React.FC = () => {
 						</div>
 
 						<div className="flex justify-center items-center w-full">
-							<a
-								href="/tickets-datas"
+							<button
+								type="submit"
 								className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center"
 							>
 								Enviar formulário
-							</a>
+							</button>
 						</div>
 					</form>
 				</div>
 			</div>
 			<div className="flex flex-col bg-yellow-700 w-1/2 h-full items-center">
-				<img src={BannerMR} alt="banner-mesa-redonda" />
+				<img src={BannerMR} alt="banner-mesa-redonda " className=""/>
 			</div>
 		</section>
 	)

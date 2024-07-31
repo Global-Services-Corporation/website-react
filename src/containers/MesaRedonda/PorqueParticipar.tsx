@@ -21,7 +21,7 @@ const PorqueParticipar: React.FC = () => {
 			<img
 				src={porqueParticipar}
 				alt=""
-				className="object-cover min-h-full min-w-[550px]"
+				className="object-cover min-h-full min-w-[550px] rounded-md"
 			/>
 		</section>
 	)

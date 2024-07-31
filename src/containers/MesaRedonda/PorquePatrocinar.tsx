@@ -4,7 +4,7 @@ const PorquePatrocinar: React.FC = () => {
 			<iframe
 				src="https://www.youtube.com/embed/v5BqqI3I95s?autoplay=1&controls=0&mute=1&loop=1&playlist=v5BqqI3I95s"
 				title="YouTube video player"
-				className="object-cover min-h-full min-w-[650px] pointer-events-none h-[550px]"
+				className="object-cover min-h-full min-w-[650px] pointer-events-none h-[550px] rounded-md"
 				frameBorder="0"
 				allow="autoplay; encrypted-media"
 				allowFullScreen

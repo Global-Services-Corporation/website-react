@@ -21,7 +21,7 @@ const OQueEsperar: React.FC = () => {
 			<img
 				src={aboutEvent}
 				alt=""
-				className="object-cover min-h-full min-w-[550px]"
+				className="object-cover min-h-full min-w-[550px] rounded-md"
 			/>
 		</section>
 	)
