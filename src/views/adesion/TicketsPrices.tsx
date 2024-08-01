@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { mesaRedonda } from "../../assets"
+import { fundoBlue2, logoMRWhite } from "../../assets/mesa-redonda"
 
 type TicketType = {
 	id: string
@@ -118,92 +119,95 @@ const TicketsPrices: React.FC = () => {
 	}
 
 	return (
-		<main className="max-sm:h-full relative bg-white flex flex-col items-center max-sm:overflow-y-auto">
-			<header className="w-full py-6 px-10 z-10 flex justify-between items-center ">
-				<a href={"/"}>
-					<img
-						src={mesaRedonda}
-						alt="Logotipo da Global Services Corporation"
-					/>
-				</a>
+		<main className="relative max-sm:h-screen">
+			<img src={fundoBlue2} alt="" className="w-full  object-cover" />
+			<div className="absolute top-0 left-0 flex flex-col items-center max-sm:overflow-y-auto max-sm:h-full w-full">
+				<header className="w-full py-6 px-10 z-10 flex justify-between items-center ">
+					<a href={"/"}>
+						<img
+							src={logoMRWhite}
+							alt="Logotipo da Global Services Corporation" className="w-8/12"
+						/>
+					</a>
 
-				<Link
-					to={"/personal-form"}
-					className="text-[#000] font-bold"
-					onClick={() => {
-						localStorage.removeItem("accumulatedTicketData")
-					}}
-				>
-					Cancelar
-				</Link>
-			</header>
-
-			<div className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between p-10 bg-[#EEEDED] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0">
-				<h1 className="font-semibold text-center text-3xl text-[#FF9800]">
-					TICKETS
-				</h1>
-				{ticketTypes.map((ticket) => (
-					<div
-						key={ticket.id}
-						className="flex w-full max-sm:flex-col justify-between items-center shadow-inner shadow-black rounded-md p-4 max-sm:gap-3 mb-3 bg-[rgba(79,79,79,0.2)]"
+					<Link
+						to={"/personal-form"}
+						className="text-white font-bold"
+						onClick={() => {
+							localStorage.removeItem("accumulatedTicketData")
+						}}
 					>
-						<p className="font-bold text-lg text-[#4F4F4F]">{ticket.label}</p>
+						Cancelar
+					</Link>
+				</header>
 
-						<p className="font-bold text-[#000]">
-							{ticket.price.toLocaleString("pt-PT", {
-								style: "currency",
-								currency: "AOA",
-							})}
-						</p>
+				<div className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between p-10 bg-[#000760] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0 shadow-lg shadow-black">
+					<h1 className="font-semibold text-center text-3xl text-[#FF9800]">
+						TICKETS
+					</h1>
+					{ticketTypes.map((ticket) => (
+						<div
+							key={ticket.id}
+							className="flex w-full max-sm:flex-col justify-between items-center shadow-inner shadow-black rounded-md p-4 max-sm:gap-3 mb-3 bg-[rgba(79,79,79,0.2)]"
+						>
+							<p className="font-bold text-lg text-white">{ticket.label}</p>
 
-						<div className="flex items-center justify-center h-8">
-							<button
-								onClick={() => handleDecrease(ticket.id)}
-								className="bg-[#FF9800] hover:bg-[#ff99008c] px-4 h-full"
-							>
-								-
-							</button>
-
-							<p className="bg-white text-black flex justify-center items-center px-4 h-full">
-								{quantities[ticket.id]}
-							</p>
-
-							<button
-								onClick={() => handleIncrease(ticket.id)}
-								className="bg-[#FF9800] hover:bg-[#ff990062] px-4 h-full"
-							>
-								+
-							</button>
-						</div>
-					</div>
-				))}
-
-				<div className="flex flex-col w-full justify-between items-center h-1/4 gap-2">
-					<div className="flex gap-2 flex-col">
-						<p className="flex font-bold gap-1 text-[#000]">
-							Quantidade de Tickets:
-							<span className="font-medium">
-								{Object.values(quantities).reduce((sum, qty) => sum + qty, 0)}
-							</span>
-						</p>
-
-						<p className="flex font-bold gap-1 text-[#000]">
-							Total:
-							<span className="font-medium">
-								{total.toLocaleString("pt-PT", {
+							<p className="font-bold text-white">
+								{ticket.price.toLocaleString("pt-PT", {
 									style: "currency",
 									currency: "AOA",
 								})}
-							</span>
-						</p>
-					</div>
+							</p>
 
-					<button
-						onClick={handleAdvance}
-						className="font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:bg-[#ff990062] hover:cursor-pointer flex justify-center items-center"
-					>
-						Avançar
-					</button>
+							<div className="flex items-center justify-center h-8">
+								<button
+									onClick={() => handleDecrease(ticket.id)}
+									className="bg-[#FF9800] hover:bg-[#ff99008c] px-4 h-full"
+								>
+									-
+								</button>
+
+								<p className="bg-white text-black flex justify-center items-center px-4 h-full">
+									{quantities[ticket.id]}
+								</p>
+
+								<button
+									onClick={() => handleIncrease(ticket.id)}
+									className="bg-[#FF9800] hover:bg-[#ff990062] px-4 h-full"
+								>
+									+
+								</button>
+							</div>
+						</div>
+					))}
+
+					<div className="flex flex-col w-full justify-between items-center h-1/4 gap-2">
+						<div className="flex gap-2 flex-col">
+							<p className="flex font-bold gap-1 text-white">
+								Quantidade de Tickets:
+								<span className="font-medium">
+									{Object.values(quantities).reduce((sum, qty) => sum + qty, 0)}
+								</span>
+							</p>
+
+							<p className="flex font-bold gap-1 text-white">
+								Total:
+								<span className="font-medium">
+									{total.toLocaleString("pt-PT", {
+										style: "currency",
+										currency: "AOA",
+									})}
+								</span>
+							</p>
+						</div>
+
+						<button
+							onClick={handleAdvance}
+							className="font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:bg-[#ff990062] hover:cursor-pointer flex justify-center items-center"
+						>
+							Avançar
+						</button>
+					</div>
 				</div>
 			</div>
 		</main>

@@ -1,3 +1,4 @@
+import { fundoWhite } from "../../assets/mesa-redonda"
 import {
 	AdrianoBastos,
 	DuraoBarroso,
@@ -30,20 +31,27 @@ const Speakers: React.FC = () => {
 	]
 
 	return (
-		<section className="flex flex-col w-full py-20 justify-center items-center gap-24">
-			<p className="font-extrabold text-3xl text-[#FF9800]">
-				Speakers do Evento
-			</p>
-			<div className="flex pb-4 ">
-				<div className="h-[424px] items-center justify-center  flex gap-4">
-					{cardInfo.map((info, index) => (
-						<img
-							key={index}
-							src={info.imagem}
-							alt=""
-							className="object-contain hover:-translate-y-3 transition-all duration-700 hover:shadow-2xl shadow-md"
-						/>
-					))}
+		<section className="relative h-[45rem]">
+			<img
+				src={fundoWhite}
+				alt=""
+				className="w-full h-full object-cover opacity-50"
+			/>
+			<div className="absolute top-0 flex flex-col w-full py-20 justify-center items-center gap-24">
+				<p className="font-extrabold text-3xl text-[#FF9800]">
+					Speakers do Evento
+				</p>
+				<div className="flex pb-4 ">
+					<div className="h-[424px] items-center justify-center  flex gap-4">
+						{cardInfo.map((info, index) => (
+							<img
+								key={index}
+								src={info.imagem}
+								alt=""
+								className="object-contain hover:-translate-y-3 transition-all duration-700 hover:shadow-2xl shadow-md"
+							/>
+						))}
+					</div>
 				</div>
 			</div>
 		</section>

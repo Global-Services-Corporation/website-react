@@ -1,9 +1,8 @@
-
 import React, { useEffect } from "react"
 import { useForm, Controller, FieldError } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { mesaRedonda } from "../../assets"
-import BannerMR from "../../../public/BannerMRGSC.png"
+import { fundoBlue2 } from "../../assets/mesa-redonda"
 
 const PersonalForm: React.FC = () => {
 	const navigate = useNavigate()
@@ -16,7 +15,7 @@ const PersonalForm: React.FC = () => {
 	useEffect(() => {
 		localStorage.clear()
 	}, [])
-	
+
 	const onSubmit = async (data: object) => {
 		try {
 			const formData = { ...data }
@@ -30,15 +29,15 @@ const PersonalForm: React.FC = () => {
 
 	return (
 		<section className="flex h-screen">
-			<div className="flex flex-col w-1/2 h-full">
+			<div className="w-1/2 max-sm:w-screen overflow-y-auto max-sm:overflow-x-hidden box-border flex flex-col">
 				<nav className="px-8 py-4 w-full">
 					<a href="/">
 						<img src={mesaRedonda} alt="logo-mesa-redonda" className="w-18" />
 					</a>
 				</nav>
-				<div className="flex flex-col gap-10 py-10 px-28">
-					<div className="flex flex-col">
-						<h1 className="font-semibold text-[30px] text-[#FF9800]">
+				<div className="flex flex-col gap-10 max-lg:gap-2 py-10 lg:px-28 max-lg:px-12 items-center">
+					<div className="flex flex-col w-full">
+						<h1 className="font-semibold text-3xl max-lg:text-2xl text-[#FF9800]">
 							Formulário de Adesão
 						</h1>
 						<p className="text-[#000000] text-[16px]">
@@ -49,7 +48,7 @@ const PersonalForm: React.FC = () => {
 						className="text-white flex flex-col gap-10 py-9 items-center"
 						onSubmit={handleSubmit(onSubmit)}
 					>
-						<div className="flex flex-col gap-3">
+						<div className="flex flex-col gap-3 w-full">
 							<label
 								htmlFor="nome"
 								className="font-semibold text-[15px] text-[#000000]"
@@ -85,7 +84,7 @@ const PersonalForm: React.FC = () => {
 							)}
 						</div>
 
-						<div className="flex flex-col gap-3">
+						<div className="flex flex-col gap-3 w-full">
 							<label
 								htmlFor="email"
 								className="font-semibold text-[15px] text-[#000000]"
@@ -123,7 +122,7 @@ const PersonalForm: React.FC = () => {
 							)}
 						</div>
 
-						<div className="flex flex-col gap-3">
+						<div className="flex flex-col gap-3 w-full">
 							<label
 								htmlFor="contacto"
 								className="font-semibold text-[15px] text-[#000000]"
@@ -162,7 +161,7 @@ const PersonalForm: React.FC = () => {
 						<div className="flex justify-center items-center w-full">
 							<button
 								type="submit"
-								className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center"
+								className="max-sm:mb-[100px] font-bold w-[300px] h-[56px] rounded-[4px] bg-[#FF9800] hover:bg-[#ff990056] hover:cursor-pointer flex justify-center items-center transition-colors duration-500"
 							>
 								Enviar formulário
 							</button>
@@ -170,9 +169,12 @@ const PersonalForm: React.FC = () => {
 					</form>
 				</div>
 			</div>
-			<div className="flex flex-col bg-yellow-700 w-1/2 h-full items-center">
-				<img src={BannerMR} alt="banner-mesa-redonda " className=""/>
-			</div>
+
+			<img
+				src={fundoBlue2}
+				alt="banner-mesa-redonda "
+				className="w-1/2 h-full max-sm:hidden object-cover"
+			/>
 		</section>
 	)
 }

@@ -90,7 +90,6 @@ import mesaRedonda from "./mesa-redonda/MesaRedondaLogo.svg"
 import downloadIcon from "./mesa-redonda/download.svg"
 import aboutEvent from "./mesa-redonda/aboutEvent/aboutEventimage.png"
 import agenda from "./mesa-redonda/aboutEvent/Vector.png"
-
 import porqueParticipar from "./mesa-redonda/porqueParticipar/porqueParticipar.png"
 import logoAes from "./events/Sponsors/logoAes.png"
 import logoTaag from "./events/Sponsors/logoTaag.png"

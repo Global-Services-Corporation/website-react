@@ -21,13 +21,13 @@ const MesaRedonda: React.FC = () => {
 			<PorqueParticipar />
 			<Estatisticas />
 			<PorquePatrocinar />
-			<Speakers />
 			<AberturaOficial />
-			<SponsorsAndPartners/>
-			<OQueEsperar/>
-			<MediaPartners/>
-			<ContactUs/>
-			<Footer/>
+			<Speakers />
+			<SponsorsAndPartners />
+			<OQueEsperar />
+			<MediaPartners />
+			<ContactUs />
+			<Footer />
 		</main>
 	)
 }

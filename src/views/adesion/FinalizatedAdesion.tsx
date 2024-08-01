@@ -1,25 +1,42 @@
-import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
-import { downloadPay, mesaRedonda } from "../../assets"
-import { User } from "../../services/utils/types"
-import Loading from "./Loading"
+import { logoDoc, mesaRedonda } from "../../assets"
+import jsPDF from "jspdf"
+import autoTable from "jspdf-autotable"
+import { fundoBlue2, logoMRWhite } from "../../assets/mesa-redonda"
+
+interface PersonalData {
+	nome: string
+	email: string
+	contacto: string
+	nif: string
+}
+
+interface Ticket {
+	label: string
+}
+
+interface TicketData {
+	total: number
+	totalQuantity: number
+	selectedTickets: Ticket[]
+}
 
 const FinalizatedAdesion: React.FC = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
-	const [user, setUser] = useState<User | null>(null)
-	const [file, setFile] = useState<File | null>(null)
-	const [isLoading, setIsLoading] = useState(false) // Estado para controlar o loading
-	const [personalData, setPersonalData] = useState<any>(null)
-	const [ticketData, setTicketData] = useState<any>(null)
-	const [pedidoEnviado, setPedidoEnviado] = useState(false) // Estado para controlar se o pedido foi enviado com sucesso
-	const [okClicked, setOkClicked] = useState(false) // Estado para controlar se o botão OK foi clicado
+
+	const [personalData, setPersonalData] = useState<PersonalData | null>(null)
+	const [ticketData, setTicketData] = useState<TicketData | null>(null)
+	const [pedidoEnviado, setPedidoEnviado] = useState(false)
+	const [okClicked, setOkClicked] = useState(false)
 
 	useEffect(() => {
-		fetchUserData(id)
 		const personalFormData = localStorage.getItem("personalFormData")
 		const ticketFormData = localStorage.getItem("accumulatedTicketData")
+
+		console.log("personalFormData:", personalFormData)
+		console.log("ticketFormData:", ticketFormData)
 
 		if (personalFormData) {
 			setPersonalData(JSON.parse(personalFormData))
@@ -30,155 +47,212 @@ const FinalizatedAdesion: React.FC = () => {
 		}
 	}, [id])
 
-	const fetchUserData = async (userId: string | undefined) => {
-		try {
-			const response = await axios.get(
-				`http://gsc.api.unocura.ao/user/${userId}`,
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
-			)
-			setUser(response.data)
-		} catch (error) {
-			console.error("Erro ao carregar dados do usuário:", error)
-		}
-	}
-
-	const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const fileList = event.target.files
-		if (fileList && fileList.length > 0) {
-			setFile(fileList[0])
-		}
-	}
-
 	const handleFinalizar = async () => {
-		if (!file || !personalData) {
-			console.error("Nenhum arquivo selecionado ou dados pessoais ausentes.")
-			return
+		console.log("handleFinalizar called")
+		console.log("personalData:", personalData)
+		console.log("ticketData:", ticketData)
+
+		if (personalData && ticketData) {
+			const data = {
+				name: personalData.nome,
+				email: personalData.email,
+				price: ticketData.total.toLocaleString("pt-PT", {
+					style: "currency",
+					currency: "AOA",
+				}),
+				contact: personalData.contacto,
+				ticketsData: JSON.stringify(ticketData),
+			}
+			gerarPDF()
+			console.log("Data prepared for PDF generation:", data)
+			setPedidoEnviado(true)
+		} else {
+			console.error("personalData or ticketData is null")
 		}
+	}
 
-		setIsLoading(true) // Ativar o estado de loading antes da requisição
+	const gerarPDF = () => {
+		const doc = new jsPDF()
 
-		const formData = new FormData()
-		formData.append("doc", file)
+		if (personalData && ticketData) {
+			doc.addImage(logoDoc, "PNG", 15, 20, 35, 15)
+			doc.setFontSize(10)
 
-		// Adicionar dados pessoais ao FormData
-		formData.append("name", personalData.nome)
-		formData.append("email", personalData.email)
-		formData.append(
-			"price",
-			ticketData.total.toLocaleString("pt-PT", {
-				style: "currency",
-				currency: "AOA",
+			const pageWidth = doc.internal.pageSize.width
+			doc.text(`NIF: ${personalData.nif}`, pageWidth - 20, 25, {
+				align: "right",
 			})
-		)
-		formData.append("contact", personalData.contacto)
-		formData.append("ticketsData", JSON.stringify(ticketData))
+			doc.text(`Nome: ${personalData.nome}`, pageWidth - 20, 30, {
+				align: "right",
+			})
+			doc.text(`Contacto: ${personalData.contacto}`, pageWidth - 20, 35, {
+				align: "right",
+			})
+			doc.text(`Email: ${personalData.email}`, pageWidth - 20, 40, {
+				align: "right",
+			})
 
-		try {
-			const response = await axios.post(
-				`https://gsc.api.unocura.ao/send-email`,
-				formData,
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-						"Content-Type": "multipart/form-data",
-					},
-				}
+			const ticketList =
+				ticketData.selectedTickets?.map((ticket) => ticket.label) || []
+
+			autoTable(doc, {
+				startY: 50,
+				head: [["Evento", "Plano", "Qtd de Tickets", "Total"]],
+				body: [
+					[
+						"Mesa Redonda com os CEO's",
+						ticketList.join("\n"),
+						`${ticketData.totalQuantity}`,
+						`${ticketData.total.toLocaleString("pt-PT", {
+							style: "currency",
+							currency: "AOA",
+						})}`,
+					],
+				],
+				theme: "grid",
+				headStyles: { fontSize: 10, fillColor: [0, 102, 204] },
+				bodyStyles: { fontSize: 10 },
+			})
+
+			doc.setFontSize(11)
+			doc.setFont("helvetica", "bold")
+			doc.text(
+				"PASSO A PASSO PARA O PAGAMENTO:",
+				15,
+				(doc as any).autoTable.previous.finalY + 10
 			)
-			console.log("Resposta do servidor:", response.data)
-			setPedidoEnviado(true) // Marcar o pedido como enviado com sucesso
-		} catch (error) {
-			console.error("Erro ao enviar formulário:", error)
-		} finally {
-			setIsLoading(false) // Desativar o estado de loading após a requisição
+
+			doc.setFontSize(10)
+			doc.setFont("helvetica", "normal")
+			const linkText = "https://api.whatsapp.com/send/?phone=+244941064919"
+			doc.text(
+				"1. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp:",
+				15,
+				(doc as any).autoTable.previous.finalY + 20
+			)
+			doc.setFontSize(10)
+			doc.setTextColor(0, 0, 255)
+			doc.textWithLink(
+				"+244941064919",
+				15,
+				(doc as any).autoTable.previous.finalY + 30,
+
+				{ url: linkText }
+			)
+
+			doc.setTextColor(0, 0, 0)
+			doc.text(
+				"2. Após o pagamento efetuado com sucesso o participante irá se dirigir ao HCTA (Hotel de Convenções Talatona) \n para obter a credencial  de acesso ao evento, deverá fazer-se acompanhar do NIF ou BI cadastrado no formulário.",
+				15,
+				(doc as any).autoTable.previous.finalY + 37
+			)
+			doc.text(
+				"3.  A credencial poderá ser levantada apenas no local indicado, no dia 18 de Julho de 2024 ou ainda duas horas \n antes do evento no balcão.",
+				15,
+				(doc as any).autoTable.previous.finalY + 50
+			)
+
+			doc.setFontSize(10)
+
+			autoTable(doc, {
+				startY: (doc as any).autoTable.previous.finalY + 60,
+				head: [["Forma de Pagamento:", "Transferência Bancária"]],
+				body: [
+					["Entidade:", "GLOBAL SC PRESTACAO SERVICOS LDA"],
+					[
+						"IBAN (Pagamento em Kwanza):",
+						"0040.0000.0066.0285.1016.3 - Banco BAI",
+					],
+					[
+						"Montante:",
+						`${ticketData.total.toLocaleString("pt-PT", {
+							style: "currency",
+							currency: "AOA",
+						})}`,
+					],
+				],
+				theme: "plain",
+				styles: { fontSize: 10, cellPadding: 3 },
+				headStyles: { fillColor: [220, 220, 220] },
+				didParseCell: function (data) {
+					if (data.row.index === 1 && data.section === "body") {
+						data.cell.styles.fillColor = [220, 220, 220]
+					}
+				},
+			})
+
+			doc.setFontSize(8)
+			doc.text(
+				"Documento Processado por Computador.",
+				80,
+				(doc as any).autoTable.previous.finalY + 10
+			)
+
+			doc.save("BusinessAfterWork2024_Ticket.pdf")
 		}
 	}
 
 	const handleOkClick = () => {
 		localStorage.removeItem("accumulatedTicketData")
 		setOkClicked(true)
-
-		navigate(`/personal/${user?.uuid}`) // Navegar para a página pessoal
-	}
-
-	if (isLoading) {
-		return <Loading />
+		navigate(`/personal-form`)
 	}
 
 	return (
-		<main className="justify-around h-screen relative flex flex-col items-center overflow-hidden max-sm:overflow-y-auto">
-			<header className="w-full py-4 px-12 z-10 flex items-center justify-between">
-				<a href={user ? `/${user?.uuid}` : "/"}>
-					<img src={mesaRedonda} alt="Logotipo da Global Services Corporation" className="w-18"/>
-				</a>
-
-				<Link
-					to={`/`}
-					className="font-bold"
-					onClick={() => {
-						localStorage.removeItem("accumulatedTicketData")
-					}}
-				>
-					Cancelar
-				</Link>
-			</header>
-
-			<section className="flex flex-col z-50 h-3/4 w-2/3 max-sm:w-[90%] rounded-md justify-between p-10 bg-[#EEEDED] my-auto items-center">
-				<h1 className="text-[35px] text-[#FF9800] font-semibold text-center max-sm:text-[25px]">
-					FINALIZAR RESERVA
-				</h1>
-
-				<div className="flex items-center flex-col gap-1">
-					<p className="text-lg font-bold">Coordenadas Bancárias:</p>
-					<p className="text-center max-sm:text-sm flex flex-col gap-1">
-						<span className="text-[#FF9800]">BAI</span>
-						<span>GLOBAL SC PRESTACAO SERVICOS LDA</span>
-						IBAN: 0040.0000.0066.0285.1016.3
-					</p>
-				</div>
-
-				<div className="text-center">
-					<p className="font-bold text-[#FF9800]">Valor total a enviar:</p>
-
-					<p>
-						{`${ticketData?.total.toLocaleString("pt-PT", {
-							style: "currency",
-							currency: "AOA",
-						})}` || "Nenhum"}
-					</p>
-				</div>
-
-				<form className="w-[90%] max-sm:w-full flex flex-col items-center h-30 justify-around max-sm:flex max-sm:flex-col gap-3">
-					<p className="font-semibold">Enviar Comprovativo</p>
-
-					<label
-						htmlFor="doc"
-						className="cursor-pointer    max-lg:w-auto max-sm:w-auto flex items-center justify-center rounded-lg text-center p-2"
-					>
-						{file ? (
-							<p className="bg-[#FF9800] p-4 rounded-lg w-5/6">{file.name}</p>
-						) : (
-							<img src={downloadPay} />
-						)}
-						<input
-							type="file"
-							id="doc"
-							accept=".pdf"
-							onChange={handleFileChange}
-							className="hidden"
+		<main className="max-sm:h-screen relative ">
+			<img src={fundoBlue2} alt="" className="w-full h-full object-cover" />
+			<div className="flex flex-col items-center overflow-hidden max-sm:overflow-y-auto absolute top-0 left-0 w-full h-full">
+				<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
+					<a href={"/"}>
+						<img
+							src={logoMRWhite}
+							alt="Logotipo da Global Services Corporation"
+							className="w-8/12"
 						/>
-					</label>
-				</form>
+					</a>
 
-				{pedidoEnviado && !okClicked && (
-					<div className="fixed top-0 left-0 w-screen h-screen flex flex-col gap-5 items-center justify-center bg-black bg-opacity-75 z-50">
-						<div className="bg-white text-[#FF9800] p-4 rounded-lg flex flex-col justify-around items-center max-sm:h-1/4 h-1/3">
-							Pedido enviado com sucesso!
+					<Link
+						to={`/tickets-datas`}
+						className="font-bold"
+						onClick={() => {
+							localStorage.removeItem("accumulatedTicketData")
+						}}
+					>
+						Cancelar
+					</Link>
+				</header>
+
+				<section className="flex flex-col z-50 h-3/4 w-2/3 max-sm:w-full rounded-md justify-around p-10 bg-[#000760] my-auto items-center">
+					<h1 className="text-[35px] text-[#FF9800] font-semibold text-center max-sm:text-[25px]">
+						FINALIZAR RESERVA
+					</h1>
+
+					<div className="flex items-center flex-col gap-1 w-2/3 text-center">
+						<p className="text-lg text-white">
+							Após confirmada a reserva, clique em{" "}
+							<span className="font-bold">FINALIZAR</span> para receber as
+							instruções de pagamento.
+						</p>
+					</div>
+
+					<div className="w-[60%] flex flex-col items-center gap-8">
+						<button
+							className="max-sm:w-full font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:bg-[#ff990072] text-white hover:cursor-pointer flex justify-center items-center"
+							onClick={handleFinalizar}
+						>
+							Finalizar
+						</button>
+					</div>
+				</section>
+
+				{pedidoEnviado && (
+					<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
+						<div className="bg-[#000760] p-6 rounded-md w-1/4 h-1/3 text-center flex items-center justify-center flex-col gap-8 max-lg:h-1/2 max-lg:w-4/5">
+							<p className=" text-white text-xl">
+								Seu pedido foi enviado, {personalData?.nome}.
+							</p>
 							<button
-								className="font-bold w-1/2 h-10 rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center "
+								className="px-4 py-2 bg-[#FF9800] rounded hover:bg-[#ff99007f] text-white w-1/2 h-12"
 								onClick={handleOkClick}
 							>
 								OK
@@ -186,16 +260,7 @@ const FinalizatedAdesion: React.FC = () => {
 						</div>
 					</div>
 				)}
-
-				<div className="w-[60%] flex flex-col items-center gap-8">
-					<button
-						className="max-sm:w-full font-bold w-[300px] h-14 rounded-[4px] bg-[#FF9800] hover:cursor-pointer flex justify-center items-center"
-						onClick={handleFinalizar}
-					>
-						Finalizar
-					</button>
-				</div>
-			</section>
+			</div>
 		</main>
 	)
 }

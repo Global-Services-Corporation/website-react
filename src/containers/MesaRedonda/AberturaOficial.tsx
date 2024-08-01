@@ -2,7 +2,7 @@ import pauloPortas from "../../assets/mesa-redonda/aberturaOficial/pauloPortas.p
 
 const AberturaOficial: React.FC = () => {
 	return (
-		<section className=" flex justify-center relative ">
+		<section className=" flex justify-center relative">
 			<div className="flex flex-col w- h-full justify-center px-12 gap-8 absolute top-0 right-1/2">
 				<div className="w-full">
 					<h1 className="text-4xl text-[#FF9800] font-extrabold">
