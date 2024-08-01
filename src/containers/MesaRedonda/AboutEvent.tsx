@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { aboutEvent } from "../../assets"
 import { fundoBlue, fundoWhite } from "../../assets/mesa-redonda"
 import {
@@ -69,12 +70,12 @@ const AboutEvent: React.FC = () => {
 								Necessitatibus quo nostrum laudantium.
 							</p>
 						</div>
-						<a
-							href=""
+						<Link
+							to=""
 							className="w-56 hover:bg-transparent hover:text-[#FF9800] bg-[#FF9800] border-[#FF9800] hover:border transition-colors duration-300 rounded-md text-white font-bold flex items-center justify-center py-2.5 px-6 h-12"
 						>
 							Participe do evento
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { mesaRedonda } from "../../assets"
+import { Link } from "react-router-dom"
+import { logoMRWhite } from "../../assets/mesa-redonda"
 
 const Banner: React.FC = () => {
 	const calculateTimeLeft = () => {
@@ -49,7 +51,7 @@ const Banner: React.FC = () => {
 
 			<div className="absolute w-full h-full top-0 left-0 flex flex-col p-10 bg-[#0000009c] ">
 				<nav className="w-full">
-					<img src={mesaRedonda} alt="Logo Mesa Redonda" className="w-20" />
+					<img src={logoMRWhite} alt="Logo Mesa Redonda" className="w-20" />
 				</nav>
 
 				<div className="flex flex-col justify-center items-center mx-auto my-auto text-white gap-20 p-12">
@@ -59,12 +61,12 @@ const Banner: React.FC = () => {
 							In Oil Gas Sector</span>
 						</h1>
 
-						<a
-							href="/personal-form"
+						<Link
+							to="/personal-form"
 							className="hover:bg-[#FF9800] hover:text-[#ffffff] bg-[#065CAB00] border-[3px] border-[#FF9800] py-2.5 px-6 font-semibold rounded-lg transition-colors duration-300 w-56 flex justify-center items-center"
 						>
-							INSCRIÇÃO
-						</a>
+							Participar
+						</Link>
 					</div>
 
 					<div className="flex gap-5 w-3/5 justify-between">
