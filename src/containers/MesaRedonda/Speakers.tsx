@@ -31,18 +31,18 @@ const Speakers: React.FC = () => {
 	]
 
 	return (
-		<section className="relative h-[45rem]">
+		<section className="relative h-[45rem] max-lg:h-[120rem]">
 			<img
 				src={fundoWhite}
 				alt=""
 				className="w-full h-full object-cover opacity-50"
 			/>
-			<div className="absolute top-0 flex flex-col w-full py-20 justify-center items-center gap-24">
-				<p className="font-extrabold text-3xl text-[#FF9800]">
+			<div className="absolute top-0 flex flex-col w-full py-20 justify-around items-center lg:px-24 max-lg:px-12 h-full">
+				<p className="font-extrabold text-3xl text-[#FF9800] text-center max-lg:text-2xl">
 					Speakers do Evento
 				</p>
 				<div className="flex pb-4 ">
-					<div className="h-[424px] items-center justify-center  flex gap-4">
+					<div className=" items-center justify-center grid grid-cols-4 gap-10 max-lg:grid-cols-1">
 						{cardInfo.map((info, index) => (
 							<img
 								key={index}

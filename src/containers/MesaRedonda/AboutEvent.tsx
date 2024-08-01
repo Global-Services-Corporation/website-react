@@ -33,12 +33,12 @@ const AboutEvent: React.FC = () => {
 				<div className="w-full relative h-56">
 					<img src={fundoBlue} alt="" className=" w-full h-full object-cover" />
 
-					<div className="flex justify-around w-full px-24 py-14 absolute top-0 left-0">
+					<div className="flex justify-around items-center w-full lg:px-24 lg:py-14 absolute top-0 left-0 max-lg:px-8 max-lg:py-20">
 						{cardInfo.map((info, index) => (
-							<a key={index} href="" className="group ">
+							<a key={index} href="" className="group w-full">
 								<div className="flex flex-col items-center gap-3">
-									<img src={info.imagem} alt="" className="h-15 w-16 " />
-									<p className="font-semibold text-xl text-white group-hover:text-[#FF9800]">
+									<img src={info.imagem} alt="" className="h-15 w-16 max-lg:w-5" />
+									<p className="font-semibold text-xl max-lg:text-sm text-white group-hover:text-[#FF9800]">
 										{info.title}
 									</p>
 								</div>
