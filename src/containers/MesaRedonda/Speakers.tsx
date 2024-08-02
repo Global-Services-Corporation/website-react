@@ -37,18 +37,18 @@ const Speakers: React.FC = () => {
 				alt=""
 				className="w-full h-full object-cover opacity-50"
 			/>
-			<div className="absolute top-0 flex flex-col w-full py-20 justify-around items-center lg:px-24 max-lg:px-12 h-full">
+			<div className="absolute top-0 flex flex-col w-full py-20 justify-around max-lg:justify-normal gap-12 items-center lg:px-24 max-lg:px-12 h-full">
 				<p className="font-extrabold text-3xl text-[#FF9800] text-center max-lg:text-2xl">
 					Speakers do Evento
 				</p>
-				<div className="flex pb-4 ">
-					<div className=" items-center justify-center grid grid-cols-4 gap-10 max-lg:grid-cols-1">
+				<div className="flex pb-4">
+					<div className="w-full h-full items-center justify-center grid grid-cols-4 gap-10 max-lg:grid-cols-1">
 						{cardInfo.map((info, index) => (
 							<img
 								key={index}
 								src={info.imagem}
 								alt=""
-								className="object-contain hover:-translate-y-3 transition-all duration-700 hover:shadow-2xl shadow-md"
+								className="object-contain hover:-translate-y-3 transition-all duration-700 hover:shadow-2xl shadow-md max-lg:w-80"
 							/>
 						))}
 					</div>

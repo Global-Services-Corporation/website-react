@@ -30,7 +30,7 @@ const PersonalForm: React.FC = () => {
 	return (
 		<section className="flex h-screen">
 			<div className="w-1/2 max-sm:w-screen overflow-y-auto max-sm:overflow-x-hidden box-border flex flex-col">
-				<nav className="px-8 py-4 w-full">
+				<nav className="px-10 py-6 w-full">
 					<a href="/">
 						<img src={mesaRedonda} alt="logo-mesa-redonda" className="w-18" />
 					</a>
