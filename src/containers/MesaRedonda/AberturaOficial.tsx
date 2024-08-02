@@ -22,7 +22,7 @@ const AberturaOficial: React.FC = () => {
 					</div>
 					<a
 						href=""
-						className="flex justify-center items-center p-2 w-32 border border-white text-[#FF9800] font-semibold rounded-xl bg-[#ffff] hover:bg-transparent hover:text-[#FF9800] transition-colors duration-300 max-lg:text-sm"
+						className="flex justify-center items-center p-2 w-32 border border-white text-[#FF9800] font-semibold rounded-lg bg-[#ffff] hover:bg-transparent hover:text-[#FF9800] transition-colors duration-300 max-lg:text-sm"
 					>
 						Ver mais
 					</a>
