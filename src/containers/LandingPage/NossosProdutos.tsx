@@ -12,7 +12,7 @@ import {
 	gestaoFinanceira,
 } from "../../assets/landing/FormativeAction"
 
-const FormativeAction: React.FC = () => {
+const NossosProdutos: React.FC = () => {
 	const [qtdSlide, setQtdSlide] = useState(3)
 	const [arrows, setArrows] = useState(false)
 
@@ -89,9 +89,12 @@ const FormativeAction: React.FC = () => {
 	]
 
 	return (
-		<section className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40">
+		<section
+			className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40"
+			id="produtos"
+		>
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
-				<p className="font-bold text-4xl max-sm:text-2xl"> Ação Formativa</p>
+				<p className="font-bold text-4xl max-sm:text-2xl">Nossos Produtos</p>
 				<p className="text-[#c5c5c5] max-sm:text-sm text-center w-2/3">
 					Veja as soluções que a{" "}
 					<span className="text-[#30CBE8]">Global Services Corporation</span>{" "}
@@ -117,4 +120,4 @@ const FormativeAction: React.FC = () => {
 	)
 }
 
-export default FormativeAction
+export default NossosProdutos

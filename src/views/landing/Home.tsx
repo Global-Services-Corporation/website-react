@@ -2,7 +2,7 @@ import AboutUs from "../../containers/LandingPage/AboutUs"
 import Services from "../../containers/LandingPage/Services"
 import EnterpriseSolution from "../../containers/LandingPage/EnterpriseSolution"
 import { elipse2 } from "../../assets"
-import FormativeAction from "../../containers/LandingPage/FormativeAction"
+import NossosProdutos from "../../containers/LandingPage/NossosProdutos"
 import Blog from "../../containers/LandingPage/Blog"
 import Newsletter from "../../containers/LandingPage/Newsletter"
 
@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
 				alt=""
 			/>
 			<EnterpriseSolution />
-			<FormativeAction />
+			<NossosProdutos />
 			<img
 				src={elipse2}
 				alt=""

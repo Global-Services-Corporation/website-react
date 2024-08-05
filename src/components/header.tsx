@@ -41,7 +41,12 @@ export const Header = () => {
 		{
 			title: "Serviços",
 			link: "/",
-			open: "services",
+			open: "produtos",
+		},
+		{
+			title: "Blog",
+			link: "/",
+			open: "blog",
 		},
 		{
 			title: "Contactos",
@@ -77,7 +82,7 @@ export const Header = () => {
 						key={index}
 						to={menu.link}
 						onClick={menu.open ? (e) => scrollTo(e, menu.open) : undefined}
-						className="text-white text-lg font-bold  hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
+						className="text-white text-base font-bold  hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
 					>
 						{menu.title}
 					</Link>
