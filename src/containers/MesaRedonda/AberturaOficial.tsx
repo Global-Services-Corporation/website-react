@@ -4,7 +4,7 @@ import pauloPortas from "../../assets/mesa-redonda/aberturaOficial/pauloPortas.p
 const AberturaOficial: React.FC = () => {
 	return (
 		<section className=" flex justify-center relative max-lg:h-[45rem]">
-			<div className="flex flex-col w-full h-full justify-center px-16 gap-8 absolute top-0  max-lg:inset-0 max-lg:items-center max-lg:text-center max-lg:justify-end max-lg:pt-20">
+			<div className="flex flex-col w-full h-full justify-center lg:px-64 gap-8 absolute top-0  max-lg:inset-0 max-lg:items-center max-lg:text-center max-lg:justify-end max-lg:pt-20">
 				<div className="flex flex-col gap-4 max-lg:items-center max-lg:text-center">
 					<div className="w-full">
 						<h1 className="text-4xl max-lg:text-2xl text-[#FF9800] font-extrabold">
@@ -22,7 +22,7 @@ const AberturaOficial: React.FC = () => {
 					</div>
 					<a
 						href=""
-						className="flex justify-center items-center p-2 w-32 border border-white text-[#FF9800] font-semibold rounded-lg bg-[#ffff] hover:bg-transparent hover:text-[#FF9800] transition-colors duration-300 max-lg:text-sm"
+						className="hidden justify-center items-center p-2 w-32 border border-white text-[#FF9800] font-semibold rounded-lg bg-[#ffff] hover:bg-transparent hover:text-[#FF9800] transition-colors duration-300 max-lg:text-sm"
 					>
 						Ver mais
 					</a>
