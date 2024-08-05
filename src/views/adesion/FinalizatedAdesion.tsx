@@ -124,9 +124,9 @@ const FinalizatedAdesion: React.FC = () => {
 
 			doc.setFontSize(10)
 			doc.setFont("helvetica", "normal")
-			const linkText = "https://api.whatsapp.com/send/?phone=+244941064919"
+			const linkText = "https://api.whatsapp.com/send/?phone=244941064919"
 			doc.text(
-				"1. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp:",
+				"1. Após submeter a sua inscrição, terá que efetuar a transferência Bancária, enviar o comprovativo para o seguinte \n número do WhatsApp (Clique no número):",
 				15,
 				(doc as any).autoTable.previous.finalY + 20
 			)
