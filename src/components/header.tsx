@@ -66,9 +66,9 @@ export const Header = () => {
 	return (
 		<header
 			className={`fixed h-[80px]
-      top-0 flex w-full justify-between bg-[#0000009f] items-center px-[55px] max-lg:px-8 box-border ${
+      top-0 flex w-full justify-between text-black items-center px-[55px] max-lg:px-8 box-border ${
 				isScrolled
-					? " transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
+					? "bg-[#ffffffc5] transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
 					: "transition duration-[0.5s]"
 			} z-50`}
 		>
@@ -82,7 +82,7 @@ export const Header = () => {
 						key={index}
 						to={menu.link}
 						onClick={menu.open ? (e) => scrollTo(e, menu.open) : undefined}
-						className="text-white text-base font-bold  hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
+						className=" text-base font-bold  hover:border-b-4 hover:border-[#30CBE8] hover:text-[#30CBE8]"
 					>
 						{menu.title}
 					</Link>
@@ -114,7 +114,7 @@ export const Header = () => {
 									onClick={
 										menu.open ? (e) => scrollTo(e, menu.open) : undefined
 									}
-									className="hover:bg-[#30CBE8] font-bold py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
+									className="hover:bg-[#30CBE8] font-bold py-2 px-4 rounded-md flex justify-center items-center hover: text-sm"
 								>
 									{menu.title}
 								</a>
@@ -122,7 +122,7 @@ export const Header = () => {
 
 							<a
 								href="https://www.businessafterwork.globalsc.ao"
-								className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover:text-white text-sm"
+								className="hover:bg-[#30CBE8] py-2 px-4 rounded-md flex justify-center items-center hover: text-sm"
 							>
 								Inscreva-se
 							</a>
@@ -133,7 +133,7 @@ export const Header = () => {
 
 			<a
 				href="https://www.mesaredonda.globalsc.ao"
-				className="max-lg:hidden duration-300 text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] transition-colors hover:from-[#000000] hover:to-[#000000] hover:text-white rounded-[10px]"
+				className="max-lg:hidden duration-300 text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] transition-colors hover:from-[#000000] hover:to-[#000000] hover: rounded-[10px]"
 			>
 				Inscreva-se
 			</a>

@@ -43,17 +43,17 @@ const EnterpriseSolution: React.FC = () => {
 					{" "}
 					Soluções Empresariais
 				</p>
-				<p className="text-[#c5c5c5] max-sm:text-sm text-center w-2/3">
+				<p className=" max-sm:text-sm text-center w-2/3">
 					Veja as soluções que a{" "}
-					<span className="text-[#30CBE8]">Global Services Corporation</span>{" "}
-					tem para a sua empresa.
+					<span className="">Global Services Corporation</span> tem para a sua
+					empresa.
 				</p>
 			</div>
 			<div className="w-4/5 grid grid-cols-3 max-sm:grid-cols-1 grid-rows-2 gap-5">
 				{CardInfo.map((info, index) => (
 					<div
 						key={index}
-						className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg bg-[#0E1937] hover:-translate-y-2 z-40 transition-all duration-500"
+						className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg  bg-gradient-to-t from-[#F7F7F8 to-[#ffffff]  hover:-translate-y-2 z-40 transition-all duration-500 border border-[#30cce891]"
 					>
 						<img
 							src={info.cardIcon}
@@ -61,7 +61,7 @@ const EnterpriseSolution: React.FC = () => {
 							className="h-16 w-16 max-sm:h-10 max-sm:w-10"
 						/>
 						<p className="text-[#30CBE8] max-sm:text-sm">{info.title}</p>
-						<p className="text-[#C5C5C5] text-xs max-sm:text-[11px]">
+						<p className=" text-xs max-sm:text-[11px]">
 							{info.description}
 						</p>
 					</div>

@@ -10,25 +10,10 @@ import BannerMesaRedonda from "../../containers/LandingPage/BannerMR"
 
 const HomePage: React.FC = () => {
 	return (
-		<div className="font-interTight bg-[#001032] h-full text-white flex flex-col justify-center items-center pb-48">
-			<img
-				src={elipse2}
-				className="absolute start-0 -top-[750px] object-cover z-0 rotate-180 animate-pulse"
-				alt=""
-			/>
+		<div className="font-interTight bg-[#ffffff] h-full text-[#000000] flex flex-col justify-center items-center pb-48">
 			<BannerMesaRedonda />
-			<img
-				src={elipse2}
-				className="absolute end-0 object-cover z-0 top-[200px] animate-pulse"
-				alt=""
-			/>
 			<Services />
 			<AboutUs />
-			<img
-				src={elipse2}
-				className="absolute start-0 object-cover z-0 top-[1470px] rotate-180 animate-pulse"
-				alt=""
-			/>
 			<EnterpriseSolution />
 			<NossosProdutos />
 			<img

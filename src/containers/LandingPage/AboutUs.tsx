@@ -2,14 +2,16 @@ import { sobrenos } from "../../assets"
 
 const AboutUs: React.FC = () => {
 	return (
-		<section id="sobre" className="w-full items-center justify-center bg-[#0E1937] h-[593px]  max-sm:h-full max-sm:py-20 flex relative gap-12 z-40">
+		<section
+			id="sobre"
+			className="w-full items-center justify-center bg-[#30CBE8] h-[593px] text-white max-sm:h-full max-sm:py-20 flex relative gap-12 z-40"
+		>
 			<div className="w-[80%] flex items-center max-sm:justify-center justify-between gap-[35px]">
 				<div className="w-2/4 max-sm:w-full flex justify-between flex-col gap-4">
 					<p className="font-semibold max-sm:text-2xl text-4xl">Sobre nós</p>
-					<div className="w-full flex max-sm:w-80 max-sm:text-md text-[20px] text-[#C5C5C5] flex-col gap-2">
-						<p className="text-[20px] max-sm:text-md text-[#C5C5C5]">
-							
-							<span className="text-[#30CBE8] font-semibold max-sm:text-md">
+					<div className="w-full flex max-sm:w-80 max-sm:text-md text-[20px] flex-col gap-2">
+						<p className="text-[20px] max-sm:text-md">
+							<span className="font-semibold max-sm:text-md">
 								Global Services Corporation
 							</span>
 							, empresa angolana de multisserviços, com sede na{" "}
@@ -26,15 +28,19 @@ const AboutUs: React.FC = () => {
 							<li>Consultoria Empresarial;</li>
 							<li>Formação do Capital Humano.</li>
 						</ul>
-						
-						<p className="text-[20px] text-[#C5C5C5] max-sm:text-md">
+
+						<p className="text-[20px] max-sm:text-md">
 							O nosso objectivo fundamental é contribuir no alcance dos
 							objectivos estrátegicos dos nossos clientes, oferecendo Serviços
 							de Consultoria.
 						</p>
 					</div>
 				</div>
-				<img src={sobrenos} alt="" className="max-sm:hidden rounded-2xl w-[500px]" />
+				<img
+					src={sobrenos}
+					alt=""
+					className="max-sm:hidden rounded-2xl w-[500px]"
+				/>
 			</div>
 		</section>
 	)

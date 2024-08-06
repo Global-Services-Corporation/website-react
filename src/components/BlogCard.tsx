@@ -21,14 +21,14 @@ const BlogCard: React.FC<Props> = ({
 	return (
 		<a
 			href={navigateTo} target='_blank'
-			className="mr-3 w-80 flex flex-col bg-[#0E1937] rounded-xl"
+			className="mr-3 w-80 flex flex-col bg-[#ffffff] rounded-xl"
 		>
 			<img src={img} alt="" className="h-56 object-cover rounded-t-xl" />
 			<div className="w-full  px-7 py-7 flex flex-col gap-2.5">
 				{" "}
 				<h1 className="text-xl">{limitText(title, 50)}</h1>
-				<p className="text-sm text-[#c5c5c5]"> {limitText(description, 150)}</p>
-				<p className="text-xs text-[#C5c5c5]">{data}</p>
+				<p className="text-sm"> {limitText(description, 150)}</p>
+				<p className="text-xs">{data}</p>
 			</div>
 		</a>
 	)

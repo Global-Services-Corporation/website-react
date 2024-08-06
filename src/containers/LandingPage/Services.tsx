@@ -6,7 +6,7 @@ const Services: React.FC = () => {
 		{
 			icon: seguros,
 			title: "Seguros",
-			description: "Começa aderindo o serviço.",
+			description: "Solicite já uma proposta.",
 			buttonTitle: "Solicitar",
 			link: "/insurance",
 		},
@@ -27,7 +27,7 @@ const Services: React.FC = () => {
 	]
 
 	return (
-		<section className="w-full pb-20 pt-4 max-2xl:pb-10 relative flex flex-col gap-12 z-40">
+		<section className="w-full pb-20 pt-4 max-2xl:pb-10 relative flex flex-col gap-12 z-40 bg-gradient-to-t from-[#e2e2e2] to-[#ffffff]">
 			<p className="font-bold max-sm:text-2xl text-4xl ml-36 max-sm:ml-8">
 				Adira já aos nossos serviços!
 			</p>
@@ -36,22 +36,22 @@ const Services: React.FC = () => {
 				{cardInfo.map((info, index) => (
 					<div
 						key={index}
-						className="min-w-[363px] min-h-[187px] flex relative p-8 bg-[#0E1937] rounded-[24px]"
+						className="min-w-[363px] min-h-[187px] flex relative p-8 bg-gradient-to-t from-[#F7F7F8] to-[#ffffff] rounded-[24px] border border-[#30cce891]"
 					>
 						<img src={info.icon} alt="" className="absolute object-none" />
 						<div className="flex flex-col absolute start-28">
 							<p className="text-[#30CBE8] font-semibold text-[20.88px]">
 								{info.title}
 							</p>
-							<p className="text-[#C5C5C5] text-[16.71px]">
+							<p className="text-[#000000] text-[16.71px]">
 								{info.description}
 							</p>
 						</div>
 
 						<Link
 							to={info.link}
-							className="hover:bg-[#30CBE8] hover:text-white bg-white text-black
-               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center"
+							className="bg-[#30CBE8] text-white hover:bg-white hover:text-[#30CBE8] hover:animate-pulse
+               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center hover:border border-[#30CBE8]"
 						>
 							{info.buttonTitle}
 						</Link>

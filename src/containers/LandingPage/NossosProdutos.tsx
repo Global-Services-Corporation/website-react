@@ -1,120 +1,114 @@
-import Slider from "react-slick"
-import FormativeActionCard from "../../components/formative-action-card"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import {
-	comunicacaoAssertiva,
-	elaboracaoDePlano,
-	gestaoDeMarketing,
-	gestaoDeRH,
-	gestaoDeSinistro,
-	gestaoFinanceira,
-} from "../../assets/landing/FormativeAction"
+	saudeIcon,
+	aviaoIcon,
+	carroIcon,
+	acidenteIcon,
+	coneIcon,
+	assaltoIcon,
+	studentsIcon,
+	camiaoIcon,
+} from "../../assets/insurance"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+
+import "swiper/css"
 
 const NossosProdutos: React.FC = () => {
-	const [qtdSlide, setQtdSlide] = useState(3)
-	const [arrows, setArrows] = useState(false)
+	const [view, setView] = useState("particular")
 
-	useEffect(() => {
-		const handleResize = () => {
-			if (window.innerWidth <= 768) {
-				setQtdSlide(1)
-				setArrows(true)
-			} else {
-				setQtdSlide(3)
-			}
-		}
+	const insuranceCard = [
+		{ icon: saudeIcon, title: "Saúde" },
+		{ icon: aviaoIcon, title: "Viagem" },
+		{ icon: carroIcon, title: "Automóvel" },
+		{ icon: acidenteIcon, title: "Acidentes Pessoais" },
+		{ icon: coneIcon, title: "Acidentes de Trabalho" },
+		{ icon: assaltoIcon, title: "Proteção Contra Assaltos" },
+		{ icon: studentsIcon, title: "Escolar" },
+		{ icon: camiaoIcon, title: "Transporte de Cargas/Mercadorias" },
+	]
 
-		handleResize()
-
-		window.addEventListener("resize", handleResize)
-
-		return () => window.removeEventListener("resize", handleResize)
-	}, [])
-
-	const settings = {
-		infinite: true,
-		speed: 500,
-		autoplay: true,
-		autoplaySpeed: 2000,
-		slidesToShow: qtdSlide,
-		slidesToScroll: 2,
-		arrows: arrows,
+	const renderParticular = () => {
+		return (
+			<div className="w-full flex">
+				<div className="w-full flex">
+					<Swiper
+						watchSlidesProgress={true}
+						slidesPerView={4}
+						className="mySwiper"
+					>
+						{insuranceCard.map((card, index) => (
+							<SwiperSlide key={index}>
+								<div className=" h-60 w-48 bg-[#ffffff] hover:bg-[#ffffffa8] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer">
+									<img src={card.icon} alt="Icon" className="w-16" />
+									<p className="text-center">{card.title}</p>
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+			</div>
+		)
 	}
 
-	const cardInfo = [
-		{
-			naviageTo: "",
-			img: gestaoDeSinistro,
-			title: "Gestão de Sinistros nas Empresas",
-			description:
-				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
-		},
-		{
-			naviageTo: "",
-			img: gestaoDeRH,
-			title: "Gestão e Estratégia de Recursos Humanos",
-			description:
-				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
-		},
-		{
-			naviageTo: "",
-			img: comunicacaoAssertiva,
-			title: "Técnicas de Comunicação Assertiva",
-			description:
-				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
-		},
-		{
-			naviageTo: "",
-			img: gestaoFinanceira,
-			title: "Gestão Financeira e Tesouraria",
-			description:
-				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
-		},
-		{
-			naviageTo: "",
-			img: elaboracaoDePlano,
-			title: "Elaboração de Plano de Negócios",
-			description:
-				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
-		},
-		{
-			naviageTo: "",
-			img: gestaoDeMarketing,
-			title: "Consultoria em Marketing",
-			description:
-				"Criação de um plano estratégico de marketing que pode incluir posicionamento de marca, segmentação de mercado, definição de público-alvo, definição de objetivos e metas de marketing.",
-		},
-	]
+	const renderEmpresarial = () => {
+		return (
+			<div className="w-full flex">
+				<Swiper
+					watchSlidesProgress={true}
+					slidesPerView={4}
+					className="mySwiper"
+				>
+					{insuranceCard.map((card, index) => (
+						<SwiperSlide key={index}>
+							<div className=" h-60 w-48 bg-[#ffffff] hover:bg-[#ffffffa8] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer">
+								<img src={card.icon} alt="Icon" className="w-16" />
+								<p className="text-center">{card.title}</p>
+							</div>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+		)
+	}
 
 	return (
 		<section
-			className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40"
+			className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40 bg-[#30CBE8]"
 			id="produtos"
 		>
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
-				<p className="font-bold text-4xl max-sm:text-2xl">Nossos Produtos</p>
-				<p className="text-[#c5c5c5] max-sm:text-sm text-center w-2/3">
-					Veja as soluções que a{" "}
-					<span className="text-[#30CBE8]">Global Services Corporation</span>{" "}
-					tem para a sua empresa.
+				<p className="font-bold text-4xl max-sm:text-2xl text-white">
+					Produtos
 				</p>
 			</div>
 
-			<div className="w-4/5 flex justify-center items-center gap-2 h-fit">
-				{" "}
-				<Slider {...settings} className="w-full flex">
-					{cardInfo.map((info, index) => (
-						<FormativeActionCard
-							key={index}
-							img={info.img}
-							title={info.title}
-							description={info.description}
-							navigateTo={info.naviageTo}
-						/>
-					))}
-				</Slider>
+			<div className="w-4/5 flex flex-col gap-4 z-40">
+				<nav className="flex justify-between p-2">
+					<div className="flex w-52 justify-between items-center">
+						<button
+							className={`text-xl cursor-pointer text-white ${
+								view === "particular" && "border-b-4 border-b-[#ffffff]"
+							}`}
+							onClick={() => setView("particular")}
+						>
+							Particular
+						</button>
+						<button
+							className={`text-xl cursor-pointer text-white ${
+								view === "empresarial" && "border-b-4 border-b-[#ffffff]"
+							}`}
+							onClick={() => setView("empresarial")}
+						>
+							Empresarial
+						</button>
+					</div>
+				</nav>
+
+				<div className="py-4 flex w-full items-center">
+					{view === "particular" && renderParticular()}
+					{view === "empresarial" && renderEmpresarial()}
+				</div>
 			</div>
 		</section>
 	)
