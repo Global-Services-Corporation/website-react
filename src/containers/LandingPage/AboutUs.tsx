@@ -4,7 +4,7 @@ const AboutUs: React.FC = () => {
 	return (
 		<section
 			id="sobre"
-			className="w-full items-center justify-center bg-[#30CBE8] h-[593px] text-white max-sm:h-full max-sm:py-20 flex relative gap-12 z-40"
+			className="w-full items-center justify-center bg-[#00C7FF] h-[593px] text-white max-sm:h-full max-sm:py-20 flex relative gap-12 z-40"
 		>
 			<div className="w-[80%] flex items-center max-sm:justify-center justify-between gap-[35px]">
 				<div className="w-2/4 max-sm:w-full flex justify-between flex-col gap-4">

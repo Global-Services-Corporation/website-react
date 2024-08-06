@@ -60,7 +60,7 @@ const EnterpriseSolution: React.FC = () => {
 							alt=""
 							className="h-16 w-16 max-sm:h-10 max-sm:w-10"
 						/>
-						<p className="text-[#30CBE8] max-sm:text-sm">{info.title}</p>
+						<p className="text-[#00C7FF] max-sm:text-sm">{info.title}</p>
 						<p className=" text-xs max-sm:text-[11px]">
 							{info.description}
 						</p>

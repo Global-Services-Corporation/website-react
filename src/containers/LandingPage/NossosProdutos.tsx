@@ -74,7 +74,7 @@ const NossosProdutos: React.FC = () => {
 
 	return (
 		<section
-			className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40 bg-[#30CBE8]"
+			className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40 bg-[#00C7FF]"
 			id="produtos"
 		>
 			<div className="w-full flex flex-col items-center gap-5 justify-center">

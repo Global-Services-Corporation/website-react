@@ -40,7 +40,7 @@ const Services: React.FC = () => {
 					>
 						<img src={info.icon} alt="" className="absolute object-none" />
 						<div className="flex flex-col absolute start-28">
-							<p className="text-[#30CBE8] font-semibold text-[20.88px]">
+							<p className="text-[#00C7FF] font-semibold text-[20.88px]">
 								{info.title}
 							</p>
 							<p className="text-[#000000] text-[16.71px]">
@@ -50,8 +50,8 @@ const Services: React.FC = () => {
 
 						<Link
 							to={info.link}
-							className="bg-[#30CBE8] text-white hover:bg-white hover:text-[#30CBE8] hover:animate-pulse
-               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center hover:border border-[#30CBE8]"
+							className="bg-[#00C7FF] text-white hover:bg-white hover:text-[#00C7FF] hover:animate-pulse
+               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center hover:border border-[#00C7FF]"
 						>
 							{info.buttonTitle}
 						</Link>

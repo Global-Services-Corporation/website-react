@@ -67,7 +67,7 @@ Matuzalém também trabalhou em empresas como: Empresa Nacional de Electricidade
 	]
 
 	return (
-		<section className="w-full bg-[#30CBE8] text-white flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40" id="blog">
+		<section className="w-full bg-[#00C7FF] text-white flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40" id="blog">
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
 				<p className="font-bold text-4xl max-sm:text-2xl">Feed de Notícias</p>
 				<p className="max-sm:text-sm text-center max-sm:w-2/3">

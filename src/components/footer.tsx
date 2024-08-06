@@ -4,10 +4,10 @@ import { logoLyricsTwo } from "../assets/mesa-redonda"
 const Footer: React.FC = () => {
 	return (
 		<footer
-			className="h-[417px] w-full  max-sm:h-auto flex flex-col bg-[#000000] justify-between"
+			className="h-[417px] w-full  max-sm:h-auto flex flex-col bg-[#DBDADA] justify-between"
 			id="footer"
 		>
-			<div className="flex text-[#fff] max-sm:gap-7 px-[50px] max-sm:px-10 max-sm:flex-col py-[60px] justify-around">
+			<div className="flex text-[#000] max-sm:gap-7 px-[50px] max-sm:px-10 max-sm:flex-col py-[60px] justify-around">
 				<div className="flex flex-col gap-[34px] max-sm:gap-5 max-sm:w-full max-sm:h-full w-[350px] h-[203px] box-border">
 					<img
 						src={logoLyricsTwo}
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 				<div className="flex max-sm:flex-col max-sm:gap-7 gap-[80px]">
 					<div className="max-sm:flex max-sm:justify-between flex gap-20 max-sm:gap-2">
 						<div className="box-border h-[202px] max-sm:h-fit flex flex-col gap-[10px] ">
-							<h1 className="font-bold  ">Consultoria</h1>
+							<h1 className="font-bold text-[#037DA7] ">Consultoria</h1>
 
 							<ul className="flex max-sm:text-[#656666] flex-col max-sm:text-[12px] gap-3 max-sm:w-[150px]">
 								<li>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 						</div>
 
 						<div className="box-border h-[202px] max-sm:h-fit flex flex-col gap-[10px]">
-							<h1 className="font-bold">Linha de Apoio</h1>
+							<h1 className="font-bold text-[#037DA7] 	">Linha de Apoio</h1>
 
 							<ul className="flex max-sm:text-[#656666] flex-col gap-3 max-sm:text-[12px]">
 								<li>
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
 					</div>
 
 					<div className="box-border max-sm:h-fit h-[202px] flex flex-col gap-[10px]">
-						<h1 className="font-bold ">Outras Soluções</h1>
+						<h1 className="font-bold text-[#037DA7]">Outras Soluções</h1>
 
 						<ul className="flex flex-col max-sm:text-[#656666] max-sm:text-[12px] gap-3">
 							<li>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
 				</div>
 				<hr />
 			</div>
-			<div className="bg-[#000020] max-sm:pb-6 max-sm:bg-[#000000] max-sm:text-[14px] max-sm:flex-col text-[#ffff] h-[80px] max-sm:text-[#A0A0AA] flex items-center justify-between px-[50px] box-border">
+			<div className="bg-[#1B223C] max-sm:pb-6 max-sm:bg-[#000000] max-sm:text-[14px] max-sm:flex-col text-[#ffff] h-[80px] max-sm:text-[#A0A0AA] flex items-center justify-between px-[50px] box-border">
 				Copyright © 2024 GSC{" "}
 				<span className="max-sm:text-[12px] max-sm:text-[#656666]">
 					Global Service Corporation - 2024
