@@ -26,7 +26,7 @@ const ContactUs: React.FC = () => {
 
 				<div className="w-[550px] items-center flex-col justify-center bg-white flex rounded-2xl max-lg:rounded-none gap-5 px-16 max-lg:px-10 py-10 h-full max-lg:w-full">
 					<div className="flex flex-col items-center w-full">
-						<p className="text-4xl max-lg:text-2xl font-bold text-[#FF9800]">
+						<p className="text-4xl max-lg:text-2xl font-bold text-[#0E1937]">
 							Entre em contacto
 						</p>
 						<p className="text-xs">Preencha o formulário para nos enviar </p>

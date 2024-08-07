@@ -9,7 +9,7 @@ import {
 const MediaPartners: React.FC = () => {
 	return (
 		<section className="h-[400px] flex flex-col items-center justify-center gap-8 w-full max-lg:px-5">
-			<p className="font-extrabold text-3xl text-[#FF9800] text-center max-lg:text-2xl">
+			<p className="font-extrabold text-3xl text-[#0E1937] text-center max-lg:text-2xl">
 				Parceiros de Mídia
 			</p>
 

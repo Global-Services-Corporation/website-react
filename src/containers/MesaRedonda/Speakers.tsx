@@ -38,7 +38,7 @@ const Speakers: React.FC = () => {
 				className="w-full h-full object-cover opacity-50"
 			/>
 			<div className="absolute top-0 flex flex-col w-full py-20 justify-around max-lg:justify-normal gap-12 items-center lg:px-24 max-lg:px-12 h-full">
-				<p className="font-extrabold text-3xl text-[#FF9800] text-center max-lg:text-2xl">
+				<p className="font-extrabold text-3xl text-[#0E1937] text-center max-lg:text-2xl">
 					Speakers do Evento
 				</p>
 				<div className="flex pb-4">

@@ -7,7 +7,7 @@ const OQueEsperar: React.FC = () => {
 			<img src={fundoWhite} alt="" className="object-cover w-full h-full" />
 			<section className="flex w-full py-20 px-24 gap-12 justify-between items-center absolute top-0 left-0 h-full  max-lg:flex-col max-lg:px-8 max-lg:py-16 ">
 				<div className="flex flex-col gap-12 max-lg:gap-4 max-w-[550px]">
-					<h2 className="font-extrabold text-3xl text-[#FF9800] max-lg:text-2xl max-lg:text-center">
+					<h2 className="font-extrabold text-3xl text-[0E1937] max-lg:text-2xl max-lg:text-center">
 						O que esperar deste evento?
 					</h2>
 					<p className="text-xl max-lg:text-sm text-justify max-lg:text-center">
