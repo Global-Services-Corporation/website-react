@@ -72,30 +72,30 @@ const Banner: React.FC = () => {
 						</Link>
 					</div>
 
-					<div className="flex gap-5 w-3/5 justify-between max-lg:w-full max-lg:justify-around max-lg:px-3">
+					<div className="flex gap-5 w-full justify-between max-lg:w-full max-lg:justify-around max-lg:px-3">
 						<div className="flex flex-col items-center">
 							<span className="text-[#ffffff] text-4xl max-lg:text-2xl">
 								{timeLeft.days}
 							</span>
-							<span className="text-lg max-lg:text-sm font-bold">Dias</span>
+							<span className="text-2xl max-lg:text-sm font-bold">Dias</span>
 						</div>
 						<div className="flex flex-col items-center">
 							<span className="text-[#ffffff] text-4xl max-lg:text-2xl">
 								{timeLeft.hours}
 							</span>
-							<span className="text-lg max-lg:text-sm font-bold">Horas</span>
+							<span className="text-2xl max-lg:text-sm font-bold">Horas</span>
 						</div>
 						<div className="flex flex-col items-center">
 							<span className="text-[#ffffff] text-4xl max-lg:text-2xl">
 								{timeLeft.minutes}
 							</span>
-							<span className="text-lg max-lg:text-sm font-bold">Minutos</span>
+							<span className="text-2xl max-lg:text-sm font-bold">Minutos</span>
 						</div>
 						<div className="flex flex-col items-center">
 							<span className="text-[#ffffff] text-4xl max-lg:text-2xl">
 								{timeLeft.seconds}
 							</span>
-							<span className="text-lg max-lg:text-sm font-bold">Segundos</span>
+							<span className="text-2xl max-lg:text-sm font-bold">Segundos</span>
 						</div>
 					</div>
 				</div>

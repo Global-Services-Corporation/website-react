@@ -31,7 +31,7 @@ const Speakers: React.FC = () => {
 	]
 
 	return (
-		<section className="relative h-[45rem] max-lg:h-[120rem]">
+		<section className="relative h-[45rem] max-lg:h-[117rem]">
 			<img
 				src={fundoWhite}
 				alt=""
