@@ -9,7 +9,7 @@ import BannerMesaRedonda from "../../containers/LandingPage/BannerMR"
 
 const HomePage: React.FC = () => {
 	return (
-		<div className="font-interTight bg-[#ffffff] h-full text-[#000000] flex flex-col justify-center items-center pb-48">
+		<div className="font-interTight h-full text-[#000000] flex flex-col justify-center items-center ">
 			<BannerMesaRedonda />
 			<Services />
 			<AboutUs />

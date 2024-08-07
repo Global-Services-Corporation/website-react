@@ -13,9 +13,18 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
+import "./nossosProdutos.css"
+import { Pagination, Autoplay } from "swiper/modules"
 
 const NossosProdutos: React.FC = () => {
 	const [view, setView] = useState("particular")
+
+	const pagination = {
+		clickable: true,
+		renderBullet: function (index: number, className: string) {
+			return '<span class="' + className + '"></span>'
+		},
+	}
 
 	const insuranceCard = [
 		{ icon: saudeIcon, title: "Saúde" },
@@ -31,11 +40,28 @@ const NossosProdutos: React.FC = () => {
 	const renderParticular = () => {
 		return (
 			<div className="w-full flex">
-				<div className="w-full flex">
+				<div className="w-full flex min-h-72">
 					<Swiper
 						watchSlidesProgress={true}
 						slidesPerView={4}
-						className="mySwiper"
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+							},
+							640: {
+								slidesPerView: 2,
+							},
+							1024: {
+								slidesPerView: 4,
+							},
+						}}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						pagination={pagination}
+						modules={[Pagination, Autoplay]}
+						className="productsSwiper"
 					>
 						{insuranceCard.map((card, index) => (
 							<SwiperSlide key={index}>
@@ -54,27 +80,46 @@ const NossosProdutos: React.FC = () => {
 	const renderEmpresarial = () => {
 		return (
 			<div className="w-full flex">
-				<Swiper
-					watchSlidesProgress={true}
-					slidesPerView={4}
-					className="mySwiper"
-				>
-					{insuranceCard.map((card, index) => (
-						<SwiperSlide key={index}>
-							<div className=" h-60 w-48 bg-[#ffffff] hover:bg-[#ffffffa8] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer">
-								<img src={card.icon} alt="Icon" className="w-16" />
-								<p className="text-center">{card.title}</p>
-							</div>
-						</SwiperSlide>
-					))}
-				</Swiper>
+				<div className="w-full flex min-h-72 ">
+					<Swiper
+						watchSlidesProgress={true}
+						slidesPerView={4}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+							},
+							640: {
+								slidesPerView: 2,
+							},
+							1024: {
+								slidesPerView: 4,
+							},
+						}}
+						pagination={pagination}
+						modules={[Pagination, Autoplay]}
+						className="productsSwiper"
+					>
+						{insuranceCard.map((card, index) => (
+							<SwiperSlide key={index}>
+								<div className=" h-60 w-48 bg-[#ffffff] hover:bg-[#ffffffa8] flex flex-col rounded-xl px-8 items-center justify-center gap-3 mx-auto cursor-pointer">
+									<img src={card.icon} alt="Icon" className="w-16" />
+									<p className="text-center">{card.title}</p>
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 			</div>
 		)
 	}
 
 	return (
 		<section
-			className="w-full flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40 bg-[#00C7FF]"
+			className="w-full flex flex-col justify-center gap-12 py-28 max-sm:py-20 items-center z-40 bg-[#0C2A42]"
 			id="produtos"
 		>
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
@@ -105,7 +150,7 @@ const NossosProdutos: React.FC = () => {
 					</div>
 				</nav>
 
-				<div className="py-4 flex w-full items-center">
+				<div className="py-10 flex w-full items-center">
 					{view === "particular" && renderParticular()}
 					{view === "empresarial" && renderEmpresarial()}
 				</div>

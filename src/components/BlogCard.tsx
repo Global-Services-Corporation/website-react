@@ -21,7 +21,7 @@ const BlogCard: React.FC<Props> = ({
 	return (
 		<a
 			href={navigateTo} target='_blank'
-			className="mr-3 w-80 flex flex-col bg-[#ffffff] rounded-xl"
+			className="w-80 flex flex-col bg-[#ffffff] rounded-xl"
 		>
 			<img src={img} alt="" className="h-56 object-cover rounded-t-xl" />
 			<div className="w-full  px-7 py-7 flex flex-col gap-2.5">

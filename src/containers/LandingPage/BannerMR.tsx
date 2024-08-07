@@ -16,22 +16,22 @@ const BannerMesaRedonda: React.FC = () => {
 	}
 
 	return (
-		<div className="h-[800px] max-lg:min-h-[0] relative max-lg:h-[500px] w-full ">
-			<div className="flex flex-col absolute top-0 inset-x-0 max-sm:z-0">
+		<div className="h-screen w-full ">
+			<div className="w-full h-full">
 				<Slider {...settings} className="">
-					<div className="w-full flex items-center h-full max-sm:h-[600px]">
+					<div className="w-full flex items-center h-full">
 						<img
 							src={bannerMesaRedonda}
 							alt=""
-							className=" w-full max-lg:hidden object-contain opacity-90 object-top  max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+							className="w-full object-cover h-screen"
 						/>
 					</div>
 
-					<div className="w-full flex items-center h-[800px] max-sm:h-[600px]">
+					<div className="w-full flex items-center h-screen">
 						<img
 							src={bannerMRPeople}
 							alt=""
-							className=" w-full max-lg:hidden object-contain opacity-90 object-top  max-sm:rounded-none  max-3xl:w-[1250px] z-0 h-full"
+							className="w-full object-cover h-screen"
 						/>
 					</div>
 				</Slider>

@@ -8,7 +8,7 @@ const Services: React.FC = () => {
 			title: "Seguros",
 			description: "Solicite já uma proposta.",
 			buttonTitle: "Solicitar",
-			link: "/insurance",
+			link: "#",
 		},
 		{
 			icon: eventosicon,
@@ -27,7 +27,7 @@ const Services: React.FC = () => {
 	]
 
 	return (
-		<section className="w-full pb-20 pt-4 max-2xl:pb-10 relative flex flex-col gap-12 z-40 bg-gradient-to-t from-[#e2e2e2] to-[#ffffff]">
+		<section className="w-full pb-20 pt-12 max-2xl:pb-10 relative flex flex-col gap-12 z-40 bg-gradient-to-t from-[#e2e2e2] to-[#ffffff]">
 			<p className="font-bold max-sm:text-2xl text-4xl ml-36 max-sm:ml-8">
 				Adira já aos nossos serviços!
 			</p>
@@ -36,7 +36,7 @@ const Services: React.FC = () => {
 				{cardInfo.map((info, index) => (
 					<div
 						key={index}
-						className="min-w-[363px] min-h-[187px] flex relative p-8 bg-gradient-to-t from-[#F7F7F8] to-[#ffffff] rounded-[24px] border border-[#30cce891]"
+						className="min-w-[363px] min-h-[187px] flex relative p-8 bg-gradient-to-t from-[#F7F7F8] to-[#ffffff] rounded-[24px] border border-[#00C7FFeb]"
 					>
 						<img src={info.icon} alt="" className="absolute object-none" />
 						<div className="flex flex-col absolute start-28">

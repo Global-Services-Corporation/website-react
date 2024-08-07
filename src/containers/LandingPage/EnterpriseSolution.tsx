@@ -53,7 +53,7 @@ const EnterpriseSolution: React.FC = () => {
 				{CardInfo.map((info, index) => (
 					<div
 						key={index}
-						className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg  bg-gradient-to-t from-[#F7F7F8 to-[#ffffff]  hover:-translate-y-2 z-40 transition-all duration-500 border border-[#30cce891]"
+						className=" w-full h-56 flex flex-col p-6 gap-2.5  rounded-lg  bg-gradient-to-t from-[#F7F7F8 to-[#ffffff]  hover:-translate-y-2 z-40 transition-all duration-500 border border-[#00C7FFa1]"
 					>
 						<img
 							src={info.cardIcon}

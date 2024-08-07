@@ -1,39 +1,12 @@
-import Slider from "react-slick"
 import BlogCard from "../../components/BlogCard"
-import { useEffect, useState } from "react"
 import { academiaBai, sukete, tda } from "../../assets/landing/Blog"
 
+import { Swiper, SwiperSlide } from "swiper/react"
+
+import "swiper/css"
+import "./nossosProdutos.css"
+
 const Blog: React.FC = () => {
-	const [qtdSlide, setQtdSlide] = useState(3)
-	const [arrows, setArrows] = useState(false)
-
-	useEffect(() => {
-		const handleResize = () => {
-			if (window.innerWidth <= 768) {
-				setQtdSlide(1)
-				setArrows(true)
-			} else {
-				setQtdSlide(3)
-			}
-		}
-
-		handleResize()
-
-		window.addEventListener("resize", handleResize)
-
-		return () => window.removeEventListener("resize", handleResize)
-	}, [])
-
-	const settings = {
-		infinite: true,
-		speed: 500,
-		autoplay: true,
-		autoplaySpeed: 2000,
-		slidesToShow: qtdSlide,
-		slidesToScroll: 2,
-		arrows: arrows,
-	}
-
 	const cardInfo = [
 		{
 			navigateTo:
@@ -67,7 +40,10 @@ Matuzalém também trabalhou em empresas como: Empresa Nacional de Electricidade
 	]
 
 	return (
-		<section className="w-full bg-[#00C7FF] text-white flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40" id="blog">
+		<section
+			className="w-full bg-[#0C2A42] text-white flex flex-col justify-center gap-12 py-24 max-sm:py-12 items-center z-40"
+			id="blog"
+		>
 			<div className="w-full flex flex-col items-center gap-5 justify-center">
 				<p className="font-bold text-4xl max-sm:text-2xl">Feed de Notícias</p>
 				<p className="max-sm:text-sm text-center max-sm:w-2/3">
@@ -76,20 +52,43 @@ Matuzalém também trabalhou em empresas como: Empresa Nacional de Electricidade
 				</p>
 			</div>
 
-			<div className="w-4/5 flex justify-center items-center gap-2 h-fit text-black">
-				{" "}
-				<Slider {...settings} className="w-full z-40 flex">
+			<div className="w-4/5 max-lg:w-11/12 flex justify-center items-center gap-2 h-fit text-black">
+				<Swiper
+					watchSlidesProgress={true}
+					slidesPerView={3}
+					spaceBetween={30}
+					autoplay={{
+						delay: 2500,
+						disableOnInteraction: false,
+					}}
+					breakpoints={{
+						0: {
+							slidesPerView: 1,
+						},
+						640: {
+							slidesPerView: 2,
+						},
+						1024: {
+							slidesPerView: 3,
+						},
+					}}
+					
+					className="productsSwiper w-full"
+				>
 					{cardInfo.map((info, index) => (
+						<SwiperSlide key={index}>
+						<div className="w-full flex items-center justify-center">
 						<BlogCard
-							key={index}
-							img={info.img}
-							title={info.title}
-							description={info.description}
-							data={info.data}
-							navigateTo={info.navigateTo}
-						/>
+								img={info.img}
+								title={info.title}
+								description={info.description}
+								data={info.data}
+								navigateTo={info.navigateTo}
+							/>
+						</div>
+						</SwiperSlide>
 					))}
-				</Slider>
+				</Swiper>
 			</div>
 		</section>
 	)

@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
 				</div>
 				<hr />
 			</div>
-			<div className="bg-[#1B223C] max-sm:pb-6 max-sm:bg-[#000000] max-sm:text-[14px] max-sm:flex-col text-[#ffff] h-[80px] max-sm:text-[#A0A0AA] flex items-center justify-between px-[50px] box-border">
+			<div className="bg-[#1B223C] max-sm:py-6 max-sm:bg-[#000000] max-sm:text-[14px] max-sm:flex-col text-[#ffff] lg:h-[80px] max-sm:text-[#A0A0AA] flex items-center justify-between px-[50px] box-border">
 				Copyright © 2024 GSC{" "}
 				<span className="max-sm:text-[12px] max-sm:text-[#656666]">
 					Global Service Corporation - 2024
