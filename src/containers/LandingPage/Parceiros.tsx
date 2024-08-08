@@ -15,7 +15,7 @@ const Partners: React.FC = () => {
 			</p>
 
 			<div className="w-2/3 marquee flex max-lg:w-full">
-				<div className="flex items-center justify-between lg:marquee-content w-full gap-24 overflow-x-auto">
+				<div className="flex items-center justify-between marquee-content w-full gap-24">
 					<img src={logoEnglishAcademy} alt="" className="w-36" />
 					<img src={parceiro1} alt="" className="w-32" />
 					<img src={logoAes} alt="" className="w-40" />
