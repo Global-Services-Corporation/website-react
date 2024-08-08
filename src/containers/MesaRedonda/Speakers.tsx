@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
 import { Pagination, Autoplay } from "swiper/modules"
+import "./speakers.css"
 
 const Speakers: React.FC = () => {
 	const cardInfo = [
@@ -34,7 +35,7 @@ const Speakers: React.FC = () => {
 			title: `Executive Chairman at African Energy Chamber`,
 		},
 	]
-	
+
 	const pagination = {
 		clickable: true,
 		renderBullet: function (index: number, className: string) {
@@ -54,14 +55,14 @@ const Speakers: React.FC = () => {
 					Speakers do Evento
 				</p>
 
-				<div className="w-full flex justify-center items-center text-black">
+				<div className="w-full flex justify-center items-center text-black h-screen">
 					<Swiper
 						watchSlidesProgress={true}
 						slidesPerView={3}
 						spaceBetween={30}
 						autoplay={{
 							delay: 2500,
-							disableOnInteraction: false,
+							disableOnInteraction: true,
 						}}
 						breakpoints={{
 							0: {
