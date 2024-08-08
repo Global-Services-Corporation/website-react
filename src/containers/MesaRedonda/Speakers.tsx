@@ -34,6 +34,13 @@ const Speakers: React.FC = () => {
 			title: `Executive Chairman at African Energy Chamber`,
 		},
 	]
+	
+	const pagination = {
+		clickable: true,
+		renderBullet: function (index: number, className: string) {
+			return '<span class="' + className + '"></span>'
+		},
+	}
 
 	return (
 		<section className="relative min-h-screen h-screen">
