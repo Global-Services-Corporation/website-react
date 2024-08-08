@@ -129,7 +129,7 @@ const NossosProdutos: React.FC = () => {
 			</div>
 
 			<div className="w-4/5 flex flex-col gap-4 z-40">
-				<nav className="flex justify-between p-2">
+				<nav className="flex justify-between p-2 max-lg:justify-center">
 					<div className="flex w-52 justify-between items-center">
 						<button
 							className={`text-xl cursor-pointer text-white ${

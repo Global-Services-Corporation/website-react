@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { seguros, eventosicon, academiaicon } from "../../assets"
+import { seguros, eventosicon } from "../../assets"
 
 const Services: React.FC = () => {
 	const cardInfo = [
@@ -16,13 +16,6 @@ const Services: React.FC = () => {
 			description: "Começa aderindo o serviço.",
 			buttonTitle: "Aderir",
 			link: "/events",
-		},
-		{
-			icon: academiaicon,
-			title: "Academia",
-			description: "Começa aderindo o serviço.",
-			buttonTitle: "Inscreva-se",
-			link: "#",
 		},
 	]
 
@@ -50,8 +43,8 @@ const Services: React.FC = () => {
 
 						<Link
 							to={info.link}
-							className="bg-[#00C7FF] text-white hover:bg-white hover:text-[#00C7FF] hover:animate-pulse
-               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center hover:border border-[#00C7FF]"
+							className="bg-[#00C7FF] hover:bg-[#0C2A42] text-white
+               w-[116px] h-[39px] end-10 bottom-8 absolute rounded-[8px] font-semibold transition-colors flex justify-center items-center duration-700"
 						>
 							{info.buttonTitle}
 						</Link>
