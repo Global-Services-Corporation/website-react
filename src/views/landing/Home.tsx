@@ -6,6 +6,7 @@ import Blog from "../../containers/LandingPage/Blog"
 import Newsletter from "../../containers/LandingPage/Newsletter"
 
 import BannerMesaRedonda from "../../containers/LandingPage/BannerMR"
+import Partners from "../../containers/LandingPage/Parceiros"
 
 const HomePage: React.FC = () => {
 	return (
@@ -15,6 +16,7 @@ const HomePage: React.FC = () => {
 			<AboutUs />
 			<EnterpriseSolution />
 			<NossosProdutos />
+			<Partners />
 			<Blog />
 			<Newsletter />
 		</div>
