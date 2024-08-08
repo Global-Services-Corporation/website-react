@@ -9,6 +9,7 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
+import { Pagination, Autoplay } from "swiper/modules"
 
 const Speakers: React.FC = () => {
 	const cardInfo = [
@@ -66,6 +67,8 @@ const Speakers: React.FC = () => {
 								slidesPerView: 3,
 							},
 						}}
+						pagination={pagination}
+						modules={[Pagination, Autoplay]}
 						className="speakersSwiper w-full"
 					>
 						{cardInfo.map((info, index) => (
