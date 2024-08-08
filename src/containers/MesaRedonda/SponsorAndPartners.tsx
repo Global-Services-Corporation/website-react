@@ -13,10 +13,6 @@ const SponsorsAndPartners: React.FC = () => {
           <img src={espacos} alt="" className="h-38 w-40" />
           <img src={logoAecipa} alt="" className="h-40 w-40" />
           <img src={parceiro1} alt="" className="h-38 w-40 invert" />
-          <img src={superbock} alt="" className="h-40 w-40" />
-          <img src={espacos} alt="" className="h-38 w-40" />
-          <img src={logoAecipa} alt="" className="h-40 w-40" />
-          <img src={parceiro1} alt="" className="h-38 w-40 invert" />
         </div>
       </div>
     </section>

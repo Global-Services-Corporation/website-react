@@ -4,7 +4,7 @@ import { logoMRWhite } from "../../assets/mesa-redonda"
 
 const Banner: React.FC = () => {
 	const calculateTimeLeft = () => {
-		const eventDate = new Date("2024-11-27T16:30:00") // data do evento
+		const eventDate = new Date("2024-11-28T16:30:00") // data do evento
 		const currentTime = new Date()
 		const difference = eventDate.getTime() - currentTime.getTime()
 
@@ -61,7 +61,10 @@ const Banner: React.FC = () => {
 					<div className="flex flex-col h-3/4 gap-10 max-w-[600px] max-lg:w-full justify-between items-center">
 						<h1 className="font-extrabold text-5xl text-center max-lg:text-2xl">
 							Leadership <span className="text-[#FF9800]">Innovation</span>
-							<span className="font-light">{" "}In Oil Gas Sector</span>
+							<span className="font-light">
+								{" "}
+								In Industries and In The Oil & Gas Sector
+							</span>
 						</h1>
 
 						<Link
@@ -95,7 +98,9 @@ const Banner: React.FC = () => {
 							<span className="text-[#ffffff] text-4xl max-lg:text-2xl">
 								{timeLeft.seconds}
 							</span>
-							<span className="text-2xl max-lg:text-sm font-bold">Segundos</span>
+							<span className="text-2xl max-lg:text-sm font-bold">
+								Segundos
+							</span>
 						</div>
 					</div>
 				</div>
