@@ -11,10 +11,11 @@ const BaixarAgenda: React.FC = () => {
 				</h1>
 
 				<a
-					href=""
+					href="../../../public/Agenda.pdf"
+					download="Agenda Mesa Redonda com os CEO's.pdf"
 					className="animate-pulse hover:animate-none flex max-lg:text-xs  text-sm items-center h-11 lg:px-4 max-lg:px-2 rounded-md gap-2 bg-[#FF9800] transition-all duration-300"
 				>
-					<img src={downloadIcon} alt="" className="w-5"/>
+					<img src={downloadIcon} alt="" className="w-5" />
 					Clique aqui para o download
 				</a>
 			</div>

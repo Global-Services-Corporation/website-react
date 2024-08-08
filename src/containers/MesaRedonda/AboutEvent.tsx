@@ -38,7 +38,11 @@ const AboutEvent: React.FC = () => {
 						{cardInfo.map((info, index) => (
 							<a key={index} href="" className="group w-full">
 								<div className="flex flex-col items-center gap-3">
-									<img src={info.imagem} alt="" className="h-15 w-16 max-lg:w-5" />
+									<img
+										src={info.imagem}
+										alt=""
+										className="h-15 w-16 max-lg:w-5"
+									/>
 									<p className="font-semibold text-xl max-lg:text-sm text-white group-hover:text-[#FF9800]">
 										{info.title}
 									</p>
@@ -58,16 +62,18 @@ const AboutEvent: React.FC = () => {
 					<div className="gap-10 flex flex-col h-full w-2/4 justify-center max-lg:gap-4 max-lg:justify-center lg:py-0 lg:max-w-[550px] max-lg:w-full max-lg:text-center max-lg:items-center">
 						<div className="flex flex-col gap-3 text-[#010D49] max-lg:text-center">
 							<h1 className="text-3xl max-lg:text-2xl font-black">Sobre</h1>
-							<h2 className="font-semibold text-3xl max-lg:text-xl">Mesa Redonda com CEO's</h2>
+							<h2 className="font-semibold text-3xl max-lg:text-xl">
+								Mesa Redonda com CEO's
+							</h2>
 							<p className="text-lg max-lg:text-sm text-justify max-lg:text-center ">
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-								Explicabo maxime consequatur reprehenderit tempore ratione,
-								omnis unde quisquam iusto nemo nesciunt dolores rem! Numquam
-								culpa quo quas. Necessitatibus quo nostrum laudantium. omnis
-								unde quisquam iusto nemo nesciunt dolores rem! Numquam culpa quo
-								quas. Necessitatibus quo nostrum laudantium. omnis unde quisquam
-								iusto nemo nesciunt dolores rem! Numquam culpa quo quas.
-								Necessitatibus quo nostrum laudantium.
+								Este tema explora como líderes visionários estão conduzindo a
+								transformação do setor por meio de estratégias inovadoras, desde
+								a adoção de novas tecnologias até a implementação de práticas
+								sustentáveis. A discussão abordará as melhores práticas em
+								gestão de talentos, a importância da diversidade na liderança e
+								como a inovação pode ser o motor para enfrentar os desafios do
+								futuro, desde a transição energética até a digitalização dos
+								processos.
 							</p>
 						</div>
 						<Link

@@ -11,14 +11,15 @@ const OQueEsperar: React.FC = () => {
 						O que esperar deste evento?
 					</h2>
 					<p className="text-lg max-lg:text-sm text-justify max-lg:text-center">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
-						maxime consequatur reprehenderit tempore ratione, omnis unde
-						quisquam iusto nemo nesciunt dolores rem! Numquam culpa quo quas.
-						Necessitatibus quo nostrum laudantium. omnis unde quisquam iusto
-						nemo nesciunt dolores rem! Numquam culpa quo quas. Necessitatibus
-						quo nostrum laudantium. omnis unde quisquam iusto nemo nesciunt
-						dolores rem! Numquam culpa quo quas. Necessitatibus quo nostrum
-						laudantium.
+						A 4ª Edição da Mesa Redonda Com CEOS reunirá líderes influentes da
+						economia angolana e internacional, para discutir o impacto da
+						inovação nas cadeias de produção, e como esse vetor, pode
+						transformar a maneira e a orientação dos lideres de modo que
+						posicionem diante dos desafios imposto pelos seus mercado. A
+						inovação é um mecanismo de sobrevivência das organizações, as
+						lideranças são obrigadas a inovar para não perder a competitividade,
+						enfrentar os desafios e aproveitar as oportunidades do
+						mercado local e global.
 					</p>
 				</div>
 

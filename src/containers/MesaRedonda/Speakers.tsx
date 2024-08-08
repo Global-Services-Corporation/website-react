@@ -1,9 +1,11 @@
 import { fundoWhite } from "../../assets/mesa-redonda"
 import {
-	AdrianoBastos,
+	carlosRosado,
 	DuraoBarroso,
+	marioNascimento,
+	matuzalemSukete,
 	NJAyuk,
-	OrlandoMata,
+	pauloPortasCard,
 } from "../../assets/mesa-redonda/speakers"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -17,17 +19,28 @@ const Speakers: React.FC = () => {
 		{
 			imagem: DuraoBarroso,
 			name: "Durão Barroso",
+
 			title: "Ex-Primeiro  Ministro de Portugal",
 		},
 		{
-			imagem: OrlandoMata,
-			name: "Orlando Mata",
-			title: `Reitor da Universidade Mandume Ya Ndemufayo de Angola e Presidente da AULP`,
+			imagem: matuzalemSukete,
+			name: "Matuzalém Sukete",
+			title: "Ex-Primeiro  Ministro de Portugal",
 		},
 		{
-			imagem: AdrianoBastos,
-			name: "Adriano Bastos",
-			title: `CEO da Galp Vice-Presidente da BP & Grupo Azule Energy`,
+			imagem: marioNascimento,
+			name: "Mário de Nascimento",
+			title: "Ex-Primeiro  Ministro de Portugal",
+		},
+		{
+			imagem: pauloPortasCard,
+			name: "Paulo Portas",
+			title: "Ex-Primeiro  Ministro de Portugal",
+		},
+		{
+			imagem: carlosRosado,
+			name: "Carlos Rosado",
+			title: "Ex-Primeiro  Ministro de Portugal",
 		},
 		{
 			imagem: NJAyuk,
