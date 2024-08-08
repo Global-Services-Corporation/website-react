@@ -6,6 +6,10 @@ import {
 	OrlandoMata,
 } from "../../assets/mesa-redonda/speakers"
 
+import { Swiper, SwiperSlide } from "swiper/react"
+
+import "swiper/css"
+
 const Speakers: React.FC = () => {
 	const cardInfo = [
 		{
@@ -31,7 +35,7 @@ const Speakers: React.FC = () => {
 	]
 
 	return (
-		<section className="relative h-[45rem] max-lg:h-[117rem]">
+		<section className="relative min-h-screen h-screen">
 			<img
 				src={fundoWhite}
 				alt=""
@@ -41,9 +45,8 @@ const Speakers: React.FC = () => {
 				<p className="font-extrabold text-3xl text-[#0E1937] text-center max-lg:text-2xl">
 					Speakers do Evento
 				</p>
-				<div className="flex pb-4"></div>
 
-				<div className="w-4/5 max-lg:w-11/12 flex justify-center items-center gap-2 h-fit text-black">
+				<div className="w-full flex justify-center items-center text-black">
 					<Swiper
 						watchSlidesProgress={true}
 						slidesPerView={3}
@@ -63,15 +66,17 @@ const Speakers: React.FC = () => {
 								slidesPerView: 3,
 							},
 						}}
-						className="productsSwiper w-full"
+						className="speakersSwiper w-full"
 					>
 						{cardInfo.map((info, index) => (
 							<SwiperSlide key={index}>
-								<img
-									src={info.imagem}
-									alt=""
-									className="object-contain hover:-translate-y-3 transition-all duration-700 hover:shadow-2xl shadow-md max-lg:w-80"
-								/>
+								<div className="w-full flex justify-center">
+									<img
+										src={info.imagem}
+										alt=""
+										className="object-contain hover:-translate-y-3 transition-all duration-700 shadow-md "
+									/>
+								</div>
 							</SwiperSlide>
 						))}
 					</Swiper>
