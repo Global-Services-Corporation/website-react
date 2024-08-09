@@ -66,7 +66,7 @@ export const Header = () => {
 	return (
 		<header
 			className={`fixed h-[80px]
-      top-0 flex w-full justify-between text-black items-center px-[55px] max-lg:px-8 box-border ${
+      top-0 flex w-full justify-between bg-[#ffffffc5] text-black items-center px-[55px] max-lg:px-8 box-border ${
 				isScrolled
 					? "bg-[#ffffffc5] transition duration-[0.5s] backdrop-blur-sm max-lg:fixed"
 					: "transition duration-[0.5s]"
