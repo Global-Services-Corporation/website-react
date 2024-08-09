@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { mesaRedonda } from "../../assets"
-import { fundoBlue2, logoMRWhite } from "../../assets/mesa-redonda"
+import { bgTicket, logoMRWhite } from "../../assets/mesa-redonda"
 
 type TicketType = {
 	id: string
@@ -120,13 +119,14 @@ const TicketsPrices: React.FC = () => {
 
 	return (
 		<main className="relative max-sm:h-screen">
-			<img src={fundoBlue2} alt="" className="w-full  object-cover" />
+			<img src={bgTicket} alt="" className="w-full  object-cover" />
 			<div className="absolute top-0 left-0 flex flex-col items-center max-sm:overflow-y-auto max-sm:h-full w-full">
 				<header className="w-full py-6 px-10 z-10 flex justify-between items-center ">
 					<a href={"/"}>
 						<img
 							src={logoMRWhite}
-							alt="Logotipo da Global Services Corporation" className="w-8/12"
+							alt="Logotipo da Global Services Corporation"
+							className="w-8/12"
 						/>
 					</a>
 
@@ -141,7 +141,7 @@ const TicketsPrices: React.FC = () => {
 					</Link>
 				</header>
 
-				<div className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between p-10 bg-[#000760] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0 shadow-lg shadow-black">
+				<div className="text-white max-sm:text-sm flex flex-col z-50 w-2/3 gap-4 my-12 rounded-md justify-between p-10 bg-[#eeeeee] max-sm:gap-2 max-sm:w-full max-sm:h-auto max-sm:m-0 shadow-lg shadow-black">
 					<h1 className="font-semibold text-center text-3xl text-[#FF9800]">
 						TICKETS
 					</h1>
@@ -150,9 +150,9 @@ const TicketsPrices: React.FC = () => {
 							key={ticket.id}
 							className="flex w-full max-sm:flex-col justify-between items-center shadow-inner shadow-black rounded-md p-4 max-sm:gap-3 mb-3 bg-[rgba(79,79,79,0.2)]"
 						>
-							<p className="font-bold text-lg text-white">{ticket.label}</p>
+							<p className="font-bold text-lg text-[#004A75]">{ticket.label}</p>
 
-							<p className="font-bold text-white">
+							<p className="font-bold text-[#004A75]">
 								{ticket.price.toLocaleString("pt-PT", {
 									style: "currency",
 									currency: "AOA",
@@ -182,15 +182,15 @@ const TicketsPrices: React.FC = () => {
 					))}
 
 					<div className="flex flex-col w-full justify-between items-center h-1/4 gap-2">
-						<div className="flex gap-2 flex-col">
-							<p className="flex font-bold gap-1 text-white">
+						<div className="flex items-center gap-2 flex-col">
+							<p className="flex font-bold gap-1 text-[#004A75]">
 								Quantidade de Tickets:
 								<span className="font-medium">
 									{Object.values(quantities).reduce((sum, qty) => sum + qty, 0)}
 								</span>
 							</p>
 
-							<p className="flex font-bold gap-1 text-white">
+							<p className="flex font-bold gap-1 text-[#004A75]">
 								Total:
 								<span className="font-medium">
 									{total.toLocaleString("pt-PT", {

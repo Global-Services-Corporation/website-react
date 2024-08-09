@@ -1,10 +1,4 @@
-import {
-	logoRna,
-	logoTpa,
-	logoTvZimbo,
-	logoPlatinaLine,
-	logoZap,
-} from "../../assets"
+import { logoRna, logoTpa, logoTvZimbo, logoPlatinaLine } from "../../assets"
 
 const MediaPartners: React.FC = () => {
 	return (
@@ -19,7 +13,6 @@ const MediaPartners: React.FC = () => {
 					<img src={logoTpa} alt="" className="h-38 w-40" />
 					<img src={logoTvZimbo} alt="" className="h-36" />
 					<img src={logoPlatinaLine} alt="" className="" />
-					<img src={logoZap} alt="" className="h-52" />
 				</div>
 			</div>
 		</section>

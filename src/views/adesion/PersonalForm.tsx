@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useForm, Controller, FieldError } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { mesaRedonda } from "../../assets"
-import { fundoBlue2 } from "../../assets/mesa-redonda"
+import { bgFormMr } from "../../assets/mesa-redonda"
 
 const PersonalForm: React.FC = () => {
 	const navigate = useNavigate()
@@ -171,7 +171,7 @@ const PersonalForm: React.FC = () => {
 			</div>
 
 			<img
-				src={fundoBlue2}
+				src={bgFormMr}
 				alt="banner-mesa-redonda "
 				className="w-1/2 h-full max-sm:hidden object-cover"
 			/>

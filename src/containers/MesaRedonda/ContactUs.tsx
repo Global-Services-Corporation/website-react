@@ -1,6 +1,6 @@
 const ContactUs: React.FC = () => {
 	return (
-		<section className="bg-gradient-to-r from-[#010D29] to-[#032087] w-full relative py-20 max-lg:py-20">
+		<section className="bg-gradient-to-r from-[#112835] to-[#004A75] w-full relative py-20 max-lg:py-20">
 			<div className="flex justify-around w-full max-lg:flex-col ">
 				<div className="box-border max-sm:h-fit flex flex-col gap-[10px] py-20 max-lg:pb-10 max-lg:pt-0  max-lg:w-full items-center">
 					<h1 className=" text-[#FF9800] text-2xl font-bold">Linha de Apoio</h1>
@@ -26,14 +26,14 @@ const ContactUs: React.FC = () => {
 
 				<div className="w-[550px] items-center flex-col justify-center bg-white flex rounded-2xl max-lg:rounded-none gap-5 px-16 max-lg:px-10 py-10 h-full max-lg:w-full">
 					<div className="flex flex-col items-center w-full">
-						<p className="text-4xl max-lg:text-2xl font-bold text-[#0E1937]">
+						<p className="text-4xl max-lg:text-2xl font-bold text-[#004B76]">
 							Entre em contacto
 						</p>
 						<p className="text-xs">Preencha o formulário para nos enviar </p>
 					</div>
 					<form action="" className="w-full flex flex-col gap-4">
 						<div>
-							<p className="text-base text-[#0E1937]">Nome</p>
+							<p className="text-base text-[#004B76]">Nome</p>
 							<input
 								type="text"
 								name="nome"
@@ -44,7 +44,7 @@ const ContactUs: React.FC = () => {
 						</div>
 
 						<div>
-							<p className="text-base text-[#0E1937]">Email</p>
+							<p className="text-base text-[#004B76]">Email</p>
 							<input
 								type="email"
 								name="email"
@@ -55,7 +55,7 @@ const ContactUs: React.FC = () => {
 						</div>
 
 						<div>
-							<p className="text-base text-[#0E1937]">Telefone</p>
+							<p className="text-base text-[#004B76]">Telefone</p>
 							<input
 								type="tel"
 								name="contact"
@@ -66,7 +66,7 @@ const ContactUs: React.FC = () => {
 						</div>
 
 						<div>
-							<p className="text-base text-[#0E1937]">Mensagem</p>
+							<p className="text-base text-[#004B76]">Mensagem</p>
 							<textarea
 								name="message"
 								id="message"

@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom"
 import { logoDoc, mesaRedonda } from "../../assets"
 import jsPDF from "jspdf"
 import autoTable from "jspdf-autotable"
-import { fundoBlue2, logoMRWhite } from "../../assets/mesa-redonda"
+import { bgTicket, fundoBlue2, logoMRWhite } from "../../assets/mesa-redonda"
 
 interface PersonalData {
 	nome: string
@@ -200,7 +200,7 @@ const FinalizatedAdesion: React.FC = () => {
 
 	return (
 		<main className="max-sm:h-screen relative ">
-			<img src={fundoBlue2} alt="" className="w-full h-full object-cover" />
+			<img src={bgTicket} alt="" className="w-full h-full object-cover" />
 			<div className="flex flex-col items-center overflow-hidden max-sm:overflow-y-auto absolute top-0 left-0 w-full h-full">
 				<header className="w-full py-4 px-6 z-10 flex items-center justify-between">
 					<a href={"/"}>
@@ -213,7 +213,7 @@ const FinalizatedAdesion: React.FC = () => {
 
 					<Link
 						to={`/tickets-datas`}
-						className="font-bold"
+						className="font-bold text-white"
 						onClick={() => {
 							localStorage.removeItem("accumulatedTicketData")
 						}}
@@ -222,13 +222,13 @@ const FinalizatedAdesion: React.FC = () => {
 					</Link>
 				</header>
 
-				<section className="flex flex-col z-50 h-3/4 w-2/3 max-sm:w-full rounded-md justify-around p-10 bg-[#000760] my-auto items-center">
+				<section className="flex flex-col z-50 h-3/4 w-2/3 max-sm:w-full rounded-md justify-around p-10 bg-[#eeeeee]  my-auto items-center">
 					<h1 className="text-[35px] text-[#FF9800] font-semibold text-center max-sm:text-[25px]">
 						FINALIZAR RESERVA
 					</h1>
 
 					<div className="flex items-center flex-col gap-1 w-2/3 text-center">
-						<p className="text-lg text-white">
+						<p className="text-lg text-[#004A75]">
 							Após confirmada a reserva, clique em{" "}
 							<span className="font-bold">FINALIZAR</span> para receber as
 							instruções de pagamento.

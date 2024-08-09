@@ -11,7 +11,7 @@ const AberturaOficial: React.FC = () => {
 							Abertura oficial
 						</h1>
 						<p className="text-4xl max-lg:text-2xl text-[#FF9800] font-extrabold">
-							Novembro de 2024
+							18 de Julho de 2024
 						</p>
 					</div>
 					<div className="w-full flex flex-col gap-2">

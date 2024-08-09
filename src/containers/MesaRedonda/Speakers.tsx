@@ -105,7 +105,7 @@ const Speakers: React.FC = () => {
 	}
 
 	return (
-		<section className="relative min-h-screen h-screen">
+		<section className="relative min-h-[45rem] h-screen">
 			<img
 				src={fundoWhite}
 				alt=""
