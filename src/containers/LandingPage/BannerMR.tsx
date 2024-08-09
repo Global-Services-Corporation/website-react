@@ -2,6 +2,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { bannerMesaRedonda, bannerMRPeople } from "../../assets"
+import { Link } from "react-router-dom"
 
 const BannerMesaRedonda: React.FC = () => {
 	const settings = {
@@ -36,7 +37,23 @@ const BannerMesaRedonda: React.FC = () => {
 				</Slider>
 			</div>
 
-			<div className="absolute top-0 left-0 w-full h-full bg-[#151515c4]"></div>
+			<div className="absolute top-0 left-0 w-full h-full bg-[#151515c4] flex justify-center items-center">
+				<div className="flex flex-col gap-10 max-w-[800px] max-lg:w-full justify-between items-center">
+					<h1 className="font-extrabold text-5xl text-center max-lg:text-2xl text-[#ffffff]">
+						Leadership <span className="text-[#FF9800]">Innovation</span>{" "}
+						In Industries and In The Oil & Gas Sector
+					</h1>
+
+					<p className="text-[#ffff]">Participe do maior evento corporativo.</p>
+
+					<Link
+						to="https://www.mesaredonda.globalsc.ao"
+						className="hover:bg-[#FF9800] hover:text-[#ffffff] bg-[#ffffff] py-2.5 px-6 font-semibold rounded-lg transition-colors duration-300 w-56 max-lg:w-36 max-lg:text-sm flex justify-center items-center"
+					>
+						Saiba mais
+					</Link>
+				</div>
+			</div>
 		</div>
 	)
 }

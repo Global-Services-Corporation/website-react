@@ -133,7 +133,7 @@ export const Header = () => {
 
 			<a
 				href="https://www.mesaredonda.globalsc.ao"
-				className="max-lg:hidden duration-300 text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#e39e00] transition-colors hover:from-[#000000] hover:to-[#000000] hover: rounded-[10px]"
+				className="max-lg:hidden text-sm font-bold flex items-center justify-center px-[20px] max-lg:px-4 py-[25px] max-lg:py-2 w-[150px] max-lg:w-[110px] h-[40px] max-lg:h-8 max-lg:text-xs bg-gradient-to-r from-[#ffe1ba] to-[#FF9800] transition-colors hover:from-[#ffffff] hover:to-[#ffffff] hover: rounded-[10px] duration-500"
 			>
 				Inscreva-se
 			</a>
