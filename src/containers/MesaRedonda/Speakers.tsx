@@ -1,11 +1,19 @@
 import { fundoWhite } from "../../assets/mesa-redonda"
 import {
+	antonioSantos,
+	braulioBrito,
 	carlosRosado,
 	DuraoBarroso,
+	edsonSantos,
+	filipaVilhena,
+	joseOctavio,
 	marioNascimento,
 	matuzalemSukete,
 	NJAyuk,
+	noelmaViegas,
+	orlandoMata,
 	pauloPortasCard,
+	ricardoCosta,
 } from "../../assets/mesa-redonda/speakers"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -45,6 +53,46 @@ const Speakers: React.FC = () => {
 		{
 			imagem: NJAyuk,
 			name: "NJ Ayuk JD MBA",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: antonioSantos,
+			name: "Antonio dos Santos",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: braulioBrito,
+			name: "Bráulio Brito",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: edsonSantos,
+			name: "Edson Santos",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: orlandoMata,
+			name: "Orlando Mata",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: filipaVilhena,
+			name: "Filipa Vilhena",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: joseOctavio,
+			name: "José Octavio",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: noelmaViegas,
+			name: "Noelma Viegas",
+			title: `Executive Chairman at African Energy Chamber`,
+		},
+		{
+			imagem: ricardoCosta,
+			name: "Ricardo Costa",
 			title: `Executive Chairman at African Energy Chamber`,
 		},
 	]
